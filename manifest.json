@@ -4,23 +4,24 @@
     "name": "JSCleaner Plugin",
     "description": "This extension will block scripts based on  machine learning model",
     "version": "1.0",
-    "content_security_policy": "script-src 'self' https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js https://code.jquery.com/jquery-3.2.1.slim.min.js https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js; object-src 'self'",
+    "content_security_policy": "script-src 'self' https://use.fontawesome.com/releases/v5.7.0/css/all.css; object-src 'self'",
     "browser_action": {
      "default_icon": "JSCleaner.png",
      "default_popup": "popup.html"
     },
     "background": {
-        "scripts": ["background.js"]
+        "scripts": ["assets/js/background.js"]
       },
     "content_scripts": [
         {
             "matches":["<all_urls>"],
-            "css": ["main.css"], 
-            "js": ["getScripts.js"]
+            "css": ["assets/css/main.css"], 
+            "js": ["assets/js/getScripts.js", "assets/js/contentscript.js"]
             }
         ],
     "permissions": [
      "activeTab",
-     "webrequest"
+     "webrequest", 
+     "storage"
      ]
   }
