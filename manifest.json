@@ -10,18 +10,28 @@
      "default_popup": "popup.html"
     },
     "background": {
-        "scripts": ["assets/js/background.js"]
+        "page": "assets/html/background.html"
       },
     "content_scripts": [
         {
+            "run_at" : "document_start", 
             "matches":["<all_urls>"],
             "css": ["assets/css/main.css"], 
             "js": ["assets/js/getScripts.js", "assets/js/contentscript.js"]
             }
-        ],
+    ],
+    "web_accessible_resources": [
+        
+    ],
+    
     "permissions": [
      "activeTab",
-     "webrequest", 
-     "storage"
+     "webRequest", 
+     "storage",
+     "tabs", 
+     "<all_urls>", 
+     "blocking", 
+     "webRequestBlocking", 
+     "asyncBlocking"
      ]
   }

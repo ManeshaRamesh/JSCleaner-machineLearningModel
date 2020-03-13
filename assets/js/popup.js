@@ -11,9 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }, false);
 
     var checkPageButton = document.getElementById('scripts');
-    checkPageButton.addEventListener('click', function() {
-        window.location.href="scripts.html";
-        // window.location.href="new.html";
-        // chrome.browserAction.setPopup({popup: "scripts.html"});
-    }, false);
+    if (checkPageButton){
+        checkPageButton.addEventListener('click', function() {
+            window.location.href="scripts.html";
+            // window.location.href="new.html";
+            // chrome.browserAction.setPopup({popup: "scripts.html"});
+        }, false);
+    }
   }, false);
