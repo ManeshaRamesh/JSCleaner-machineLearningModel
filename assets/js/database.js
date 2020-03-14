@@ -9,7 +9,7 @@ import * as Constants from './constants.js';
 // var BlockTheseScripts =[]
 var disabledLabels = [];
 
-
+var blockScripts = [];
 var labelledScript = new Map();
 
 
@@ -302,7 +302,35 @@ function iterate(OSName, callback){
 
  }
 
+ async function logStorageChange(changes, area) {
+    console.log("Change in storage area: " + area);
+   
+    let changedItems = Object.keys(changes);
+   
+    
+      
+    for (let item of changedItems) {
+        //if item is default
+        //
+        if (item === 'default'){
+            Constants.setdefaultLabels(changes[item].newValue).then(()=>{
+                console.log("updating array", Constants.defaultLabels)
+                blockRequests(true);
+                return;
 
+            }); 
+            
+        }
+     
+    }
+    // for (let item of changedItems) {
+    //   console.log(item + " has changed:");
+    //   console.log("Old value: ");
+    //   console.log(changes[item].oldValue);
+    //   console.log("New value: ");
+    //   console.log(changes[item].newValue);
+    // }
+  }
  function blockURLS(OSName, details){
      return new Promise((resolve, reject)=>{
         let objectStore = db.transaction(OSName).objectStore(OSName);
@@ -341,7 +369,7 @@ function iterate(OSName, callback){
  }
 
  function cancel(requestDetails) {
-    console.log("Canceling: " + requestDetails.url);
+    // console.log("Canceling: " + requestDetails.url);
     
     return {cancel: true};
     
@@ -350,13 +378,18 @@ function iterate(OSName, callback){
  function blockRequests(removelistener, object, action){
     return new Promise((resolve, reject)=>{
         var label;
-        var blockScripts = [];
+        console
        //this runs when the extension is reloaded and things need to be read from the database
         if (!object)
         {
+            // console.log("reload", Constants.defaultLabels)
+            blockScripts = [];
+            disabledLabels = [];
+            // console.log("empty", blockScripts )
             //gets labels that are disabled
             for(label of Constants.defaultLabels){
                 if (!label.status){
+                    // console.log("Labels that are disabled", label.label)
                     disabledLabels.push(label.label);
                 }
             }
@@ -366,6 +399,7 @@ function iterate(OSName, callback){
             //     blockScripts.push(value.name); 
             // }
             // })
+            // console.log("disabledLabels", disabledLabels) 
             for(let [key,value] of labelledScript){
                 // console.log(key, value)
                 if(disabledLabels.includes(value.label)){
@@ -385,14 +419,14 @@ function iterate(OSName, callback){
             }
 
         }
-        console.log("Scripts that are being blocked", blockScripts, blockScripts.length); 
-        
+        // console.log("Scripts that are being blocked", blockScripts, blockScripts.length); 
+        if (removelistener){
+            console.log("removelistener")
+            chrome.webRequest.onBeforeRequest.removeListener(cancel);
+        }
         if (blockScripts && blockScripts.length)
         {
-            if (removelistener){
-                console.log("removelistener")
-                chrome.webRequest.onBeforeRequest.removeListener(cancel);
-            }
+            
             console.log("creating a listener")
 
             // add the listener,
@@ -405,6 +439,9 @@ function iterate(OSName, callback){
         }
         // return blockScripts;
         resolve(blockScripts); 
+    }).then(()=>{
+        console.log("Scripts that are being blocked", blockScripts, blockScripts.length); 
+
     })
 
  }
@@ -484,7 +521,8 @@ export  {
     blockURLS,
     labelledScript, 
     loadData, 
-    blockRequests
+    blockRequests, 
+    logStorageChange
 
 
 };

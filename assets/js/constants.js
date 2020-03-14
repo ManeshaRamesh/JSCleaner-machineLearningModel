@@ -2,14 +2,15 @@ var defaultLabels = [];
 var labels = ['Advertising','Analytics', 'Social', 'Video', 'Utilities', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Managment', 'Others']
 chrome.storage.local.get(['default'], function(result) {
     var obj;
-    if (result.key ===undefined || result.value === null){ //if not in google storage 
+    console.log("default: ", result); 
+    if (!result.default){ //if not in google storage 
 
         // console.log("does not exist", result.key)
         var settingDefault = []
         labels.forEach((element) =>{
             obj ={
                 label: element,
-                status: Math.round(Math.random())
+                status: 1
             }
             settingDefault.push(obj)// enables all scripts - does not block anything unless set otherwise
         })
@@ -21,13 +22,21 @@ chrome.storage.local.get(['default'], function(result) {
     }
     else{
         console.log("exists", result.key)
-        defaultLabels = result.value;
+        defaultLabels = result.default;
     }
 
  
   });
 
+function setdefaultLabels(value){
+    return new Promise((resolve, reject)=>{
+        defaultLabels = value;
+        resolve(defaultLabels);
+    })
+    
 
+}
 export {
-    defaultLabels
+    defaultLabels, 
+    setdefaultLabels
 };

@@ -115,7 +115,7 @@ chrome.runtime.onInstalled.addListener(function (object) {
         
     // });
     
-   
+    // chrome.storage.local.remove(['default']);
 
  
     
@@ -158,7 +158,7 @@ Database.createDatabase().then((result) =>{
     
             ////////////////////////Proxy replacement//////////////////////////
                 //add labelled scripts to the database.
-                console.log("print add item - here2")
+                // console.log("print add item - here2")
 
                 var script;
                 for (script of labeledScripts){
@@ -169,7 +169,7 @@ Database.createDatabase().then((result) =>{
         }
         }, 5000);
 
-
+        browser.storage.onChanged.addListener(Database.logStorageChange);
 
         chrome.webRequest.onBeforeSendHeaders.addListener(
             
