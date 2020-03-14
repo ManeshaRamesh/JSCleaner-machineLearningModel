@@ -4,11 +4,13 @@ import * as Constants from './constants.js';
  var db;
 
 //  var blockScripts = ['']; //array of blocked scripts (based on labels)
- var scripts = []; //array of all scripts
-
-var BlockTheseScripts =[]
 
 
+// var BlockTheseScripts =[]
+var disabledLabels = [];
+
+
+var labelledScript = new Map();
 
 
 function createDatabase(){ 
@@ -31,19 +33,19 @@ function createDatabase(){
     };
 
         // if (!db.objectStoreNames.contains('scripts')) {
-            var scriptsOS = db.createObjectStore("scripts", {keyPath: "scriptsID", autoIncrement:true});
-            // scriptsOS.createIndex("scriptsID", "scriptsID", {unique: true});
-            scriptsOS.createIndex('name', 'name', {unique: true});
+            var scriptsOS = db.createObjectStore("scripts", {keyPath: "name"});
+            // scriptsOS.createIndex("scriptsID", "scriptsID", {unique: true, autoIncrement:true});
+            // scriptsOS.createIndex('name', 'name', {unique: true});
             scriptsOS.createIndex('label', 'label', {unique: false});
             scriptsOS.createIndex('accuracy', 'accuracy', {unique: false});
 
             console.log("createdObjectStore", scriptsOS)
         // }
         // if (!db.objectStoreNames.contains('urls')) {
-            var urlsOS = db.createObjectStore('urls', {keyPath: 'urlsName', autoIncrement:true});
-            // urlsOS.createIndex('urlID', 'urlID', {unique: true});
-            urlsOS.createIndex('default', 'default', {unique: true});
-            urlsOS.createIndex('scripts', 'scripts', {unique: false});
+            // var urlsOS = db.createObjectStore('urls', {keyPath: 'urlsName', autoIncrement:true});
+            // // urlsOS.createIndex('urlID', 'urlID', {unique: true});
+            // urlsOS.createIndex('default', 'default', {unique: true});
+            // urlsOS.createIndex('scripts', 'scripts', {unique: false});
         // }
         // if (!db.objectStoreNames.contains('urlsScripts')) {
         // var urlsscriptsOS = db.createObjectStore('urlsScripts', {keyPath: 'urlsScriptsID', autoIncrement:true});
@@ -96,7 +98,11 @@ function addItem(newItem, OSName ){
     // report the success of our request
     // note.innerHTML += '<li>Request successful.</li>';
     console.log("Request to add item was successful- ", newItem)
-    loadData(null); 
+    // loadData(null); 
+    updateScriptsMap(newItem);
+    updateBlockedScripts('add',newItem);
+
+
 };
 
    
@@ -104,6 +110,29 @@ function addItem(newItem, OSName ){
  
 }
 
+
+function updateBlockedScripts(action,item){
+    if (action ==='add'){
+        if(disabledLabels.includes(item.label)){
+            blockRequests(true, item, action) 
+        }
+    }
+    // else if (action ==='remove'){} 
+    else {
+        console.log("action is incorrect");
+
+    }
+}
+
+function updateScriptsMap(item){
+    var key = item.name;
+    var value = {
+        accuracy : item.accuracy, 
+        label : item.label,
+        scriptsID: item.scriptsID, 
+    }
+    labelledScript.set(key, value);
+}
 
     //read values params - objectstore, key,
 function readItem(OSName, key) {
@@ -158,7 +187,9 @@ function updateItem(OSName, key, data){
             // report the success of our request
             // note.innerHTML += '<li>Request successful.</li>';
             console.log("Request to update item was successful- ", data)
-            loadData(null); 
+            updateScriptsMap(data);
+
+            // loadData(null); 
         };
     };
 
@@ -186,7 +217,8 @@ function updateItem(OSName, key, data){
         // report the success of our request
         // note.innerHTML += '<li>Request successful.</li>';
         console.log("Request to remove item was successful- ", key)
-        loadData(null); 
+        // loadData(null); 
+        labelledScript.delete(key);
     };
  }
  function searchItem(OSName, attribute, item){
@@ -308,34 +340,84 @@ function iterate(OSName, callback){
 
  }
 
- function blockRequests(){
-    var label;
-    var disabledLabels = [];
-    var blockScripts = [];
-    for(label of Constants.defaultLabels){
-        if (!label.status){
-            disabledLabels.push(label.label);
+ function cancel(requestDetails) {
+    console.log("Canceling: " + requestDetails.url);
+    
+    return {cancel: true};
+    
+}
+
+ function blockRequests(removelistener, object, action){
+    return new Promise((resolve, reject)=>{
+        var label;
+        var blockScripts = [];
+       //this runs when the extension is reloaded and things need to be read from the database
+        if (!object)
+        {
+            //gets labels that are disabled
+            for(label of Constants.defaultLabels){
+                if (!label.status){
+                    disabledLabels.push(label.label);
+                }
+            }
+            //gets teh scripts with the disabled labels
+            // iterate('scripts', function(value){
+            // if(disabledLabels.includes(value.label)){
+            //     blockScripts.push(value.name); 
+            // }
+            // })
+            for(let [key,value] of labelledScript){
+                // console.log(key, value)
+                if(disabledLabels.includes(value.label)){
+                    blockScripts.push(key); 
+                }
+            }
         }
-    }
-    iterate('scripts', function(value){
-        if(disabledLabels.includes(value.label)){
-            blockScripts.push(value.name); 
+        else{ 
+            if(action ==='add'){//just add the name of the script (for add item)
+                blockScripts.push(object.name);
+            }
+            else if (action === 'remove'){
+                const index = blockScripts.indexOf(object.name);
+                if (index > -1) {
+                    blockScripts.splice(index, 1);
+                }
+            }
+
         }
+        console.log("Scripts that are being blocked", blockScripts, blockScripts.length); 
+        
+        if (blockScripts && blockScripts.length)
+        {
+            if (removelistener){
+                console.log("removelistener")
+                chrome.webRequest.onBeforeRequest.removeListener(cancel);
+            }
+            console.log("creating a listener")
+
+            // add the listener,
+            // passing the filter argument and "blocking"
+            chrome.webRequest.onBeforeRequest.addListener(
+                cancel,
+                {urls: blockScripts},
+                ["blocking"]
+            );
+        }
+        // return blockScripts;
+        resolve(blockScripts); 
     })
-    console.log("Scripts that are being blocked", blockScripts); 
-    BlockTheseScripts = blockScripts;
-    // return blockScripts;
 
  }
 
  function loadData(openedDB){
  
-    return new Promise(()=>{
+    return new Promise(async (resolve, reject)=>{
         if (openedDB !==null){
             db = openedDB;
         }
+
+                
         
-        blockRequests();
         // console.log('Scripts that need to be blocked; ', blockScripts)
 
         
@@ -349,6 +431,7 @@ function iterate(OSName, callback){
         
         transaction.onerror = function(event) {
             // console.log("Transaction not opened due to error. Duplicate items not allowed - ", transaction.error)
+            reject(false)
 
             // note.innerHTML += '<li>Transaction not opened due to error: ' + transaction.error + '</li>';
         };
@@ -360,13 +443,30 @@ function iterate(OSName, callback){
         var objectStoreRequest = objectStore.getAll();
         
         objectStoreRequest.onsuccess = function(event) {
+            var scripts = []; //array of all scripts
             // report the success of our request
             scripts = objectStoreRequest.result;
+            var count;
+            var key;
+            var value;
+            for(count = 0; count < scripts.length ; count ++){
+                key = scripts[count].name
+                value = {
+                    accuracy : scripts[count].accuracy, 
+                    label : scripts[count].label,
+                    scriptsID: scripts[count].scriptsID, 
+                }
+                labelledScript.set(key, value )
+            }
+            console.log("Request successful - ", labelledScript)
 
-            console.log("Request successful - ", scripts)
+
+            resolve(true)
         
         };
 
+    }).then(async ()=>{
+        await blockRequests(false);
     })
     
 }
@@ -382,7 +482,7 @@ export  {
     ifExists, 
     iterate, 
     blockURLS,
-    scripts, 
+    labelledScript, 
     loadData, 
     blockRequests
 

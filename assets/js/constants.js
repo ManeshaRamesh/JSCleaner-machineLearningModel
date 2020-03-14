@@ -9,7 +9,7 @@ chrome.storage.local.get(['default'], function(result) {
         labels.forEach((element) =>{
             obj ={
                 label: element,
-                status: 1
+                status: Math.round(Math.random())
             }
             settingDefault.push(obj)// enables all scripts - does not block anything unless set otherwise
         })

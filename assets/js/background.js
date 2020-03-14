@@ -131,6 +131,134 @@ Database.createDatabase().then((result) =>{
     
     Database.loadData(result).then(()=>{
 
+
+        // console.log("The scripts that need to be bocked", Database.BlockTheseScripts)
+        
+        setInterval(() => {
+            // console.log("Labelled Scripts size", Database.labelledScript)
+
+            // console.log('Timed Out', timedout);
+            // timedout = true;
+
+            //every 3 seconds is checks if there any scripts that need to be sent to the eproxy 
+            if(scripts.length){
+                ////////////////////////Proxy replacement//////////////////////////
+                var script;
+                var tempObj = {};
+                //get response say in labeled scripts
+                for (script of scripts){
+            
+                    tempObj = {
+                        name: script, 
+                        label: window.jscleaner.Constants.labels[Math.floor(Math.random() * window.jscleaner.Constants.labels.length)], 
+                        accuracy: 0.1
+                    }
+                    labeledScripts.push(tempObj); //teh proxy returns an array of objects
+                }
+    
+            ////////////////////////Proxy replacement//////////////////////////
+                //add labelled scripts to the database.
+                console.log("print add item - here2")
+
+                var script;
+                for (script of labeledScripts){
+                    Database.addItem(script,'scripts');
+                }
+            scripts = [];
+            labeledScripts = [];
+        }
+        }, 5000);
+
+
+
+        chrome.webRequest.onBeforeSendHeaders.addListener(
+            
+            function(details) {
+                // console.log(details.url)
+                
+                if (details.type == "script"){ //check if url is of type script
+                    //only adds those scripts that have not been labelled
+                    var found = false;
+                    //check if the scripts can be found
+
+                    if (Database.labelledScript.get(details.url)){
+                        found = true;
+                    }
+                    // for(var i = 0; i < Database.scripts.length; i++) {
+                    //     if (Database.scripts[i].name == details.url) {
+                    //         found = true;
+                    //         break;
+                    //     }
+                    // }
+                    console.log("Should script be labelled?: ", details.url, !found  , !scripts.includes(details.url) )
+                    if (!found && !scripts.includes(details.url)) {//if is script is in database
+            
+                        // console.log('Needs to be sent to proxy server')
+                        //check if teh url is already in local storage
+                        scripts.push(details.url)
+                        // console.log ("pushed", details.url,scripts.length)
+                    }
+
+
+                }
+                console.log("conditions: scriptlength and timeout", scripts.length)
+
+            
+                if(scripts.length == 5) {//add a timer
+                    // console.log("print add item - here1")
+                    // timedout = false;
+                    
+                    //send an ajax request
+                    
+                     
+                            ////////////////////////Proxy replacement//////////////////////////
+                            var script;
+                            var tempObj = {};
+                            //get response say in labeled scripts
+                            for (script of scripts){
+                        
+                                tempObj = {
+                                    name: script, 
+                                    label: window.jscleaner.Constants.labels[Math.floor(Math.random() * window.jscleaner.Constants.labels.length)], 
+                                    accuracy: 0.1
+                                }
+                                labeledScripts.push(tempObj); //teh proxy returns an array of objects
+                            }
+                
+                        ////////////////////////Proxy replacement//////////////////////////
+                            //add labelled scripts to the database.
+                            // console.log("print add item - here2")
+
+                            var script;
+                            for (script of labeledScripts){
+                                Database.addItem(script,'scripts');
+                            }
+                        scripts = [];
+                        labeledScripts = [];
+                
+
+                }
+
+
+
+                    // console.log("These are the Labeled Scripts: ",labeledScripts);
+                    // chrome.storage.local.set({LabeledScripts: labeledScripts}, function() { })
+
+                // }
+            //   return {requestHeaders: details.requestHeaders};
+            },
+            {urls: ["<all_urls>"]},["requestHeaders"]);
+
+    // create and event and event listener for the timer
+
+    
+    
+  
+        
+
+
+
+
     })
 });
 
@@ -153,105 +281,7 @@ Database.createDatabase().then((result) =>{
 
 // }, {urls: ["<all_urls>"]}, ["blocking", "responseHeaders"])
 
-console.log("The scripts that need to be bocked", Database.BlockTheseScripts)
-function cancel(requestDetails) {
-    console.log("Canceling: " + requestDetails.url);
-    return {cancel: true};
-  }
-  
-  // add the listener,
-  // passing the filter argument and "blocking"
-  browser.webRequest.onBeforeRequest.addListener(
-    cancel,
-    {urls: Database.BlockTheseScripts},
-    ["blocking"]
-  );
-setInterval(() => {
-    console.log('Timed Out');
-    timedout = true;
-}, 5000);
 
-
-
-browser.webRequest.onBeforeSendHeaders.addListener(
-    
-    function(details) {
-        // console.log(details.url)
-        
-        if (details.type == "script"){ //check if url is of type script
-            //only adds those scripts that have not been labelled
-            var found = false;
-            for(var i = 0; i < Database.scripts.length; i++) {
-                if (Database.scripts[i].name == details.url) {
-                    found = true;
-                    break;
-                }
-            }
-            console.log("Should script be labelled?: ", details.url, !found  , !scripts.includes(details.url) )
-            if (!found && !scripts.includes(details.url)) {//if is script is in database
-       
-                console.log('Needs to be sent to proxy server')
-                //check if teh url is already in local storage
-                scripts.push(details.url)
-                console.log ("pushed", details.url,scripts.length)
-            }
-
-
-        }
-        console.log("conditions: scriptlength and timeout", scripts.length, scripts.length == 5,timedout)
-
-       
-        if(scripts.length == 5 || timedout) {//add a timer
-            
-            timedout = false;
-            
-            //send an ajax request
-            
-
-                    ////////////////////////Proxy replacement//////////////////////////
-                    var script;
-                    var tempObj = {};
-                    //get response say in labeled scripts
-                    for (script of scripts){
-                
-                        tempObj = {
-                            name: script, 
-                            label: window.jscleaner.Constants.labels[Math.floor(Math.random() * window.jscleaner.Constants.labels.length)], 
-                            accuracy: 0.1
-                        }
-                        labeledScripts.push(tempObj); //teh proxy returns an array of objects
-                    }
-        
-                ////////////////////////Proxy replacement//////////////////////////
-                    //add labelled scripts to the database.
-                    var script;
-                    for (script of labeledScripts){
-                        Database.addItem(script,'scripts');
-                    }
-                scripts = [];
-                labeledScripts = [];
-
-        }
-
-
-
-            // console.log("These are the Labeled Scripts: ",labeledScripts);
-            // chrome.storage.local.set({LabeledScripts: labeledScripts}, function() { })
-        
-            
-
-
-        
-        // }
-    //   return {requestHeaders: details.requestHeaders};
-    },
-    {urls: ["<all_urls>"]},["requestHeaders"]);
-
-    // create and event and event listener for the timer
-
-    
-    
-  
   
   /////////////////////////////////Blocking after receiving the response
   
