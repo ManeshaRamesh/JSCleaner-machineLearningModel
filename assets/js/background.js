@@ -111,9 +111,9 @@ window.jscleaner.Error = {
         
     // });
 chrome.runtime.onInstalled.addListener(function (object) {
-    // chrome.tabs.create({url: "settings.html"}, function (tab) {
+    chrome.tabs.create({url: "settings.html"}, function (tab) {
         
-    // });
+    });
     
     // chrome.storage.local.remove(['default']);
 
