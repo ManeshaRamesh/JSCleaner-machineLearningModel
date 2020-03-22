@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var labels = ['Advertising','Analytics', 'Social', 'Video', 'Utilities', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Managment', 'Others']
   var checkbox = {
-    1 : "", 
-    0 : "checked"
+    0 : "", 
+    1 : "checked"
   }
   //get default settings from storage
   new Promise((resolve, reject) =>{
