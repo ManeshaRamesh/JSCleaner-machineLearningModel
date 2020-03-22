@@ -21,7 +21,10 @@
             }
     ],
     "web_accessible_resources": [
-        
+   
+      "/assets/html/", 
+      "/assets/lib/", 
+      "/assets/js/"        
     ],
     
     "permissions": [
@@ -29,9 +32,9 @@
      "webRequest", 
      "storage",
      "tabs", 
-     "<all_urls>", 
-     "blocking", 
-     "webRequestBlocking", 
-     "asyncBlocking"
+     "http://*/*",
+     "https://*/*",
+     "http://10.224.41.171/JSCleaner/", 
+     "webRequestBlocking"
      ]
   }

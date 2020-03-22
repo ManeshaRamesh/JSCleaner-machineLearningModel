@@ -65,8 +65,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   $(document).ready(function () {
-    $(".toggle").click(function (){
-      var checkbox = this.childNodes[0];
+    $(".toggle-script").click(function (){
+      // var checkbox = this.childNodes[0];
+      console.log(this);
+      var checkbox = this;
       var status = $('#'+checkbox.id).is(':checked');
       console.log("checkbox " +checkbox.id +" if disabled" ,status)
       if (status) {

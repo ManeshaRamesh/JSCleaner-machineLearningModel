@@ -1,10 +1,8 @@
 ### TO DO LIST
-- figure out how to delay and block responses
-- Add the default settings option
-- create the welcome page
-- enable and disable scripts - contentscripts
-- blocking
-- notify the user when the plugin does not work for certain sites
+- migrate to firefox
+- figure out how to delay and block before sending a request
+- work on proxy
+- add urls to the database
 
 ### Features List
 - default configuration #

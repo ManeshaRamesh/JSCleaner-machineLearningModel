@@ -84,7 +84,7 @@ function addItem(newItem, OSName ){
 
   transaction.onerror = function(event) {
 //   note.innerHTML += '<li>Transaction not opened due to error. Duplicate items not allowed.</li>';
-    console.log("Transaction not opened due to error. Duplicate items not allowed - ", newItem)
+    // console.log("Transaction not opened due to error. Duplicate items not allowed - ", newItem)
 
   };
 
@@ -97,7 +97,7 @@ function addItem(newItem, OSName ){
   objectStoreRequest.onsuccess = function(event) {
     // report the success of our request
     // note.innerHTML += '<li>Request successful.</li>';
-    console.log("Request to add item was successful- ", newItem)
+    // console.log("Request to add item was successful- ", newItem)
     // loadData(null); 
     updateScriptsMap(newItem);
     updateBlockedScripts('add',newItem);
