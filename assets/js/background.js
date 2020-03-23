@@ -102,14 +102,12 @@ window.jscleaner.Error = {
 //   });
 
 
-//   chrome.runtime.onMessage.addListener(
-//     function(request, sender, sendResponse) {
+  chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
 
-//       if (request.url){
-
-    //   }
+      console.log(request.url)
         
-    // });
+    });
 chrome.runtime.onInstalled.addListener(function (object) {
     // chrome.tabs.create({url: "settings.html"}, function (tab) {
         
