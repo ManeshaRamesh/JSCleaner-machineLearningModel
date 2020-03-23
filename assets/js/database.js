@@ -369,7 +369,7 @@ function iterate(OSName, callback){
  }
 
  function cancel(requestDetails) {
-    // console.log("Canceling: " + requestDetails.url);
+    console.log("Canceling: " + requestDetails.url);
     
     return {cancel: true};
     
@@ -382,13 +382,13 @@ function iterate(OSName, callback){
        //this runs when the extension is reloaded and things need to be read from the database
         if (!object)
         {
-            // console.log("reload", Constants.defaultLabels)
+            console.log("reload", Constants.defaultLabels)
             blockScripts = [];
             disabledLabels = [];
             // console.log("empty", blockScripts )
             //gets labels that are disabled
             for(label of Constants.defaultLabels){
-                if (!label.status){
+                if (label.status){
                     // console.log("Labels that are disabled", label.label)
                     disabledLabels.push(label.label);
                 }
@@ -422,7 +422,7 @@ function iterate(OSName, callback){
         // console.log("Scripts that are being blocked", blockScripts, blockScripts.length); 
         if (removelistener){
             console.log("removelistener")
-            chrome.webRequest.onBeforeRequest.removeListener(cancel);
+            browser.webRequest.onBeforeRequest.removeListener(cancel);
         }
         if (blockScripts && blockScripts.length)
         {
@@ -431,7 +431,7 @@ function iterate(OSName, callback){
 
             // add the listener,
             // passing the filter argument and "blocking"
-            chrome.webRequest.onBeforeRequest.addListener(
+            browser.webRequest.onBeforeRequest.addListener(
                 cancel,
                 {urls: blockScripts},
                 ["blocking"]
@@ -503,6 +503,7 @@ function iterate(OSName, callback){
         };
 
     }).then(async ()=>{
+        console.log("HHEERREE")
         await blockRequests(false);
     })
     

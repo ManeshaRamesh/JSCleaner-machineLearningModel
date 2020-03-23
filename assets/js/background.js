@@ -110,8 +110,8 @@ chrome.storage.local.get(['default'], function(result) {
     //   }
         
     // });
-chrome.runtime.onInstalled.addListener(function (object) {
-    chrome.tabs.create({url: "./../../settings.html"}, function (tab) {
+browser.runtime.onInstalled.addListener(function (object) {
+    browser.tabs.create({url: "./../../settings.html"}, function (tab) {
         
     });
     
@@ -139,7 +139,7 @@ Database.createDatabase().then((result) =>{
 
             // console.log('Timed Out', timedout);
             // timedout = true;
-
+            
             //every 3 seconds is checks if there any scripts that need to be sent to the eproxy 
             if(scripts.length){
                 console.log("print add item - here1")
@@ -162,120 +162,144 @@ Database.createDatabase().then((result) =>{
                         }
                         scripts = [];
                         labeledScripts = [];
-
+                        
 
                     }
                       
                       var oReq = new XMLHttpRequest();
                       oReq.addEventListener("load", reqListener);
 
-                                      oReq.open("GET", "http://10.224.41.171/JSCleaner/JSLabel.py?url=" + requestString);
+                      oReq.open("GET", "http://10.224.41.171/JSCleaner/JSLabel.py?url=" + requestString);
                       oReq.send();
-            
+                      oReq.timeout = 5000;
+                      oReq.onerror = function(e){
+                          console.log("Server Error: contact administrator" + e)
+                          
+                      }
+                      oReq.ontimeout = function(e){
+                        console.log("Request has timedout: ", e)
+                        
+                      }
+
+            scripts = [];
         }
         }, 5000);
 
         browser.storage.onChanged.addListener(Database.logStorageChange);
-
-        chrome.webRequest.onBeforeSendHeaders.addListener(
+        browser.webRequest.onBeforeSendHeaders.addListener(
             
             function(details) {
-             
-                
-                if (details.type == "script"){ //check if url is of type script
-                    //only adds those scripts that have not been labelled
-                    var found = false;
-                    //check if the scripts can be found
-
-                    if (Database.labelledScript.get(details.url)){
-                        found = true;
-                    }
-                    // for(var i = 0; i < Database.scripts.length; i++) {
-                    //     if (Database.scripts[i].name == details.url) {
-                    //         found = true;
-                    //         break;
-                    //     }
-                    // }
-                    // console.log("Should script be labelled?: ", details.url, !found  , !scripts.includes(details.url) )
-                    if (!found && !scripts.includes(details.url)) {//if is script is in database
-            
-                        // console.log('Needs to be sent to proxy server')
-                        //check if teh url is already in local storage
-                        scripts.push(details.url)
-                        // console.log ("pushed", details.url,scripts.length)
-                    }
-
-
-                }
-                // console.log("conditions: scriptlength and timeout", scripts.length)
-
-            
-                if(scripts.length == 5) {//add a timer
-                    console.log("print add item - here1")
-                    // timedout = false;
-                    var requestString = "";
-                    for(let ele of scripts){
-                        requestString = requestString +ele +','
-                    }
-                    requestString = requestString.substr(0, requestString.length-1);
-                    //send an ajax request
-                    console.log("REQUESTSTRING", requestString)
-
-                    function reqListener () {
-                        console.log("RESPONSE FROM PROXY: ", this.responseText);
-                        labeledScripts = JSON.parse(this.responseText)
-                        var script;
-                        for (script of labeledScripts){
-                            Database.addItem(script,'scripts');
+                return new Promise((resolve, reject) =>{
+                    if (details.type == "script"){ //check if url is of type script
+                        //only adds those scripts that have not been labelled
+                        var found = false;
+                        console.log("details", details);
+                        //check if the scripts can be found
+                        // console.log("hellloooo", Database.labelledScript)
+                        if (Database.labelledScript.get(details.url)){
+                            found = true;
                         }
-                        
-                        labeledScripts = [];
-
-
+                        // for(var i = 0; i < Database.scripts.length; i++) {
+                        //     if (Database.scripts[i].name == details.url) {
+                        //         found = true;
+                        //         break;
+                        //     }
+                        // }
+                        console.log("Should script be labelled?: ", details.url, !found  , !scripts.includes(details.url) )
+                        if (!found && !scripts.includes(details.url)) {//if is script is in database
+                
+                            // console.log('Needs to be sent to proxy server')
+                            //check if teh url is already in local storage
+                            scripts.push(details.url)
+                            console.log ("pushed", details.url,scripts.length)
+                        }
+    
+    
                     }
-                      
-                      var oReq = new XMLHttpRequest();
-                      oReq.addEventListener("load", reqListener);
-
-                                      oReq.open("GET", "http://10.224.41.171/JSCleaner/JSLabel.py?url=" + requestString);
-                      oReq.send();
-                      scripts = [];
-
-                    
-                     
-                            ////////////////////////Proxy replacement//////////////////////////
-                            // var script;
-                            // var tempObj = {};
-                            // //get response say in labeled scripts
-                            // for (script of scripts){
+                    console.log("conditions: scriptlength and timeout", scripts.length)
+    
+                
+                    if(scripts.length == 5) {//add a timer
+                        console.log("print add item - here1")
+                        // timedout = false;
+                        var requestString = "";
+                        for(let ele of scripts){
+                            requestString = requestString +ele +','
+                        }
+                        requestString = requestString.substr(0, requestString.length-1);
+                        //send an ajax request
+                        console.log("REQUESTSTRING", requestString)
+    
+                        function reqListener () {
+                            console.log("RESPONSE FROM PROXY: ", this.responseText);
+                            labeledScripts = JSON.parse(this.responseText)
+                            var script;
+                            for (script of labeledScripts){
+                                Database.addItem(script,'scripts');
+                            }
+                            
+                            labeledScripts = [];
+                            resolve();
+    
+                        }
+                          
+                          var oReq = new XMLHttpRequest();
+                          oReq.addEventListener("load", reqListener);
+    
+                                          oReq.open("GET", "http://10.224.41.171/JSCleaner/JSLabel.py?url=" + requestString);
+                          oReq.send();
+                          oReq.timeout = 5000;
+                          oReq.onerror = function(e){
+                              console.log("Server Error: contact administrator" + e)
+                              reject();
+                          }
+                          oReq.ontimeout = function(e){
+                            console.log("Request has timedout: ", e)
+                            reject();
+                          }
+                          scripts = [];
+    
                         
-                            //     tempObj = {
-                            //         name: script, 
-                            //         label: window.jscleaner.Constants.labels[Math.floor(Math.random() * window.jscleaner.Constants.labels.length)], 
-                            //         accuracy: 0.1
-                            //     }
-                            //     labeledScripts.push(tempObj); //teh proxy returns an array of objects
-                            // }
+                         
+                                ////////////////////////Proxy replacement//////////////////////////
+                                // var script;
+                                // var tempObj = {};
+                                // //get response say in labeled scripts
+                                // for (script of scripts){
+                            
+                                //     tempObj = {
+                                //         name: script, 
+                                //         label: window.jscleaner.Constants.labels[Math.floor(Math.random() * window.jscleaner.Constants.labels.length)], 
+                                //         accuracy: 0.1
+                                //     }
+                                //     labeledScripts.push(tempObj); //teh proxy returns an array of objects
+                                // }
+    
+    
+    
+                    
+                            ////////////////////////Proxy replacement//////////////////////////
+                                //add labelled scripts to the database.
+                                // console.log("print add item - here2")
+    
+                               
+                    
+    
+                    }
+    
+    
+    
+                        // console.log("These are the Labeled Scripts: ",labeledScripts);
+                        // chrome.storage.local.set({LabeledScripts: labeledScripts}, function() { })
+    
+                    // }
+                //   return {requestHeaders: details.requestHeaders};
 
 
 
-                
-                        ////////////////////////Proxy replacement//////////////////////////
-                            //add labelled scripts to the database.
-                            // console.log("print add item - here2")
 
-                           
-                
-
-                }
-
-
-
-                    // console.log("These are the Labeled Scripts: ",labeledScripts);
-                    // chrome.storage.local.set({LabeledScripts: labeledScripts}, function() { })
-
-                // }
-            //   return {requestHeaders: details.requestHeaders};
+                })
+            
             },
             {urls: ["<all_urls>"]},["requestHeaders"]);
 
@@ -293,22 +317,22 @@ Database.createDatabase().then((result) =>{
 
 
 
-    chrome.runtime.onMessage.addListener(
-        function(request, sender, sendResponse) {
-            // console.log("Url: ", request, sender.tab.id)
-            chrome.webRequest.onBeforeRequest.addListener(
-                function(details) {
-                    if (details.type === "script"){
-                    // console.log("Url: ", details.url); 
-                    }
+    // chrome.runtime.onMessage.addListener(
+    //     function(request, sender, sendResponse) {
+    //         // console.log("Url: ", request, sender.tab.id)
+    //         browser.webRequest.onBeforeRequest.addListener(
+    //             function(details) {
+    //                 if (details.type === "script"){
+    //                 // console.log("Url: ", details.url); 
+    //                 }
                    
-                },
-                {urls: ["<all_urls>"], tabId: sender.tab.id},
-                ["requestBody", "extraHeaders", "blocking"]
-                );
+    //             },
+    //             {urls: ["<all_urls>"], tabId: sender.tab.id},
+    //             ["requestBody", "extraHeaders", "blocking"]
+    //             );
 
         
-    });
+    // });
 });
 
 // chrome.webRequest.onHeadersReceived.addListener(function(details){

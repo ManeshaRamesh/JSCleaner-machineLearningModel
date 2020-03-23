@@ -35,6 +35,6 @@
      "http://*/*",
      "https://*/*",
      "http://10.224.41.171/JSCleaner/", 
-     "webRequestBlocking"
+     "webRequestBlocking" 
      ]
   }
