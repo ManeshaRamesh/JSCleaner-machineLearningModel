@@ -55,10 +55,10 @@ window.jscleaner.Error = {
 
 
 //gest the default setting ands tores 
-
+// chrome.storage.local.remove(['default']);
 chrome.storage.local.get(['default'], function(result) {
     var obj;
-    if (result.key ===undefined || result.value === null){ //if not in google storage 
+    if (!result.hasOwnProperty('default')){ //if not in google storage 
 
         // console.log("does not exist", result.key)
         var settingDefault = []
@@ -76,8 +76,8 @@ chrome.storage.local.get(['default'], function(result) {
         Constants.setdefaultLabels(settingDefault);
     }
     else{
-        console.log("exists", result.key)
-        Constants.setdefaultLabels(result.value);
+        console.log("exists", result)
+        Constants.setdefaultLabels(result['default']);
     }
 
  
@@ -115,9 +115,11 @@ browser.runtime.onInstalled.addListener(function (object) {
         
     });
     
-    // chrome.storage.local.remove(['default']);
+    
+    chrome.storage.local.remove("https://stackoverflow.com/questions/20019958/chrome-extension-how-to-send-data-from-content-script-to-popup-html");
+    chrome.storage.local.remove("https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension");
+    chrome.storage.local.remove("https://javascript.info/indexeddb");
 
- 
     
 });
 
@@ -130,6 +132,14 @@ window.jscleaner.Constants.labels = ['Advertising','Analytics', 'Social', 'Video
 Database.createDatabase().then((result) =>{
     
     Database.loadData(result).then(()=>{
+
+        chrome.runtime.onMessage.addListener((msg, sender) => {
+            // First, validate the message's structure.
+            if ((msg.from === 'content') && (msg.subject === 'showPageAction')) {
+              // Enable the page-action for the requesting tab.
+              chrome.pageAction.show(sender.tab.id);
+            }
+          });
 
 
         // console.log("The scripts that need to be bocked", Database.BlockTheseScripts)
@@ -157,8 +167,15 @@ Database.createDatabase().then((result) =>{
     
             ////////////////////////Proxy replacement//////////////////////////
                 //add labelled scripts to the database.
-                // console.log("print add item - here2")
-
+                console.log("print add item - here2", labeledScripts)
+                var thisObj = labeledScripts.slice();
+                console.log("THIS OBJ: ", thisObj)
+                browser.tabs.query({active: true, currentWindow: true}, function(tabs){
+                    
+                    for(let tab of tabs){
+                        browser.tabs.sendMessage(tab.id,{message: thisObj, subject: "updateScripts"}, function(response) {});  
+                    }
+                });
                 var script;
                 for (script of labeledScripts){
                     Database.addItem(script,'scripts');
@@ -298,7 +315,15 @@ Database.createDatabase().then((result) =>{
                         ////////////////////////Proxy replacement//////////////////////////
                             //add labelled scripts to the database.
                             // console.log("print add item - here2")
-
+                            console.log("print add item - here2", labeledScripts)
+                            var thisObj = labeledScripts.slice();
+                            console.log("THIS OBJ: ", thisObj)
+                            browser.tabs.query({active: true, currentWindow: true}, function(tabs){
+                                
+                                for(let tab of tabs){
+                                    browser.tabs.sendMessage(tab.id,{message: thisObj, subject: "updateScripts"}, function(response) {});  
+                                }
+                            });
                             var script;
                             for (script of labeledScripts){
                                 Database.addItem(script,'scripts');
@@ -341,22 +366,21 @@ Database.createDatabase().then((result) =>{
 
 
 
-    chrome.runtime.onMessage.addListener(
-        function(request, sender, sendResponse) {
-            // console.log("Url: ", request, sender.tab.id)
-            browser.webRequest.onBeforeRequest.addListener(
-                function(details) {
-                    if (details.type === "script"){
-                    console.log("Url: ", details.url); 
-                    }
+    // chrome.runtime.onMessage.addListener(
+    //     function(request, sender, sendResponse) {
+    //         console.log("Url: ", request, sender.tab.id)
+    //         browser.webRequest.onBeforeRequest.addListener(
+    //             function(details) {
+    //                 if (details.type === "script"){
+    //                 console.log("Url: ", details.url); 
+    //                 }
                    
-                },
-                {urls: ["<all_urls>"], tabId: sender.tab.id},
-                ["requestBody", "extraHeaders", "blocking"]
-                );
+    //             },
+    //             {urls: ["<all_urls>"], tabId: sender.tab.id}
+    //             );
 
         
-    });
+    // });
 });
 
 // chrome.webRequest.onHeadersReceived.addListener(function(details){

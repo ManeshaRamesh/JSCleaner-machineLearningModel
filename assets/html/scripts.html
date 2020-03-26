@@ -4,15 +4,18 @@
     <title>JSCleaner</title>
     
     
-    <link rel="stylesheet" href="assets/lib/css/popup.css">
-    <link rel ="stylesheet" href="assets/lib/bootstrap-4.3.1/css/bootstrap.min.css">
-    <link rel ="stylesheet" href="assets/lib/bootstrap-4.3.1/css/bootstrap-toggle.min.css">
-    <script src ="assets/lib/JQuery-3.2.1/jquery-3.2.1.slim.min.js"></script>
-    <script src ="assets/lib/bootstrap-4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src ="assets/lib/bootstrap-4.3.1/js/bootstrap-toggle.min.js"></script>
+
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+    <link rel="stylesheet" href="../css/popup.css">
+    <link rel ="stylesheet" href="../lib/bootstrap-4.3.1/css/bootstrap.min.css">
+    <link rel ="stylesheet" href="../lib/bootstrap-4.3.1/css/bootstrap-toggle.min.css">
+    <script src ="../lib/JQuery-3.2.1/jquery-3.2.1.slim.min.js"></script>
+    <script src ="../lib/bootstrap-4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src ="../lib/bootstrap-4.3.1/js/bootstrap-toggle.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <script src="assets/js/popup.js"></script>
-    <script src="assets/js/scripts.js"></script>
+    <script src="../js/popup.js"></script>
+    <script src="../js/scripts.js"></script>
 </head>
 <style>
 .main-container .header img{
@@ -177,7 +180,7 @@ input:checked + .slider:before {
         <div class = "container" id = "body">
             <div class= "row header" >
                 <div class="col-2 icon">
-                    <button id="home"><img src="JSCleaner.png"></button>
+                    <button id="home"><img src="../../JSCleaner.png"></button>
                 </div>
                 <div class="col-5 title">
                     JSCleaner
@@ -186,11 +189,16 @@ input:checked + .slider:before {
                     <button id="settings" class = "menu"><i class="fas fa-cog"></i></button>
                 </div>
             </div>
-            <!-- <div class= "row body scriptLabels">
+            <div class= "row body scriptLabels">
+              <div class = "col">
+                  <div id="mode"class ="row">
+                    
 
-                   <div class="accordion" id="accordionLabels" data-content-type="scripts">
                   </div>
-            </div> -->
+                   <div class="accordion row" id="accordionLabels" data-content-type="scripts">
+                  </div>
+              </div>
+            </div>
         </div>
     </div>
     <!-- <button id="checkPage">Check this page now!</button> -->

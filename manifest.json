@@ -7,7 +7,7 @@
     "content_security_policy": "script-src 'self' https://use.fontawesome.com/releases/v5.7.0/css/all.css; object-src 'self'",
     "browser_action": {
      "default_icon": "JSCleaner.png",
-     "default_popup": "popup.html"
+     "default_popup": "assets/html/popup.html"
     },
     "background": {
         "page": "assets/html/background.html"

@@ -1,169 +1,119 @@
+Constants = {};
+Constants.labels = {
+Advertising : 0,
+Analytics : 1, 
+Social : 2, 
+Video : 3, 
+Utilities:4,
+Hosting: 5, 
+Marketing: 6, 
+"Customer Success": 7, 
+Content : 8,
+CDN : 9,
+"Tag Managment": 10,
+Others: 11
+}
+var labels = ['Advertising','Analytics', 'Social', 'Video', 'Utilities', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Managment', 'Others']
+
 document.addEventListener('DOMContentLoaded', function() {
 
 
-
-var contentScripts = function(object, label){
-  // return JSON.stringify(object.scripts[label]) 
-  var array = object.scripts[label]
-  var string = '<ul style="list-style-type:none;">';
-  if (array.length){
-    for (element of array){
-      string = string + '<li><div style="overflow: hidden;">' +JSON.stringify(Object.keys(element)[0]).split('"').join('').split('\\').pop().split('/').pop();; + " </div> </li>";
-    }
-  }
-  else {
-    return "none"
-  }
-  string = string + '</ul>'
-  return string;
+  //add the two modes
+  var mode = document.getElementById("mode");
+  var radio1 = document.createElement("input");
+  radio1.type = 'radio';
+  radio1.id = 'radioDefault'
+  radio1.name = "radioMode";
+  radio1.checked = true; 
   
-}  
+
+  var radio1Label = document.createElement("label");
+  radio1Label.for = 'radioDefault';
+  radio1Label.innerText = "default";
+
+  var mode = document.getElementById("mode");
+  var radio2 = document.createElement("input");
+  radio2.type = 'radio';
+  radio2.id = 'radioCustom'
+  radio2.name = "radioMode";
 
 
-
-// var accordian = document.getElementById("accordionLabels");
-var checkbox = {
-  enabled : "", 
-  disabled : "checked"
-}
-
-var labels = ['Advertising','Analytics', 'Social', 'Video', 'Utilities', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Managment', 'Others']
-chrome.tabs.query({active:true,currentWindow:true},function(tabArray){
-  // console.log("window url",tabArray[0].url);
-  windowURL = tabArray[0].url;
-  //check if url is in chrome storage
-  chrome.storage.local.get([windowURL], function(result) {
-    var bar;
-    var defaultFlag = false;
-    // console.log("result",  result,  result.value , result.key)
-    // if (result.key ===undefined || result.value === null){ //if installed for the first time or the default settings are cleared
-    if (!result.hasOwnProperty (windowURL)){
-    //if the website is not in chrome storage ask user to reload the page
-      bar = document.createElement('div');
-      bar.innerHTML = " <div> Please reload the page </div> " 
-      accordian.appendChild(bar)
-    }
-    else { // if it is in chrhome storage
-      var scriptsObject = result[windowURL];
-       new Promise((resolve, reject)=>{
-        if (scriptsObject.default == true){ //if the website's setting is default
-
-        if (scriptsObject.default = true){
-          chrome.storage.local.get(['default'], function(result) {
-            resolve(result.default) //resolve the default object
-          })
+  var radio2Label = document.createElement("label");
+  radio2Label.for = 'radioCustom';
+  radio2Label.innerText = "custom";
   
-        }
+  mode.appendChild(radio1);
+  mode.appendChild(radio1Label)
+  mode.appendChild(radio2);
+  mode.appendChild(radio2Label)
 
-        else{
-          resolve(null);
-        }
-      }
-      else{
-        resolve (null); //resolve null if the website's default is false
-      }
 
-       }).then((defaultObject)=>{
-                defaultFlag = true;
-               console.log("Object: ", defaultObject);
-               if (defaultObject === null) {
-                var body =  document.getElementById("body");
-                var mode = document.createElement('div');
-                mode.className = "row setting center";
-                mode.innerHTML = '  <div class="col">  <label class="container"> Default \
-                  <input type="checkbox"> \
-                  <span class="checkmark" id="defaultCheckbox"></span> \
-                  </label> </div>   '
-                body.appendChild(mode);
-                
-                
-               }
-               else{
-                 defaultFlag = false;
-                  var body =  document.getElementById("body");
-                  var mode = document.createElement('div');
-                  mode.className = "row setting center";
-                  mode.innerHTML = '  <div class="col">  <label class="container"> Default \
-                    <input type="checkbox" checked="checked" > \
-                    <span class="checkmark" id="defaultCheckbox"></span> \
-                    </label> </div>   '
-                  body.appendChild(mode);
-      for (var label = 0; label < labels.length ; label++){
-        console.log("here2")
 
-        // if default == true
-        // this is the button with the default and the custom mode
-        
 
-        bar = document.createElement('div');
-        bar.className = "row body scriptLabels";
-        bar.innerHTML = "                      <div class='accordion' id='accordionLabels' data-content-type='scripts'>  <div class='card z-depth-0 bordered'> \
-        <div class='card-header' id='heading"+labels[label]+"'>\
-          <h5 class='mb-0'>\
-          <div class ='row'>\
-            <div class='col label'>\
-            <button class='btn btn-link collapsed' type='button' data-toggle='collapse' data-target='#collapse"+labels[label].replace(' ', '')+"'\
-              aria-expanded='false' aria-controls='collapse "+labels[label].replace(' ', '')+"'>\
-              " + labels[label]+" \
-            </button> </div> \
-            <div class='col toggle-site'> \
-            <label class='switch'>\
-              <input type='checkbox' " + checkbox[defaultObject[labels[label]]]+">\
-              <span class='slider'></span>\
-            </label> \
-          </h5>  \
-        </div>  \
-        <div> \
-        <div id='collapse"+labels[label].replace(' ', '')+"' class='collapse' aria-labelledby='heading"+labels[label].replace(' ', '')+"' \
-          data-parent='#accordionLabels'> \
-          <div class='card-body'> \
-            "+ contentScripts(scriptsObject, labels[label])
-            
-            +" \
-          </div> \
-        </div> \
-      </div> \
-      </div>"
-      body.appendChild(bar)
-    }
 
-  }
 
   $(document).ready(function () {
-    $("#defaultCheckbox").click(function (){
-      console.log("before", defaultFlag)
+    $("#radioCustom").click(function (){
+      var checkboxDefault = this;
+      var status = $('#'+checkboxDefault.id).is(':checked');
+      if (status){
 
-      if (defaultFlag){
-        defaultFlag = false;
       }
-      else{
-        defaultFlag = true
-      }
-      console.log("after", defaultFlag)
       
-      
-      chrome.storage.local.get([windowURL], function(result) {
-        result[windowURL].default = defaultFlag;
-        console.log("after", result)
-        var tempObject = {}
-        tempObject[windowURL] = result[windowURL]
-        // chrome.storage.local.set({default: settings}, function() { })
-      })
     })
-
   })
-
-
-       })
-
-
-    }
-  
-  })
-});
-//  window.location.href)
-
-
-
-
 }, false);
+
+window.addEventListener('DOMContentLoaded', () => {
+  // ...query for the active tab...
+  chrome.tabs.query({
+    active: true,
+    currentWindow: true
+  }, tabs => {
+    // ...and send a request for the DOM info...
+    browser.tabs.sendMessage(
+        tabs[0].id,
+        {from: 'popup', subject: 'DOMInfo'}
+        // ...also specifying a callback to be called 
+        //    from the receiving end (content script).
+        ).then((response)=>{
+          console.log("Scripts to be displayed", response)
+          var accordian = document.getElementById("accordionLabels");
+          var div = document.createElement("div");
+          div.id = "accordionlabels";
+          div.className = "col";
+          accordian.appendChild(div);
+          // for (let [key, value] of response) {
+          for (label of labels) {
+            var scriptwrapper = document.createElement("div");
+            scriptwrapper.className = "row";
+            // scriptwrapper.innerHTML= "<div class='col-6 scriptName'> " + key + "</div> <div class='col-6 status' style='overflow: hidden; '>"+ JSON.stringify(value) + "</div>"
+            scriptwrapper.innerHTML =  "<div class='card z-depth-0 bordered'> \
+            <div class='card-header' id='heading"+label.replace(' ', '')+"'>\
+              <h5 class='mb-0'>\
+                <button class='btn btn-link collapsed' type='button' data-toggle='collapse' data-target='#collapse"+label.replace(' ', '')+"'\
+                  aria-expanded='false' aria-controls='collapse"+label.replace(' ', '')+"'>\
+                  " + label+" \
+                </button>  \
+              </h5>  \
+            </div>  \
+            <div id='collapse"+label.replace(' ', '')+"' class='collapse' aria-labelledby='heading"+label.replace(' ', '')+"' \
+            data-parent='#accordionlabels'> \
+              <div class='card-body' id ='scriptsListHere"+label.replace(' ', '')+"'> \
+             </div> \
+            </div> \
+          </div>"
+          div.appendChild(scriptwrapper);
+          var place = document.getElementById('scriptsListHere'+label.replace(' ', ''))
+          for (let [key, value] of response) {
+            if (value.label === label){
+              document.getElementById('collapse'+label.replace(' ', '')).className = "collapse show"
+              place.innerText = place.innerText + key +"/n";
+
+            }
+          }
+            
+          }
+        });
+  });
+});

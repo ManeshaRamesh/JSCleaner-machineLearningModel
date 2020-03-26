@@ -13,6 +13,20 @@ var blockScripts = [];
 var labelledScript = new Map();
 
 
+// const asyncLocalStorage = {
+//     setItem: function (key, value) {
+//         return new Promise((resolve)=>{
+//             resolve(localStorage.setItem(key, value));
+//         })
+            
+//     },
+//     getItem: function (key) {
+//         return new Promise((resolve)=>{
+//             resolve(localStorage.getItem(key));
+//         })
+//     }
+// };
+
 function createDatabase(){ 
     return new Promise((resolve) => {
             //create the database
@@ -368,11 +382,72 @@ function iterate(OSName, callback){
 
  }
 
+
+
  function cancel(requestDetails) {
-    console.log("Canceling: " + requestDetails.url);
+    //store it in locastorage
+    var hostUrl;
+    if (requestDetails.type ==="script"){
+        // console.log("requestDetails", requestDetails)
+        if (requestDetails.frameAncestors.length===0){
+            hostUrl = requestDetails.documentUrl;
+        }
+        else{
+            hostUrl = requestDetails.frameAncestors[0].url;
+        }
+        
+         var tempObj = {}
+         var Obj = {};
+        if (blockScripts.includes(requestDetails.url)){
+                Obj = {
+                    name: requestDetails.url,
+                    status: 0, 
+                    label: labelledScript.get(requestDetails.url)
+                };
+                tempObj = {
+                    message : Obj, 
+                    subject: "script"
+                }
+                browser.tabs.sendMessage(requestDetails.tabId,tempObj)
+            console.log("Canceling: " + requestDetails.url);
+            return {cancel: true};
+        }
+        else{
+            Obj = {
+                name: requestDetails.url,
+                status: 1, 
+                label: labelledScript.get(requestDetails.url)
+            };
+            tempObj = {
+                message : Obj, 
+                subject: "script"
+            }
+            browser.tabs.sendMessage(requestDetails.tabId,tempObj)
+            return;
+        } 
+        // chrome.storage.local.get([hostUrl], function(result) {
+        //     console.log("HELOO", result);
+
+        //     if (!result.hasOwnProperty(hostUrl)){
+        //         var obj = {};
+        //         obj[hostUrl] = []
+        //         obj[hostUrl].push(requestDetails.url);
+        //         chrome.storage.local.set(obj, function() { })
+        //     }
+
+        //     else{
+        //         if (!result[hostUrl].includes(requestDetails.url)){
+        //             result[hostUrl].push(requestDetails.url);
+        //             chrome.storage.local.set(result, function() { })
+        //         }
+        //     }
+
+        // })
+         //store default settings in chrome storage     
+
+    }
     
-    return {cancel: true};
-    
+     
 }
 
  function blockRequests(removelistener, object, action){
@@ -420,12 +495,12 @@ function iterate(OSName, callback){
 
         }
         // console.log("Scripts that are being blocked", blockScripts, blockScripts.length); 
-        if (removelistener){
-            console.log("removelistener")
-            browser.webRequest.onBeforeRequest.removeListener(cancel);
-        }
-        if (blockScripts && blockScripts.length)
-        {
+        // if (removelistener){
+        //     console.log("removelistener")
+        //     browser.webRequest.onBeforeRequest.removeListener(cancel);
+        // }
+        // if (blockScripts && blockScripts.length)
+        // {
             
             console.log("creating a listener")
 
@@ -433,10 +508,10 @@ function iterate(OSName, callback){
             // passing the filter argument and "blocking"
             browser.webRequest.onBeforeRequest.addListener(
                 cancel,
-                {urls: blockScripts},
+                {urls: ["<all_urls>"]},
                 ["blocking"]
             );
-        }
+        // }
         // return blockScripts;
         resolve(blockScripts); 
     }).then(()=>{

@@ -1,7 +1,7 @@
 ### TO DO LIST
-- migrate to firefox
-- figure out how to delay and block before sending a request
+
 - work on proxy
+- display on popup.js 
 - add urls to the database
 
 ### Features List
