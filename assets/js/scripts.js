@@ -1,4 +1,8 @@
 Constants = {};
+var checkbox = {
+  1 : "", 
+  0 : "checked"
+}
 Constants.labels = {
 Advertising : 0,
 Analytics : 1, 
@@ -22,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var mode = document.getElementById("mode");
   var radio1 = document.createElement("input");
   radio1.type = 'radio';
+  radio1.className = 'modes';
   radio1.id = 'radioDefault'
   radio1.name = "radioMode";
   radio1.checked = true; 
@@ -33,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var mode = document.getElementById("mode");
   var radio2 = document.createElement("input");
+  radio2.className = 'modes';
   radio2.type = 'radio';
   radio2.id = 'radioCustom'
   radio2.name = "radioMode";
@@ -46,22 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
   mode.appendChild(radio1Label)
   mode.appendChild(radio2);
   mode.appendChild(radio2Label)
-
-
-
-
-
-
-  $(document).ready(function () {
-    $("#radioCustom").click(function (){
-      var checkboxDefault = this;
-      var status = $('#'+checkboxDefault.id).is(':checked');
-      if (status){
-
-      }
-      
-    })
-  })
 }, false);
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -77,7 +67,7 @@ window.addEventListener('DOMContentLoaded', () => {
         // ...also specifying a callback to be called 
         //    from the receiving end (content script).
         ).then((response)=>{
-          console.log("Scripts to be displayed", response)
+          console.log("Scripts to be displayed", JSON.stringify(Array.from(response.entries())), response)
           var accordian = document.getElementById("accordionLabels");
           var div = document.createElement("div");
           div.id = "accordionlabels";
@@ -91,7 +81,7 @@ window.addEventListener('DOMContentLoaded', () => {
             scriptwrapper.innerHTML =  "<div class='card z-depth-0 bordered'> \
             <div class='card-header' id='heading"+label.replace(' ', '')+"'>\
               <h5 class='mb-0'>\
-                <button class='btn btn-link collapsed' type='button' data-toggle='collapse' data-target='#collapse"+label.replace(' ', '')+"'\
+                <button style= 'width: 100%;'class='btn btn-link collapsed' type='button' data-toggle='collapse' data-target='#collapse"+label.replace(' ', '')+"'\
                   aria-expanded='false' aria-controls='collapse"+label.replace(' ', '')+"'>\
                   " + label+" \
                 </button>  \
@@ -108,12 +98,69 @@ window.addEventListener('DOMContentLoaded', () => {
           for (let [key, value] of response) {
             if (value.label === label){
               document.getElementById('collapse'+label.replace(' ', '')).className = "collapse show"
-              place.innerText = place.innerText + key +"/n";
+              // place.innerText = place.innerText + key +"/n";
+              place.innerHTML = place.innerHTML + "<div style='padding:2px;' class = 'row'> <div  class = 'col-9' style = 'overflow:hidden; white-space: nowrap;'>"+key+ "</div><div class ='col-3'><input type='checkbox' " + checkbox[value.status] +" class = 'checkbox-script'></div> </div>"
 
             }
           }
+
             
           }
+
+          var defaultMode = document.getElementById('radioDefault');
+          var listCheckBoxes = document.getElementsByClassName('checkbox-script');
+          var customMode = document.getElementById('radioCustom');
+          var bodyContainer = document.getElementById('bodyContainer');
+          var accordian = document.getElementById('accordionLabels');
+
+          console.log("Body Container", bodyContainer)
+          var saveButton = document.createElement("div");
+          saveButton.className = "row"
+          saveButton.id = "saveCustomContainer"
+          saveButton.innerHTML = "<button id ='saveCustom'> Save Settings </button>"; 
+          if (defaultMode.checked){
+            for (input of listCheckBoxes){
+              input.disabled = true;
+            } 
+          }
+          $(document).ready(function () {
+            $('.modes').click(function() {
+              if(customMode.checked){
+                //enable all checkboxes
+                for (input of listCheckBoxes){
+                  input.disabled = false;
+                } 
+                //add save button
+                bodyContainer.insertBefore(saveButton,accordian);
+                $('.checkbox-script').click(function(){
+                  var scriptName = this.parentNode.previousSibling.innerText;
+                  var scriptElement = response.get(scriptName);
+                  if($(this).is(':checked')) {
+                    let statusScript  = 0;
+                  }
+                  else{
+                    let statusScript  = 1;
+
+                  } 
+                  
+                  response.set(scriptName, {label: scriptElement.label, status: !statusScript})
+                  console.log("updated response", response)
+                })
+              }
+              else{
+                if(defaultMode.checked){
+                  for (input of listCheckBoxes){
+                    input.disabled = true;
+                  }
+                  var saveCustomButton = document.getElementById("saveCustomContainer")
+                  if (saveCustomButton){
+                    bodyContainer.removeChild(saveCustomButton);
+                  }
+                }
+              }
+            })
+          })
+
         });
   });
 });

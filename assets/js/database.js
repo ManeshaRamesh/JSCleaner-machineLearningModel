@@ -463,7 +463,7 @@ function iterate(OSName, callback){
             // console.log("empty", blockScripts )
             //gets labels that are disabled
             for(label of Constants.defaultLabels){
-                if (label.status){
+                if (!label.status){
                     // console.log("Labels that are disabled", label.label)
                     disabledLabels.push(label.label);
                 }

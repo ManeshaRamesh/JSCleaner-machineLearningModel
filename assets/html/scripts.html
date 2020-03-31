@@ -18,12 +18,22 @@
     <script src="../js/scripts.js"></script>
 </head>
 <style>
+body{
+  width: 500px;
+  height: 800px;
+}
+.main-container{
+  margin: 10px;
+}
 .main-container .header img{
     width: 50px;
 }
 
+
+
 .main-container .body .accordion{
     width: 100%;
+    margin: auto;
 }
 
 .main-container .body .accordion{
@@ -129,7 +139,9 @@ input:checked + .slider:before {
   height: 0;
   width: 0;
 }
-
+.accordion .card{
+  width: 100%;
+}
 /* Create a custom checkbox */
 .main-container .setting .checkmark {
   position: absolute;
@@ -163,7 +175,7 @@ input:checked + .slider:before {
 }
 
 /* Style the checkmark/indicator */
-.main-container .setting .container .checkmark:after {
+.main-container .scriptLabels .container .checkmark:after {
   left: 9px;
   top: 5px;
   width: 5px;
@@ -173,6 +185,13 @@ input:checked + .slider:before {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+#bodyContainer #saveCustom{
+  width: 100%;
+  border: none;
+  margin: 5%;
+  padding: 5%;
+  
 }
 </style>
   <body>
@@ -190,10 +209,8 @@ input:checked + .slider:before {
                 </div>
             </div>
             <div class= "row body scriptLabels">
-              <div class = "col">
+              <div class = "col" id="bodyContainer">
                   <div id="mode"class ="row">
-                    
-
                   </div>
                    <div class="accordion row" id="accordionLabels" data-content-type="scripts">
                   </div>

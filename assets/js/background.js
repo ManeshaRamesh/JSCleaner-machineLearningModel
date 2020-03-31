@@ -383,17 +383,15 @@ Database.createDatabase().then((result) =>{
     // });
 });
 
-// chrome.webRequest.onHeadersReceived.addListener(function(details){
-
+// browser.webRequest.onHeadersReceived.addListener(function(details){
+//     console.log("On headers received")
 //     for (item of labeledScripts){
 //         if (item.name === details.url){
-//             console.log("Reponse stuff: ", details)
+//             console.log("Response stuff: ", details)
 //             console.log ("Print the url and the label", details.url, item.label)
-//             // console.log("Print shit: ",details.responseHeaders[5].name, details.responseHeaders[5].value);
-//             let header = details.responseHeaders.find(e => e.name.toLowerCase() === "access-control-allow-origin") ;
-//             details.responseHeaders.pop (headers)
+//             var scheme = /^https/.test(details.url) ? "https" : "http";
+//             return {redirectUrl: scheme + "://robwu.nl/204" };
             
-//             return {responseHeaders: details.responseHeaders};
 //         }
 //         else{
 

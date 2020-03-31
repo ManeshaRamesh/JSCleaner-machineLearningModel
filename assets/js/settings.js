@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var labels = ['Advertising','Analytics', 'Social', 'Video', 'Utilities', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Managment', 'Others']
   var checkbox = {
-    0 : "", 
-    1 : "checked"
+    1 : "", 
+    0 : "checked"
   }
   //get default settings from storage
   new Promise((resolve, reject) =>{
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var checkbox = this;
       var status = $('#'+checkbox.id).is(':checked');
       console.log("checkbox " +checkbox.id +" if disabled" ,status)
-      if (status) {
+      if (!status) {
         // settings[checkbox.id] = 1;
         for (let ele in settings){
           if (settings[ele].label.replace(' ', '') === checkbox.id){
@@ -102,12 +102,13 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log("updated settings", settings)
     })
     //your code here
+    $("#saveDefaultSettings").click(function (){
+      console.log("clickeed")
+      console.log(settings)
+      chrome.storage.local.set({default: settings}, function() { })
+    })
   });
-  $("#saveDefaultSettings").click(function (){
-    console.log("clickeed")
-    console.log(settings)
-    chrome.storage.local.set({default: settings}, function() { })
-  })
+  
 
 
   }, false)

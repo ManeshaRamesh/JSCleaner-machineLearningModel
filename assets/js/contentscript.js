@@ -8,6 +8,8 @@
     var defaultSettings = [];
     chrome.storage.local.get(['default'], function(result) {
       defaultSettings = result;
+      console.log("Default settings: ", defaultSettings)
+    
       browser.runtime.onMessage.addListener(request => {
         console.log("Message from the background script:", request);
         
@@ -29,6 +31,8 @@
           for (let element of request.message){
             console.log("UPDATE: ", element);
             if (scripts.get(element.name)){
+              console.log(defaultSettings, element.label, defaultSettings.filter(word => word.label === element.label))
+              console.log("status: ", defaultSettings.get(element.label))
               scripts.set(element.name, {label: element.label , status: defaultSettings[element.label]})
               console.log("updated")
             }
