@@ -17,9 +17,15 @@ CDN : 9,
 "Tag Managment": 10,
 Others: 11
 }
+var currentTab;
 var labels = ['Advertising','Analytics', 'Social', 'Video', 'Utilities', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Managment', 'Others']
 
 document.addEventListener('DOMContentLoaded', function() {
+  browser.tabs.query({ active: true, currentWindow: true }).then(function (tabs) {
+                currentTab = tabs[0].url; // there will be only one in this array
+
+
+  });
 
 
   //add the two modes
@@ -124,6 +130,20 @@ window.addEventListener('DOMContentLoaded', () => {
             } 
           }
           $(document).ready(function () {
+
+            $(document).on('click', "#saveCustom",function(){
+              this.disabled = true;
+              
+                browser.runtime.sendMessage({from:"popup", subject: "urlUpdate", content: {url: currentTab, scripts: response}}, function(message){
+                  if (message == "updated" || message == "added"){
+                    this.disabled = false;
+                  }
+
+                });
+
+             
+            })
+          
             $('.modes').click(function() {
               if(customMode.checked){
                 //enable all checkboxes
@@ -135,11 +155,12 @@ window.addEventListener('DOMContentLoaded', () => {
                 $('.checkbox-script').click(function(){
                   var scriptName = this.parentNode.previousSibling.innerText;
                   var scriptElement = response.get(scriptName);
+                  let statusScript;
                   if($(this).is(':checked')) {
-                    let statusScript  = 0;
+                    statusScript  = 0;
                   }
                   else{
-                    let statusScript  = 1;
+                    statusScript  = 1;
 
                   } 
                   

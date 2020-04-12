@@ -78,6 +78,7 @@ chrome.storage.local.get(['default'], function(result) {
     else{
         console.log("exists", result)
         Constants.setdefaultLabels(result['default']);
+
     }
 
  
@@ -116,9 +117,9 @@ browser.runtime.onInstalled.addListener(function (object) {
     });
     
     
-    chrome.storage.local.remove("https://stackoverflow.com/questions/20019958/chrome-extension-how-to-send-data-from-content-script-to-popup-html");
-    chrome.storage.local.remove("https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension");
-    chrome.storage.local.remove("https://javascript.info/indexeddb");
+    // chrome.storage.local.remove("https://stackoverflow.com/questions/20019958/chrome-extension-how-to-send-data-from-content-script-to-popup-html");
+    // chrome.storage.local.remove("https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension");
+    // chrome.storage.local.remove("https://javascript.info/indexeddb");
 
     
 });
@@ -132,12 +133,41 @@ window.jscleaner.Constants.labels = ['Advertising','Analytics', 'Social', 'Video
 Database.createDatabase().then((result) =>{
     
     Database.loadData(result).then(()=>{
+        console.log("here") 
 
-        chrome.runtime.onMessage.addListener((msg, sender) => {
+        chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
             // First, validate the message's structure.
             if ((msg.from === 'content') && (msg.subject === 'showPageAction')) {
               // Enable the page-action for the requesting tab.
               chrome.pageAction.show(sender.tab.id);
+            }
+
+             if ((msg.from === 'popup') && (msg.subject === 'urlUpdate')) {
+                var URLscripts =[];
+                var tempObj = {};
+              // console.log("Recieved from content script: ",msg.content);
+              msg.content.scripts.forEach((value, key, map)=>{
+                console.log("element", value, " ", key);
+                tempObj = {
+                    name: key, 
+                    label: value.label, 
+                    status: value.status
+                }
+                URLscripts.push(tempObj)
+
+
+              })
+              // console.log(Database.URLExceptions.get(msg.content))
+
+              if (!Database.URLExceptions.get(msg.content.url)){
+                    Database.addItem({urlsName: msg.content.url, default: 0, scripts: URLscripts}, 'urls');
+                    sendResponse("added")
+              }
+              else{
+                    Database.updateItem({urlsName: msg.content.url, default: 0, scripts: URLscripts}, 'urls');
+                    sendResponse("updated") 
+              }
+              
             }
           });
 

@@ -14,15 +14,15 @@
         console.log("Message from the background script:", request);
         
         if (request.subject === "script"){
-          console.log("ADD: ", request);
+          console.log("ADD: ", request.message.label);
 
           if (!scripts.get(request.message.name)){
             if (request.message.label){
-              scripts.set(request.message.name, {label:request.message.label.label, status:request.message.status })
+              scripts.set(request.message.name, {label: request.message.label, status: request.message.status })
 
-            }
-            else{
-              scripts.set(request.message.name, {label:request.message.label, status:request.message.status })
+            // }
+            // else{
+            //   scripts.set(request.message.name, {label: request.message.label, status: request.message.status })
 
             }
           }
@@ -49,6 +49,7 @@
         browser.runtime.onMessage.addListener((msg, sender, response) => {
           // First, validate the message's structure.
           if ((msg.from === 'popup') && (msg.subject === 'DOMInfo')) {
+            console.log(" scripts sent to scripts.js: ", scripts)
             response(scripts);
           }
         });

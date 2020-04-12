@@ -11,6 +11,7 @@ var disabledLabels = [];
 
 var blockScripts = [];
 var labelledScript = new Map();
+var URLExceptions = new Map();
 
 
 // const asyncLocalStorage = {
@@ -56,10 +57,10 @@ function createDatabase(){
             console.log("createdObjectStore", scriptsOS)
         // }
         // if (!db.objectStoreNames.contains('urls')) {
-            // var urlsOS = db.createObjectStore('urls', {keyPath: 'urlsName', autoIncrement:true});
-            // // urlsOS.createIndex('urlID', 'urlID', {unique: true});
-            // urlsOS.createIndex('default', 'default', {unique: true});
-            // urlsOS.createIndex('scripts', 'scripts', {unique: false});
+            var urlsOS = db.createObjectStore('urls', {keyPath: 'urlsName'});
+            // urlsOS.createIndex('urlID', 'urlID', {unique: true});
+            urlsOS.createIndex('default', 'default', {unique: false});
+            urlsOS.createIndex('scripts', 'scripts', {unique: false});
         // }
         // if (!db.objectStoreNames.contains('urlsScripts')) {
         // var urlsscriptsOS = db.createObjectStore('urlsScripts', {keyPath: 'urlsScriptsID', autoIncrement:true});
@@ -113,7 +114,13 @@ function addItem(newItem, OSName ){
     // note.innerHTML += '<li>Request successful.</li>';
     // console.log("Request to add item was successful- ", newItem)
     // loadData(null); 
-    updateScriptsMap(newItem);
+    if (OSName == 'scripts'){
+        updateScriptsMap(newItem);
+    }
+    else if (OSName == 'urls'){
+        updateURLExceptionMap(newItem);
+    }
+    
     updateBlockedScripts('add',newItem);
 
 
@@ -124,7 +131,15 @@ function addItem(newItem, OSName ){
  
 }
 
+function updateURLExceptionMap(item){
+    var key = item.urlsName;
+    var value = {
+        default : item.default, 
+        scripts: item.scripts
+    }
+     URLExceptions.set(key, value);
 
+}
 function updateBlockedScripts(action,item){
     if (action ==='add'){
         if(disabledLabels.includes(item.label)){
@@ -387,22 +402,64 @@ function iterate(OSName, callback){
  function cancel(requestDetails) {
     //store it in locastorage
     var hostUrl;
+    var tempObj = {}
+    var Obj = {};
+    var entry; 
     if (requestDetails.type ==="script"){
-        // console.log("requestDetails", requestDetails)
+        console.log("requestDetails", requestDetails)
+        //gettign the hostURL - the page that makes the requests
         if (requestDetails.frameAncestors.length===0){
             hostUrl = requestDetails.documentUrl;
         }
         else{
             hostUrl = requestDetails.frameAncestors[0].url;
         }
-        
-         var tempObj = {}
-         var Obj = {};
+
+        //checks if the host Url is an exception
+        if (URLExceptions.get(hostUrl)){ // if it 
+            Obj =URLExceptions.get(hostUrl);
+            // console.log("Canceling URL Exception: " + Obj.default, Obj.scripts);
+            if (Obj.default === 0){
+                for (entry of Obj.scripts){
+                    // console.log(entry.name +" === " + requestDetails.url, entry.name  === requestDetails.url);
+                    if (entry.name === requestDetails.url) {
+                            tempObj = {
+                            message : entry, 
+                            subject: "script"
+                        }
+                        if ( !entry.status){
+                        
+                        console.log("Canceling URL Exception: " + requestDetails.url);
+
+                        browser.tabs.sendMessage(requestDetails.tabId,tempObj)
+
+                        return({cancel: true})
+
+                        }
+                        else{
+
+                       
+                        browser.tabs.sendMessage(requestDetails.tabId,tempObj)
+
+                        return; 
+
+                        }
+                        
+                    }
+                
+
+                    
+                }
+            }
+        }
+
+        //will be executed if the script is not a URLExcepption or if the urls are set to follow the default settings across all pages
+         
         if (blockScripts.includes(requestDetails.url)){
                 Obj = {
                     name: requestDetails.url,
                     status: 0, 
-                    label: labelledScript.get(requestDetails.url)
+                    label: labelledScript.get(requestDetails.url) ? labelledScript.get(requestDetails.url).label : undefined
                 };
                 tempObj = {
                     message : Obj, 
@@ -416,7 +473,7 @@ function iterate(OSName, callback){
             Obj = {
                 name: requestDetails.url,
                 status: 1, 
-                label: labelledScript.get(requestDetails.url)
+                label: labelledScript.get(requestDetails.url) ? labelledScript.get(requestDetails.url).label : undefine
             };
             tempObj = {
                 message : Obj, 
@@ -494,13 +551,6 @@ function iterate(OSName, callback){
             }
 
         }
-        // console.log("Scripts that are being blocked", blockScripts, blockScripts.length); 
-        // if (removelistener){
-        //     console.log("removelistener")
-        //     browser.webRequest.onBeforeRequest.removeListener(cancel);
-        // }
-        // if (blockScripts && blockScripts.length)
-        // {
             
             console.log("creating a listener")
 
@@ -513,17 +563,23 @@ function iterate(OSName, callback){
             );
         // }
         // return blockScripts;
-        resolve(blockScripts); 
-    }).then(()=>{
         console.log("Scripts that are being blocked", blockScripts, blockScripts.length); 
 
-    })
+        resolve(blockScripts); 
+    }).catch((error)=>{
+        console.log("Error in creating a list of blocked scripts: ", error)
+    }) 
 
  }
 
- function loadData(openedDB){
- 
-    return new Promise(async (resolve, reject)=>{
+ /*
+    1) creates a map of labeelled scripts
+    2) creates a map of URLExeptions
+    3) makes a list of scripts that need to be blocked
+ */
+
+ function createMapofLabelledScripts(openedDB){
+        return new Promise(async (resolve, reject)=>{
         if (openedDB !==null){
             db = openedDB;
         }
@@ -570,18 +626,93 @@ function iterate(OSName, callback){
                 }
                 labelledScript.set(key, value )
             }
-            console.log("Request successful - ", labelledScript)
+            console.log("Map Created - ", labelledScript)
 
 
-            resolve(true)
+            resolve(labelledScript)
         
         };
 
-    }).then(async ()=>{
-        console.log("HHEERREE")
-        await blockRequests(false);
+    }).catch(function(error){
+        console.log("Error loading labelled scripts from database: ", error)
+
     })
-    
+
+ }
+
+  function createMapofURLExceptions(openedDB){
+        return new Promise(async (resolve, reject)=>{
+        if (openedDB !==null){
+            db = openedDB;
+        }
+
+                
+        
+        // console.log('Scripts that need to be blocked; ', blockScripts)
+
+        
+        var transaction = db.transaction(['urls'], "readwrite");
+        
+        // report on the success of the transaction completing, when everything is done
+        transaction.oncomplete = function(event) {
+            // console.log("Transaction Completed - ", OSName)
+
+        };
+        
+        transaction.onerror = function(event) {
+            // console.log("Transaction not opened due to error. Duplicate items not allowed - ", transaction.error)
+            reject(false)
+
+            // note.innerHTML += '<li>Transaction not opened due to error: ' + transaction.error + '</li>';
+        };
+        
+        // create an object store on the transaction
+        var objectStore = transaction.objectStore('urls');
+        
+        // Make a request to get a record by key from the object store
+        var objectStoreRequest = objectStore.getAll();
+        
+        objectStoreRequest.onsuccess = function(event) {
+            var urls = []; //array of all scripts
+            // report the success of our request
+            urls = objectStoreRequest.result;
+            var count;
+            var key;
+            var value;
+            for(count = 0; count < urls.length ; count ++){
+                key = urls[count].urlsName
+                value = {
+                    default : urls[count].default, 
+                    scripts: urls[count].scripts
+                }
+                URLExceptions.set(key, value )
+            }
+            console.log("Map Created - ", URLExceptions)
+
+
+            resolve(URLExceptions)
+        
+        };
+
+    }).catch(function(error){
+        console.log("Error loading URL exceptions from database: ", error )
+
+    })
+
+ }
+
+
+ function loadData(openedDB){
+    return new Promise(async (reject, resolve)=>{
+        var map = await createMapofLabelledScripts(openedDB); 
+        var map2 = await createMapofURLExceptions(openedDB);
+        var  list = await blockRequests(); 
+        resolve("done")
+
+    }).catch((error)=>{
+        console.log("Error loading data: ", error)
+    })
+
 }
 
 
@@ -598,7 +729,8 @@ export  {
     labelledScript, 
     loadData, 
     blockRequests, 
-    logStorageChange
+    logStorageChange, 
+    URLExceptions
 
 
 };
