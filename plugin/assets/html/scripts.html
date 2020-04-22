@@ -13,7 +13,7 @@
     <script src ="../lib/JQuery-3.2.1/jquery-3.2.1.slim.min.js"></script>
     <script src ="../lib/bootstrap-4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src ="../lib/bootstrap-4.3.1/js/bootstrap-toggle.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../js/popup.js"></script>
     <script src="../js/scripts.js"></script>
 </head>
@@ -26,7 +26,7 @@ body{
   margin: 10px;
 }
 .main-container .header img{
-    width: 50px;
+    width: 40px;
 }
 
 
@@ -188,11 +188,16 @@ input:checked + .slider:before {
 }
 #bodyContainer #saveCustom{
   width: 100%;
-  border: none;
+  /*border: none;*/
   margin: 5%;
   padding: 5%;
   
 }
+
+/*.scriptLabels  .modes:hover{
+    color:brown;
+    background-color: white;
+}*/
 </style>
   <body>
     <div class= "main-container"> 
@@ -204,8 +209,11 @@ input:checked + .slider:before {
                 <div class="col-5 title">
                     JSCleaner
                 </div>
-                <div class="col-5 settings text-center">
-                    <button id="settings" class = "menu"><i class="fas fa-cog"></i></button>
+                <div class="col-2 settings text-center">
+                    <button id="settings" class = "menu"><i class="fa fa-cog fa-fw"></i></button>
+                </div>
+                <div class="col-2 settings text-center">
+                    <button id="reload" class = "menu"><i class="fa fa-refresh"></i></button>
                 </div>
             </div>
             <div class= "row body scriptLabels">

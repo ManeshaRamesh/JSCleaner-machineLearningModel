@@ -17,6 +17,8 @@ CDN : 9,
 "Tag Managment": 10,
 Others: 11
 }
+var customFlag =0;
+var URLmode;
 var currentTab;
 var labels = ['Advertising','Analytics', 'Social', 'Video', 'Utilities', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Managment', 'Others']
 
@@ -26,38 +28,95 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   });
+  browser.tabs.query({
+    active: true,
+    currentWindow: true
+  }, (tabs) =>{
 
+    
+    browser.tabs.sendMessage(
+        tabs[0].id,
+        {from: 'popup', subject: 'modeInfo'}
+            // ...also specifying a callback to be called 
+    //    from the receiving end (content script).
+    ).then((message)=>{
+      URLmode = message;
+      console.log("get mode: ", URLmode)
+      if (URLmode === 1 || URLmode ===undefined){
+        console.log("are in default mode")
+        radio1.disabled = true;
+        radio2.disabled = false;
+      }
+     else if (URLmode === 0){
+        console.log("not in default mode")
+        radio1.disabled = false;
+        radio2.disabled = false;
+      }
+
+    })
+});
 
   //add the two modes
   var mode = document.getElementById("mode");
   var radio1 = document.createElement("input");
-  radio1.type = 'radio';
-  radio1.className = 'modes';
-  radio1.id = 'radioDefault'
-  radio1.name = "radioMode";
+  radio1.type = 'button';
+  radio1.className = 'modes col';
+    radio1.style = "margin:3px;"
+
+  // radio1.style = "margin:3px; background-color: brown; border: none; color: white; "
+  radio1.value = "Set back to Default";
+  radio1.id = 'buttonDefault'
+  radio1.name = "buttonMode";
   radio1.checked = true; 
   
 
-  var radio1Label = document.createElement("label");
-  radio1Label.for = 'radioDefault';
-  radio1Label.innerText = "default";
+  // var radio1Label = document.createElement("label");
+  // radio1Label.for = 'radioDefault';
+  // radio1Label.innerText = "default";
 
   var mode = document.getElementById("mode");
   var radio2 = document.createElement("input");
-  radio2.className = 'modes';
-  radio2.type = 'radio';
-  radio2.id = 'radioCustom'
-  radio2.name = "radioMode";
+  radio2.className = 'modes col';
+  radio2.type = 'button';
+  radio2.style = "margin:3px;"
 
+  // radio2.style = "margin:3px; background-color: brown; border: none; color: white; "
+  radio2.value = "Customize";
+  radio2.id = 'buttonCustom'
+  radio2.name = "buttonMode";
 
-  var radio2Label = document.createElement("label");
-  radio2Label.for = 'radioCustom';
-  radio2Label.innerText = "custom";
+  //if mode == 1 = is an URL exception but set to default for noe
+  //if mode == undefined = not a URLexception
+  //if mode == 0 = it is a URLexception with page-specific settings
+
+  
+
+  // var radio2Label = document.createElement("label");
+  // radio2Label.for = 'radioCustom';
+  // radio2Label.innerText = "custom";
   
   mode.appendChild(radio1);
-  mode.appendChild(radio1Label)
+  // mode.appendChild(radio1Label)
   mode.appendChild(radio2);
-  mode.appendChild(radio2Label)
+  // mode.appendChild(radio2Label)
+
+//hover over teh buttons
+  // document.getElementById("radioDefault").onmouseover = function() {
+  //     this.style.backgroundColor = "white";
+  //     this.style.color = "brown";
+  // }
+  //  document.getElementById("radioDefault").onmouseout = function() {
+  //     this.style.backgroundColor = "brown";
+  //     this.style.color = "white";
+  // }
+  // document.getElementById("radioCustom").onmouseover = function() {
+  //     this.style.backgroundColor = "white";
+  //     this.style.color = "brown";
+  // }
+  //    document.getElementById("radioCustom").onmouseout = function() {
+  //     this.style.backgroundColor = "brown";
+  //     this.style.color = "white";
+  // }
 }, false);
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -112,10 +171,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
             
           }
-
-          var defaultMode = document.getElementById('radioDefault');
+        
+          var defaultMode = document.getElementById('buttonDefault');
           var listCheckBoxes = document.getElementsByClassName('checkbox-script');
-          var customMode = document.getElementById('radioCustom');
+          var customMode = document.getElementById('buttonCustom');
           var bodyContainer = document.getElementById('bodyContainer');
           var accordian = document.getElementById('accordionLabels');
 
@@ -124,63 +183,161 @@ window.addEventListener('DOMContentLoaded', () => {
           saveButton.className = "row"
           saveButton.id = "saveCustomContainer"
           saveButton.innerHTML = "<button id ='saveCustom'> Save Settings </button>"; 
-          if (defaultMode.checked){
+          // if (defaultMode.checked){
+            //disable all checkboxes 
             for (input of listCheckBoxes){
               input.disabled = true;
             } 
-          }
-          $(document).ready(function () {
 
-            $(document).on('click', "#saveCustom",function(){
-              this.disabled = true;
-              
-                browser.runtime.sendMessage({from:"popup", subject: "urlUpdate", content: {url: currentTab, scripts: response}}, function(message){
-                  if (message == "updated" || message == "added"){
+
+
+            $(document).ready(function(){
+               async function closeSelf() {
+                  // const { id: windowId, } = (await browser.windows.getCurrent());
+                  // return browser.windows.remove(windowId);
+                  window.close();
+                }
+              //saves the settings 
+              $("#reload").click(function(){
+                browser.tabs.reload(tabs[0].id, {bypassCache: true});
+               closeSelf();
+
+              })
+
+              $(document).on('click', "#saveCustom",function(){
+                this.disabled = true;
+                // send to backgrounds script
+                  browser.runtime.sendMessage({from:"popup", subject: "urlUpdate", content: {url: currentTab, scripts: response}}
+                  ).then((message)=>{
                     this.disabled = false;
-                  }
+                    console.log("Message from background script: ", message);
 
-                });
+                    saveButton.innerHTML = "<button id ='saveCustom'> Updated Site Preferences </button>"; 
+                    browser.tabs.reload(tabs[0].id, {bypassCache: true});
+                    closeSelf();
+
+
+                  }, (error)=>{
+                    this.disabled = false;
+                    console.log("Could not save site preferences: ", error)
+                    saveButton.innerHTML = "<button id ='saveCustom'> Failed to Update Preferences </button>"; 
+                  })
+                  
 
              
-            })
-          
-            $('.modes').click(function() {
-              if(customMode.checked){
-                //enable all checkboxes
-                for (input of listCheckBoxes){
-                  input.disabled = false;
-                } 
-                //add save button
-                bodyContainer.insertBefore(saveButton,accordian);
-                $('.checkbox-script').click(function(){
-                  var scriptName = this.parentNode.previousSibling.innerText;
-                  var scriptElement = response.get(scriptName);
-                  let statusScript;
-                  if($(this).is(':checked')) {
-                    statusScript  = 0;
-                  }
-                  else{
-                    statusScript  = 1;
+              })
+              $(document).on('click','#buttonCustom', function(){
+                // $('#buttonCustom').toggle(function(toggled){
+                  //enables and disables the checkboxes
+                  //when customization is turned on
+                  if (customFlag === 0){
+                    for (input of listCheckBoxes){
+                      input.disabled = false;
+                    }
+                    customFlag = 1;
+                    //add save button
+                    bodyContainer.insertBefore(saveButton,accordian);
+                    //when scripts are being checked
+                    $('.checkbox-script').click(function(){
+                      var scriptName = this.parentNode.previousSibling.innerText;
+                      var scriptElement = response.get(scriptName);
+                      let statusScript;
+                      saveButton.innerHTML = "<button id ='saveCustom'> Save Settings </button>"; 
 
-                  } 
-                  
-                  response.set(scriptName, {label: scriptElement.label, status: !statusScript})
-                  console.log("updated response", response)
-                })
-              }
-              else{
-                if(defaultMode.checked){
-                  for (input of listCheckBoxes){
-                    input.disabled = true;
+                      if($(this).is(':checked')) {
+                        statusScript  = 0;
+                      }
+                      else{
+                        statusScript  = 1;
+
+                      } 
+                      
+                      response.set(scriptName, {label: scriptElement.label, status: !statusScript})
+                      console.log("updated response", response)
+                    })
+
                   }
-                  var saveCustomButton = document.getElementById("saveCustomContainer")
-                  if (saveCustomButton){
-                    bodyContainer.removeChild(saveCustomButton);
+                  //when customization is turned off
+
+                  else{
+                    //remove button
+                    var saveCustomButton = document.getElementById("saveCustomContainer")
+                    if (saveCustomButton){
+                      bodyContainer.removeChild(saveCustomButton);
+                    }
+                    // disabled all teh checkboxes
+                    for (input of listCheckBoxes){
+                      input.disabled = true;
+                    }
+                    customFlag = 0;
                   }
-                }
-              }
+
+                // })
+              })
+
             })
-          })
+           // }
+          // $(document).ready(function () {
+
+
+          //   $(document).on('click', "#saveCustom",function(){
+          //     this.disabled = true;
+              
+          //       browser.runtime.sendMessage({from:"popup", subject: "urlUpdate", content: {url: currentTab, scripts: response}}, function(message){
+          //         if (message == "updated" || message == "added"){
+          //           this.disabled = false;
+          //         }
+
+          //       });
+
+             
+          //   })
+
+          //   //the buttons
+
+
+          //   // if cutomize button is clicked"
+          //     //save button appears
+          //     //hide the buttons
+          //     //once saved 
+          //       //remove the save button ans the red buttons appears
+          //   $('.modes').click(function() {
+          //     if(customMode.checked){
+          //       //enable all checkboxes
+          //       for (input of listCheckBoxes){
+          //         input.disabled = false;
+          //       } 
+          //       //add save button
+          //       bodyContainer.insertBefore(saveButton,accordian);
+          //       $('.checkbox-script').click(function(){
+          //         var scriptName = this.parentNode.previousSibling.innerText;
+          //         var scriptElement = response.get(scriptName);
+          //         let statusScript;
+          //         if($(this).is(':checked')) {
+          //           statusScript  = 0;
+          //         }
+          //         else{
+          //           statusScript  = 1;
+
+          //         } 
+                  
+          //         response.set(scriptName, {label: scriptElement.label, status: !statusScript})
+          //         console.log("updated response", response)
+          //       })
+          //     }
+          //     else{
+          //       if(defaultMode.checked){
+          //         for (input of listCheckBoxes){
+          //           input.disabled = true;
+          //         }
+          //         var saveCustomButton = document.getElementById("saveCustomContainer")
+          //         if (saveCustomButton){
+          //           bodyContainer.removeChild(saveCustomButton);
+          //         }
+          //       }
+          //     }
+          //   })
+          // })
 
         });
   });

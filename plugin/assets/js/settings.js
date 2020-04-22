@@ -63,11 +63,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
   }
-
   $(document).ready(function () {
+    // var selectAll = document.getElementById("selectAll")
+    var saveSettings = document.getElementById("saveDefaultSettings");
+    var checkboxes = document.getElementsByClassName("toggle-script"); 
+    $("#selectAll").click(function(){
+      if ($(this).is(':checked')){
+        for (var ele of checkboxes){
+          ele.checked = true;
+          for (let item in settings){
+            settings[item].status = 0;
+          }
+        }
+      }
+      else{
+        for (var ele of checkboxes){
+          ele.checked = false;
+          for (let item in settings){
+            settings[item].status = 1;
+          }
+
+        }
+      }
+      console.log("updated settings", settings)
+      saveSettings.innerHTML = "Save";
+    })
     $(".toggle-script").click(function (){
+
       // var checkbox = this.childNodes[0];
       console.log(this);
+      // this.innerHTML = "Save"
+      saveSettings.innerHTML = "Save";
       var checkbox = this;
       var status = $('#'+checkbox.id).is(':checked');
       console.log("checkbox " +checkbox.id +" if disabled" ,status)
@@ -105,6 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $("#saveDefaultSettings").click(function (){
       console.log("clickeed")
       console.log(settings)
+      this.innerHTML = "Settings Saved"
       chrome.storage.local.set({default: settings}, function() { })
     })
   });

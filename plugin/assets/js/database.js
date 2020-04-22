@@ -210,13 +210,21 @@ function updateItem(OSName, key, data){
         var updateItemRequest = objectStore.put(data);
 
         // Log the transaction that originated this request
-        console.log("The transaction that originated this request is " + updateItemRequest.transaction);
+        // console.log("The transaction that originated this request is " + updateItemRequest.transaction);
         // When this new request succeeds, run the displayData() function again to update the display
-        objectStoreRequest.onsuccess = function(event) {
+        updateItemRequest.onsuccess = function(event) {
             // report the success of our request
             // note.innerHTML += '<li>Request successful.</li>';
             console.log("Request to update item was successful- ", data)
             updateScriptsMap(data);
+
+            // loadData(null); 
+        };
+        updateItemRequest.onerror = function(event) {
+            // report the success of our request
+            // note.innerHTML += '<li>Request successful.</li>';
+            console.log("Transaction not opened due to error.- ", transaction.error)
+
 
             // loadData(null); 
         };
@@ -473,7 +481,7 @@ function iterate(OSName, callback){
             Obj = {
                 name: requestDetails.url,
                 status: 1, 
-                label: labelledScript.get(requestDetails.url) ? labelledScript.get(requestDetails.url).label : undefine
+                label: labelledScript.get(requestDetails.url) ? labelledScript.get(requestDetails.url).label : undefined
             };
             tempObj = {
                 message : Obj, 

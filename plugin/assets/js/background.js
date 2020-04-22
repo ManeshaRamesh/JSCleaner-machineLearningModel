@@ -136,10 +136,15 @@ Database.createDatabase().then((result) =>{
         console.log("here") 
 
         chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+            
             // First, validate the message's structure.
-            if ((msg.from === 'content') && (msg.subject === 'showPageAction')) {
+            if ((msg.from === 'content') && (msg.subject === 'modeInfo')) {
+            // console.log("HERE", Database.URLExceptions.get(sender.url))
+
               // Enable the page-action for the requesting tab.
-              chrome.pageAction.show(sender.tab.id);
+               // browser.pageAction.show(sender.tab.id);
+
+                sendResponse(Database.URLExceptions.get(sender.url));
             }
 
              if ((msg.from === 'popup') && (msg.subject === 'urlUpdate')) {
@@ -147,7 +152,7 @@ Database.createDatabase().then((result) =>{
                 var tempObj = {};
               // console.log("Recieved from content script: ",msg.content);
               msg.content.scripts.forEach((value, key, map)=>{
-                console.log("element", value, " ", key);
+                // console.log("element", value, " ", key);
                 tempObj = {
                     name: key, 
                     label: value.label, 
@@ -164,7 +169,7 @@ Database.createDatabase().then((result) =>{
                     sendResponse("added")
               }
               else{
-                    Database.updateItem({urlsName: msg.content.url, default: 0, scripts: URLscripts}, 'urls');
+                    Database.updateItem('urls', msg.content.url,{urlsName: msg.content.url, default: 0, scripts: URLscripts});
                     sendResponse("updated") 
               }
               

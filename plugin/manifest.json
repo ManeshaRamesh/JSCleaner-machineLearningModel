@@ -4,7 +4,7 @@
     "name": "JSCleaner Plugin",
     "description": "This extension will block scripts based on  machine learning model",
     "version": "1.0",
-    "content_security_policy": "script-src 'self' https://use.fontawesome.com/releases/v5.7.0/css/all.css; object-src https://code.jquery.com/jquery-3.2.1.slim.min.js 'self'",
+    "content_security_policy": "script-src 'self' https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css; object-src https://code.jquery.com/jquery-3.2.1.slim.min.js 'self'",
     "browser_action": {
      "default_icon": "JSCleaner.png",
      "default_popup": "assets/html/popup.html"
