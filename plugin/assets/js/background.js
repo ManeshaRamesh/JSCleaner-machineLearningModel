@@ -146,6 +146,22 @@ Database.createDatabase().then((result) =>{
 
                 sendResponse(Database.URLExceptions.get(sender.url));
             }
+            if ((msg.from === 'popup') && (msg.subject === 'modeUpdate')) {
+            // console.log("HERE", Database.URLExceptions.get(sender.url))
+                console.log("are: ", Database.URLExceptions.get(msg.content.url))
+              // Enable the page-action for the requesting tab.
+               // browser.pageAction.show(sender.tab.id);
+                if (Database.URLExceptions.get(msg.content.url)){
+                    Database.updateItem('urls', {urlsName: msg.content.url, default: 1, scripts: msg.content.scripts})
+                    // .then(()=>{
+                   
+                    // })
+                    console.log("mode updated");
+                    sendResponse("modeUpdated")
+                    
+                }
+               
+            }
 
              if ((msg.from === 'popup') && (msg.subject === 'urlUpdate')) {
                 var URLscripts =[];
@@ -169,8 +185,21 @@ Database.createDatabase().then((result) =>{
                     sendResponse("added")
               }
               else{
-                    Database.updateItem('urls', msg.content.url,{urlsName: msg.content.url, default: 0, scripts: URLscripts});
-                    sendResponse("updated") 
+                    Database.updateItem('urls',{urlsName: msg.content.url, default: 0, scripts: URLscripts})
+                    sendResponse("updated");
+                    // .then((message)=>{
+                    //     console.log("Message: ", message);
+                        
+
+
+                    // })
+                    // .catch((error)=>{
+                    //     console.log("Error: ", error);
+                    //     // sendResponse("update failed");
+
+                    // })
+
+                    
               }
               
             }
@@ -291,6 +320,9 @@ Database.createDatabase().then((result) =>{
     
     
                     }
+                    else{
+                        resolve("not script")
+                    }
                     // console.log("conditions: scriptlength and timeout", scripts.length)
     
                 
@@ -365,10 +397,14 @@ Database.createDatabase().then((result) =>{
                             }
                         scripts = [];
                         labeledScripts = [];
+                        resolve("batch filled")
     
                                
                     
     
+                    }
+                    else{
+                        resolve("next script")
                     }
     
     

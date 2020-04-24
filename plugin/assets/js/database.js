@@ -194,42 +194,44 @@ function readItem(OSName, key) {
     };
 }
 
-function updateItem(OSName, key, data){
+function updateItem(OSName, data){
     // var title = "Walk dog";
 
-// Open up a transaction as usual
-    var objectStore = db.transaction([OSName], "readwrite").objectStore(OSName);
+ var transaction = db.transaction([OSName], "readwrite");
 
-    // Get the to-do list object that has this title as it's title
-    var objectStoreKeyRequest = objectStore.get(key);
+  // report on the success of the transaction completing, when everything is done
+  transaction.oncomplete = function(event) {
+    // note.innerHTML += '<li>Transaction completed.</li>';
+    // console.log("Transaction Completed (ADD ITEM) - ", newItem)
+  };
 
-    objectStoreKeyRequest.onsuccess = function() {
-    // Grab the data object returned as the result    
+  transaction.onerror = function(event) {
+//   note.innerHTML += '<li>Transaction not opened due to error. Duplicate items not allowed.</li>';
+    // console.log("Transaction not opened due to error. Duplicate items not allowed - ", newItem)
 
-        // Create another request that inserts the item back into the database
-        var updateItemRequest = objectStore.put(data);
+  };
 
-        // Log the transaction that originated this request
-        // console.log("The transaction that originated this request is " + updateItemRequest.transaction);
-        // When this new request succeeds, run the displayData() function again to update the display
-        updateItemRequest.onsuccess = function(event) {
-            // report the success of our request
-            // note.innerHTML += '<li>Request successful.</li>';
-            console.log("Request to update item was successful- ", data)
-            updateScriptsMap(data);
+  // create an object store on the transaction
+  var objectStore = transaction.objectStore(OSName);
 
-            // loadData(null); 
-        };
-        updateItemRequest.onerror = function(event) {
-            // report the success of our request
-            // note.innerHTML += '<li>Request successful.</li>';
-            console.log("Transaction not opened due to error.- ", transaction.error)
+  // Make a request to add our newItem object to the object store
+  var objectStoreRequest = objectStore.put(data);
 
+  objectStoreRequest.onsuccess = function(event) {
+    // report the success of our request
+    // note.innerHTML += '<li>Request successful.</li>';
+    console.log("Request to update item was successful- ", data)
+    // loadData(null); 
+    if (OSName == 'scripts'){
+        updateScriptsMap(data);
+    }
+    else if (OSName == 'urls'){
+        updateURLExceptionMap(data);
+    }
+    
+    updateBlockedScripts('add',data);
 
-            // loadData(null); 
-        };
-    };
-
+}
 }
  function removeItem(OSName, key){
        // open a read/write db transaction, ready for deleting the data
@@ -404,7 +406,6 @@ function iterate(OSName, callback){
 
 
  }
-
 
 
  function cancel(requestDetails) {

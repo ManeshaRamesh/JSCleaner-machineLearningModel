@@ -14,3 +14,8 @@ Currently the following has not been implemented:
 - Managing scripts for a specific site - on its way to being completed
 
 If you want to enable or disable scripts, do so on the settings.html page and see which scripts have been blocked on the networks tab of your Dev Tools. 
+
+
+References: 
+
+https://almanac.httparchive.org/en/2019/third-parties

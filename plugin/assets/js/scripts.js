@@ -199,33 +199,55 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
               //saves the settings 
               $("#reload").click(function(){
+                closeSelf();
                 browser.tabs.reload(tabs[0].id, {bypassCache: true});
-               closeSelf();
 
               })
-
-              $(document).on('click', "#saveCustom",function(){
-                this.disabled = true;
-                // send to backgrounds script
-                  browser.runtime.sendMessage({from:"popup", subject: "urlUpdate", content: {url: currentTab, scripts: response}}
-                  ).then((message)=>{
+              function handleResponseSave(sentMessage){
                     this.disabled = false;
-                    console.log("Message from background script: ", message);
+                    console.log("Message from background script savecustom: ", sentMessage);
 
                     saveButton.innerHTML = "<button id ='saveCustom'> Updated Site Preferences </button>"; 
+                    setTimeout(closeSelf, 1000)
                     browser.tabs.reload(tabs[0].id, {bypassCache: true});
-                    closeSelf();
+                    
+                    
 
 
-                  }, (error)=>{
+                  }
+                  function handleErrorSave(error){
                     this.disabled = false;
                     console.log("Could not save site preferences: ", error)
                     saveButton.innerHTML = "<button id ='saveCustom'> Failed to Update Preferences </button>"; 
-                  })
+
+                  }
+
+              $(document).on('click', "#saveCustom",function(){
+
+                this.disabled = true;
+                // send to backgrounds script
+                  browser.runtime.sendMessage({from:"popup", subject: "urlUpdate", content: {url: currentTab, scripts: response}})
+                  .then(handleResponseSave, handleErrorSave);
                   
 
              
               })
+              $(document).on('click','#buttonDefault', function(){
+                console.log("clicked button default")
+
+                browser.runtime.sendMessage({from:"popup", subject: "modeUpdate", content: {url: currentTab, scripts: response}}).then(()=>{
+                  
+                  console.log("set back to default");
+                  browser.tabs.reload(tabs[0].id, {bypassCache: true});
+                  closeSelf();
+                }, (error)=>{
+                  console.log("Error: ", error)
+                })
+
+
+
+              })
+
               $(document).on('click','#buttonCustom', function(){
                 // $('#buttonCustom').toggle(function(toggled){
                   //enables and disables the checkboxes
@@ -252,8 +274,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
                       } 
                       
-                      response.set(scriptName, {label: scriptElement.label, status: !statusScript})
-                      console.log("updated response", response)
+                      response.set(scriptName, {label: scriptElement.label, status: statusScript})
+                      console.log("updated response", response, JSON.stringify(response))
                     })
 
                   }
@@ -274,6 +296,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
                 // })
               })
+
+
 
             })
            // }
