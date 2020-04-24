@@ -11,7 +11,10 @@ To run this on your computer do the following;
 
 
 Currently the following has not been implemented:
-- Managing scripts for a specific site - on its way to being completed
+- To make the blocking happen in the first page load by rerouting
+
+Things to note:
+- Currently this plugin does not make get requests to the server (still waiting for access).
 
 If you want to enable or disable scripts, do so on the settings.html page and see which scripts have been blocked on the networks tab of your Dev Tools. 
 
