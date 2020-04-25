@@ -414,7 +414,33 @@ function iterate(OSName, callback){
     var tempObj = {}
     var Obj = {};
     var entry; 
+
+    //redirect urls
+
+
     if (requestDetails.type ==="script"){
+
+        //////////
+           var found = false;
+            // console.log("details", details);
+            //check if the scripts can be found
+            // console.log("hellloooo", Database.labelledScript)
+            if (!labelledScript.get(requestDetails.url)){
+                console.log("Redirecting: " + requestDetails.url);
+                  return {
+                    redirectUrl: "https://127.0.0.1:8081"
+                  };
+            }
+            // for(var i = 0; i < Database.scripts.length; i++) {
+            //     if (Database.scripts[i].name == details.url) {
+            //         found = true;
+            //         break;
+            //     }
+            // }
+            // console.log("Should script be labelled?: ", details.url, !found  , !scripts.includes(details.url) )
+
+
+        //////////
         console.log("requestDetails", requestDetails)
         //gettign the hostURL - the page that makes the requests
         if (requestDetails.frameAncestors.length===0){
