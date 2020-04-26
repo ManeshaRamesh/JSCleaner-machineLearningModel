@@ -4,7 +4,7 @@ Advertising : 0,
 Analytics : 1, 
 Social : 2, 
 Video : 3, 
-Utilities:4,
+Utility:4,
 Hosting: 5, 
 Marketing: 6, 
 "Customer Success": 7, 
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log("here")
   var accordian = document.getElementById("accordionLabels");
 
-  var labels = ['Advertising','Analytics', 'Social', 'Video', 'Utilities', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Managment', 'Others']
+  var labels = ['Advertising','Analytics', 'Social', 'Video', 'Utility', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Managment', 'Others']
   var checkbox = {
     1 : "", 
     0 : "checked"

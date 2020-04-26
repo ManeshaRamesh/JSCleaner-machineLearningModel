@@ -8,7 +8,7 @@ Advertising : 0,
 Analytics : 1, 
 Social : 2, 
 Video : 3, 
-Utilities:4,
+Utility:4,
 Hosting: 5, 
 Marketing: 6, 
 "Customer Success": 7, 
@@ -20,7 +20,7 @@ Others: 11
 var customFlag =0;
 var URLmode;
 var currentTab;
-var labels = ['Advertising','Analytics', 'Social', 'Video', 'Utilities', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Managment', 'Others']
+var labels = ['Advertising','Analytics', 'Social', 'Video', 'Utility', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Managment', 'Others']
 
 document.addEventListener('DOMContentLoaded', function() {
   browser.tabs.query({ active: true, currentWindow: true }).then(function (tabs) {
