@@ -1,30 +1,50 @@
 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import cgi
+import cgitb
+import json
+import random
+
 import requests
 from collections import OrderedDict
 import pandas
 import numpy as np
+import sklearn
 import pickle
-import json
+
+def warn(*args, **kwargs):
+    pass
+import warnings
+warnings.warn = warn
+
+print "Status: 200 Ok"
+print "Content-Type: application/json;charset=utf-8"
+print ""
 
 
-PROXY_IP = "127.0.0.1"
-PROXY_PORT = 8080
 
-HTTP_PROXY = "http://" + PROXY_IP + ":" + str(PROXY_PORT)
-HTTPS_PROXY = "https://" + PROXY_IP + ":" + str(PROXY_PORT)
-PROXYDICT = {"http": HTTP_PROXY, "https": HTTPS_PROXY}
-PROXY = PROXY_IP + ":" + str(PROXY_PORT)
-ENCODING = "utf-8"
+#if True:
+
+# PROXY_IP = "127.0.0.1"
+# PROXY_PORT = 8080
+
+# HTTP_PROXY = "http://" + PROXY_IP + ":" + str(PROXY_PORT)
+# HTTPS_PROXY = "https://" + PROXY_IP + ":" + str(PROXY_PORT)
+# PROXYDICT = {"http": HTTP_PROXY, "https": HTTPS_PROXY}
+# PROXY = PROXY_IP + ":" + str(PROXY_PORT)
+# ENCODING = "utf-8"
 
 
 filename = "ml_model.sav"
 
-input = ["https://apis.google.com/_/scs/abc-static/_/js/k=gapi.gapi.en.jw7XZHvcak8.O/m=gapi_iframes,googleapis_client,plusone/rt=j/sv=1/d=1/ed=1/rs=AHpOoo-L1iz4xVj0PCdm2On38RCj6aYemA/cb=gapi.loaded_0"]
+# input = ["https://apis.google.com/_/scs/abc-static/_/js/k=gapi.gapi.en.jw7XZHvcak8.O/m=gapi_iframes,googleapis_client,plusone/rt=j/sv=1/d=1/ed=1/rs=AHpOoo-L1iz4xVj0PCdm2On38RCj6aYemA/cb=gapi.loaded_0"]
 
 
 # PROXY_IP = "10.224.41.171"
 
-loaded_model = pickle.load(open(filename, 'rb'),  encoding='latin-1')
+loaded_model = pickle.load(open(filename, 'rb'))
 # feature store (50 features)
 FEATURES = ['replace',
             'createElement',
@@ -122,28 +142,38 @@ def extract_features(content_text):
     vector = pandas.Series(tmp)
     return vector
 
+cgitb.enable()
+form = cgi.FieldStorage()
+data = []
 
-def main():
-    json_object = "{";
-    for url in input:
-        content = get_resource(url);
-        vector = extract_features(content);
-        new_output = loaded_model.predict([vector]) #this is your label to be displayed (ex: Ads...) c
-        confidence = np.amax(loaded_model.predict_proba([vector])) #this is the confidence of prediction
-        # print (new_output , confidence)
-        json_object =  json_object + "{ 'name': '"+url +"', 'label': '" + new_output[0] + "',  'accuracy': '"+  str(confidence) +"'} ,"
-    json_object = json_object[0:-1]; # remove the last comma
-    json_object += "}"
+try:
+	urls = form["url"].value.split(",")
 
+	for url in urls:
+		content = get_resource(url);
+		vector = extract_features(content);
+		new_output = loaded_model.predict([vector]) #this is your label to be displayed (ex: Ads...) c
+		confidence = np.amax(loaded_model.predict_proba([vector])) #this is the confidence of prediction
+	    # print (new_output , confidence)
+	    # json_object =  json_object + "{ 'name': '"+url +"', 'label': '" + new_output[0] + "',  'accuracy': '"+  str(confidence) +"'} ,"
 
-    print(json.dumps(json_object))
+		if new_output[0] == 'cdn':
+			new_output[0] = 'CDN'
+		elif new_output[0] == 'ads':
+			new_output[0] = 'Advertising'
+		elif new_output[0] == 'Tag-manager':
+			new_output[0] = 'Tag Manager'
+		elif new_output[0] == 'Tag-manager':
+			new_output[0] = 'Tag Manager'
+		else:
+			new_output[0] = new_output[0].capitalize()
 
+		data.append({"name":url, "label":new_output[0], "accuracy":confidence})
 
-    # the json object will be returned
+	print json.dumps(data, indent=4)
 
-                   
-
-main()
+except:
+	print "Error"
 
 
 
