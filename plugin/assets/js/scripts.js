@@ -14,13 +14,13 @@ Marketing: 6,
 "Customer Success": 7, 
 Content : 8,
 CDN : 9,
-"Tag Managment": 10,
+"Tag Manager": 10,
 Others: 11
 }
 var customFlag =0;
 var URLmode;
 var currentTab;
-var labels = ['Advertising','Analytics', 'Social', 'Video', 'Utility', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Managment', 'Others']
+var labels = ['Advertising','Analytics', 'Social', 'Video', 'Utility', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Manager', 'Others']
 
 document.addEventListener('DOMContentLoaded', function() {
   browser.tabs.query({ active: true, currentWindow: true }).then(function (tabs) {
