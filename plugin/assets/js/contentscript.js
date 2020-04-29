@@ -37,6 +37,8 @@
             console.log("mode", URLmode)
             response(URLmode);
           }
+          //
+          
           //when scripts are received store it in the scripts variablef
           if (msg.subject === "script"){
           console.log("ADD: ", msg.message.label);

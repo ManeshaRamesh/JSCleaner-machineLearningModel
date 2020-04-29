@@ -407,7 +407,7 @@ function iterate(OSName, callback){
 
  }
 
-
+// these scripts are all labelled 
  function cancel(requestDetails) {
     //store it in locastorage
     var hostUrl;
@@ -422,14 +422,61 @@ function iterate(OSName, callback){
 
         //////////
            var found = false;
+           var scriptBody;
+           var request ;
+           var jsonObj;
             // console.log("details", details);
             //check if the scripts can be found
             // console.log("hellloooo", Database.labelledScript)
+            // if script is not in the database
             if (!labelledScript.get(requestDetails.url)){
-                console.log("Redirecting: " + requestDetails.url);
-                  return {
-                    redirectUrl: "https://127.0.0.1:8081"
-                  };
+                console.log("Unlabelled requestDetails", requestDetails)
+
+                // send get request to server and get response 
+                function reqListener () {
+                    // console.log("RESPONSE FROM PROXY: ", this.responseText);
+                    // scriptBody = this.responseText.substring(0, this.responseText.search(">>>>>>>>>>>>>>>>>>>> JSCLEANER <<<<<<<<<<<<<<<<<<<<"))
+                    // console.log("response: ", scriptBody)
+                    // jsonObj = this.responseText.substring(this.responseText.search(">>>>>>>>>>>>>>>>>>>> JSCLEANER <<<<<<<<<<<<<<<<<<<<") + 51)
+                    console.log("json: ", jsonObj)
+                    jsonObj= JSON.parse(this.responseText)
+                    // console.log("parsed", jsonObj)
+                    if (!labelledScript.get(requestDetails.url) ){
+                        addItem(jsonObj[0], 'scripts')
+                    }
+                    //     tempObj = {
+                    //         smessage : {
+                    //             body: scriptBody,
+                    //             url: requestDetails.url
+                    //         }, 
+                    //         subject: "injectScript"
+                    //     }
+                    // browser.tabs.sendMessage(requestDetails.tabId, tempObj)
+
+
+                    return 
+                    
+                    
+                }
+                  
+                  var oReq = new XMLHttpRequest();
+                  oReq.addEventListener("load", reqListener);
+                  request = "http://86.97.179.52:9000/JSCleaner/JSLabel2.py?url=" + requestDetails.url
+                  console.log("Request: ", request)
+                  oReq.open("GET", request );
+                  oReq.send();
+                  oReq.timeout = 50000;
+                  oReq.onerror = function(e){
+                      console.log("Server Error: contact administrator" + e)
+                      return
+                      
+                  }
+                  oReq.ontimeout = function(e){
+                    console.log("Request has timedout: ", e)
+                    return
+                    
+                  }
+
             }
             // for(var i = 0; i < Database.scripts.length; i++) {
             //     if (Database.scripts[i].name == details.url) {
@@ -441,7 +488,7 @@ function iterate(OSName, callback){
 
 
         //////////
-        console.log("requestDetails", requestDetails)
+        // console.log("requestDetails", requestDetails)
         //gettign the hostURL - the page that makes the requests
         if (requestDetails.frameAncestors.length===0){
             hostUrl = requestDetails.documentUrl;
