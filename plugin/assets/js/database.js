@@ -418,7 +418,7 @@ function iterate(OSName, callback){
     //redirect urls
 
 
-    if (requestDetails.type ==="script"){
+    if (requestDetails.url.search(".js") !== -1){
 
         //////////
            var found = false;
@@ -438,9 +438,9 @@ function iterate(OSName, callback){
                     // scriptBody = this.responseText.substring(0, this.responseText.search(">>>>>>>>>>>>>>>>>>>> JSCLEANER <<<<<<<<<<<<<<<<<<<<"))
                     // console.log("response: ", scriptBody)
                     // jsonObj = this.responseText.substring(this.responseText.search(">>>>>>>>>>>>>>>>>>>> JSCLEANER <<<<<<<<<<<<<<<<<<<<") + 51)
-                    console.log("json: ", jsonObj)
+                    console.log("response text: ", requestDetails.url,  this.responseText)
                     jsonObj= JSON.parse(this.responseText)
-                    // console.log("parsed", jsonObj)
+                    console.log("parsed", requestDetails.url, " ", jsonObj)
                     if (!labelledScript.get(requestDetails.url) ){
                         addItem(jsonObj[0], 'scripts')
                     }
@@ -465,17 +465,17 @@ function iterate(OSName, callback){
                   console.log("Request: ", request)
                   oReq.open("GET", request );
                   oReq.send();
-                  oReq.timeout = 50000;
+                  // oReq.timeout = 5000;
                   oReq.onerror = function(e){
                       console.log("Server Error: contact administrator" + e)
                       return
                       
                   }
-                  oReq.ontimeout = function(e){
-                    console.log("Request has timedout: ", e)
-                    return
+                  // oReq.ontimeout = function(e){
+                  //   console.log("Request has timedout: ", e, requestDetails.url)
+                  //   return
                     
-                  }
+                  // }
 
             }
             // for(var i = 0; i < Database.scripts.length; i++) {

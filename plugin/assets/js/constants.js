@@ -1,5 +1,5 @@
 var defaultLabels = [];
-var labels = ['Advertising','Analytics', 'Social', 'Video', 'Utilities', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Managment', 'Others']
+var labels = ['Advertising','Analytics', 'Social', 'Video', 'Utility', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Manager', 'Others']
 // chrome.storage.local.get(['default'], function(result) {
 //     var obj;
 //     console.log("default: ", result); 

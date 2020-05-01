@@ -7,7 +7,7 @@ var timedout = false;
 window.jscleaner = {}
 window.jscleaner.tabs = [];
 
-window.jscleaner.labels = ['Advertising','Analytics', 'Social', 'Video', 'Utilities', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Managment', 'Others']
+window.jscleaner.labels = ['Advertising','Analytics', 'Social', 'Video', 'Utility', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Manager', 'Others']
 window.jscleaner.Error = {
     DATABASEERROR: "Database error: ", 
 
@@ -129,7 +129,7 @@ browser.runtime.onInstalled.addListener(function (object) {
 var scripts = []; //scripts names extracted
 var labeledScripts = []; //labaled scripts
 window.jscleaner.Constants = {}
-window.jscleaner.Constants.labels = ['Advertising','Analytics', 'Social', 'Video', 'Utilities', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Managment', 'Others']
+window.jscleaner.Constants.labels = ['Advertising','Analytics', 'Social', 'Video', 'Utility', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Manager', 'Others']
 Database.createDatabase().then((result) =>{
     
     Database.loadData(result).then(()=>{
