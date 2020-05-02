@@ -164,7 +164,7 @@ window.addEventListener('DOMContentLoaded', () => {
             if (value.label === label){
               document.getElementById('collapse'+label.replace(' ', '')).className = "collapse show"
               // place.innerText = place.innerText + key +"/n";
-              place.innerHTML = place.innerHTML + "<div style='padding:2px;' class = 'row'> <div  class = 'col-9' style = 'overflow:hidden; white-space: nowrap;'>"+key+ "</div><div class ='col-3'><input type='checkbox' " + checkbox[value.status] +" class = 'checkbox-script'></div> </div>"
+              place.innerHTML = place.innerHTML + "<div style='padding:2px;' class = 'row'> <div  class = 'col-9' style = 'overflow:hidden; white-space: nowrap;'> <a href='' title='"+key+"' style='background-color:#FFFFFF;color:#000000;text-decoration:none'>"+key+ "<a></div><div class ='col-3'><input type='checkbox' " + checkbox[value.status] +" class = 'checkbox-script'></div> </div>"
 
             }
           }

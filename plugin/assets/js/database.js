@@ -108,6 +108,12 @@ function addItem(newItem, OSName ){
 
   // Make a request to add our newItem object to the object store
   var objectStoreRequest = objectStore.add(newItem);
+    objectStoreRequest.onerror = function(event) {
+        console.log ("failed to add item to database",  event);
+//   note.innerHTML += '<li>Transaction not opened due to error. Duplicate items not allowed.</li>';
+    // console.log("Transaction not opened due to error. Duplicate items not allowed - ", newItem)
+
+  };
 
   objectStoreRequest.onsuccess = function(event) {
     // report the success of our request
@@ -417,8 +423,11 @@ function iterate(OSName, callback){
 
     //redirect urls
 
+    // console.log("All requestDetails: ", (requestDetails.url.search("http://86.97.179.52:9000/JSCleaner/JSLabel2.py") === -1), requestDetails.url.search(".js"), requestDetails.url) 
 
-    if (requestDetails.url.search(".js") !== -1){
+    if (requestDetails.url.search(".js") !== -1 && requestDetails.url.search("http://86.97.179.52:9000/JSCleaner/JSLabel2.py") === -1){
+        // console.log("All requestDetails: ", "pass", requestDetails.url) 
+
 
         //////////
            var found = false;
@@ -429,6 +438,8 @@ function iterate(OSName, callback){
             //check if the scripts can be found
             // console.log("hellloooo", Database.labelledScript)
             // if script is not in the database
+            console.log("labelledscript", JSON.stringify(Array.from(labelledScript.entries())))
+            
             if (!labelledScript.get(requestDetails.url)){
                 console.log("Unlabelled requestDetails", requestDetails)
 
@@ -443,6 +454,7 @@ function iterate(OSName, callback){
                     console.log("parsed", requestDetails.url, " ", jsonObj)
                     if (!labelledScript.get(requestDetails.url) ){
                         addItem(jsonObj[0], 'scripts')
+                        console.log("add item")
                     }
                     //     tempObj = {
                     //         smessage : {
