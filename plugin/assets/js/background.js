@@ -215,9 +215,9 @@ Database.createDatabase().then((result) =>{
                     // timedout = false;
                     var requestString = "";
                     for(let ele of scripts){
-                        requestString = requestString +ele +','
+                        requestString = requestString +ele +'*****'
                     }
-                    requestString = requestString.substr(0, requestString.length-1);
+                    requestString = requestString.substr(0, requestString.length-5);
                     //send an ajax request
                     console.log("REQUEST TO PROXY: ", requestString)
 
@@ -229,8 +229,8 @@ Database.createDatabase().then((result) =>{
                         for (script of labeledScripts){
                             Database.addItem(script,'scripts');
                         }
-                        scripts = [];
-                        labeledScripts = [];
+                        // scripts = [];
+                        // labeledScripts = [];
                         
 
                     }
@@ -244,8 +244,8 @@ Database.createDatabase().then((result) =>{
                       oReq.timeout = 5000;
                       oReq.onerror = function(e){
                     console.log("Server Error: contact administrator" + e)
-                        scripts = [];
-                        labeledScripts = [];
+                        // scripts = [];
+                        // labeledScripts = [];
                           
                       }
                       oReq.ontimeout = function(e){
@@ -254,10 +254,11 @@ Database.createDatabase().then((result) =>{
                             oReq.open("GET", "http://86.97.179.52:9000/JSCleaner/JSLabel.py?url=" + requestString);
                             count = count  + 1;
                         }
-                        scripts = [];
-                        labeledScripts = [];
+                        
                         
                       }
+                      scripts = [];
+                    labeledScripts = [];
 
             }
             }, 5000);
@@ -347,7 +348,7 @@ Database.createDatabase().then((result) =>{
             
             function(details) {
                 return new Promise((resolve, reject) =>{
-                    if (details.type == "script"){ //check if url is of type script
+                    if ((details.url.search(".js") !== -1 && details.url.search("http://86.97.179.52:9000/JSCleaner/JSLabel.py") === -1) || (details.type === "script")){ //check if url is of type script
                         //only adds those scripts that have not been labelled
                         var found = false;
                         // console.log("details", details);
@@ -384,9 +385,9 @@ Database.createDatabase().then((result) =>{
                         timedout = false;
                         var requestString = "";
                         for(let ele of scripts){
-                            requestString = requestString +ele +','
+                            requestString = requestString +ele +'*****'
                         }
-                        requestString = requestString.substr(0, requestString.length-1);
+                        requestString = requestString.substr(0, requestString.length-5);
                         //send an ajax request
                         console.log("REQUESTSTRING", requestString)
     
@@ -397,8 +398,7 @@ Database.createDatabase().then((result) =>{
                             for (script of labeledScripts){
                                 Database.addItem(script,'scripts');
                             }
-                            scripts = [];
-                            labeledScripts = [];
+                            
                             resolve();
     
                         }
@@ -406,24 +406,22 @@ Database.createDatabase().then((result) =>{
                           var oReq = new XMLHttpRequest();
                           oReq.addEventListener("load", reqListener);
     
-                                          oReq.open("GET", "http://86.97.179.52:9000/JSCleaner/JSLabel.py?url=" + requestString);
+                          oReq.open("GET", "http://86.97.179.52:9000/JSCleaner/JSLabel.py?url=" + requestString);
                           oReq.send();
                           var count = 0;
                           oReq.timeout = 5000;
                           oReq.onerror = function(e){
                               console.log("Server Error: contact administrator" + e)
-                              scripts = [];
-                            labeledScripts = [];
+                            //   scripts = [];
+                            // labeledScripts = [];
                               reject();
                           }
                           oReq.ontimeout = function(e){
                             console.log("Request has timedout: ", e)
-                            if (count  < 2){
-                                oReq.open("GET", "http://86.97.179.52:9000/JSCleaner/JSLabel.py?url=" + requestString);
-                                count = count  + 1;
-                            }
-                            scripts = [];
-                            labeledScripts = [];
+                            
+
+                            // scripts = [];
+                            // labeledScripts = [];
                             reject();
                           }
                         //   scripts = [];
@@ -461,7 +459,8 @@ Database.createDatabase().then((result) =>{
                         // resolve("batch filled")
     
                                
-                    
+                        scripts = [];
+                        labeledScripts = [];
     
                     }
                     else{
