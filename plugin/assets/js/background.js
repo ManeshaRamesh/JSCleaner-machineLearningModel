@@ -128,8 +128,8 @@ browser.runtime.onInstalled.addListener(function (object) {
 // var storedScript = []; //scripts are alreadys stored
 var scripts = []; //scripts names extracted
 var labeledScripts = []; //labaled scripts
-window.jscleaner.Constants = {}
-window.jscleaner.Constants.labels = ['Advertising','Analytics', 'Social', 'Video', 'Utility', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Manager', 'Others']
+// window.jscleaner.Constants = {}
+// window.jscleaner.Constants.labels = ['Advertising','Analytics', 'Social', 'Video', 'Utility', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Manager', 'Others']
 Database.createDatabase().then((result) =>{
     
     Database.loadData(result).then(()=>{

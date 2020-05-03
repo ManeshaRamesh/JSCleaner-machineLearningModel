@@ -425,7 +425,7 @@ function iterate(OSName, callback){
 
     // console.log("All requestDetails: ", (requestDetails.url.search("http://86.97.179.52:9000/JSCleaner/JSLabel2.py") === -1), requestDetails.url.search(".js"), requestDetails.url) 
 
-    if (requestDetails.url.search(".js") !== -1 && requestDetails.url.search("http://86.97.179.52:9000/JSCleaner/JSLabel2.py") === -1){
+    if ((requestDetails.url.search(".js") !== -1 && requestDetails.url.search("http://86.97.179.52:9000/JSCleaner/JSLabel2.py") === -1) || (requestDetails.type === "script")){ //check if url is of type script
         // console.log("All requestDetails: ", "pass", requestDetails.url) 
 
 
@@ -434,6 +434,7 @@ function iterate(OSName, callback){
            var scriptBody;
            var request ;
            var jsonObj;
+           var requestString;
             // console.log("details", details);
             //check if the scripts can be found
             // console.log("hellloooo", Database.labelledScript)
@@ -473,8 +474,9 @@ function iterate(OSName, callback){
                   
                   var oReq = new XMLHttpRequest();
                   oReq.addEventListener("load", reqListener);
-                  request = "http://86.97.179.52:9000/JSCleaner/JSLabel2.py?url=" + requestDetails.url
-                  console.log("Request: ", request)
+                  requestString = encodeURIComponent(requestDetails.url)
+                  request = "http://86.97.179.52:9000/JSCleaner/JSLabel2.py?url=" + requestString
+                  // console.log("Request: ", request)
                   oReq.open("GET", request );
                   oReq.send();
                   // oReq.timeout = 5000;
