@@ -1,6 +1,8 @@
 
 import * as Database from './database.js';
 import * as Constants from './constants.js';
+// import * as CryptoJS from '../lib/cryptojs/crypto-js.js'
+// var MD5 = new Hashes.SHA1().hex(str)
 
 
 var timedout = false;
@@ -215,7 +217,7 @@ Database.createDatabase().then((result) =>{
                     // timedout = false;
                     var requestString = "";
                     for(let ele of scripts){
-                        requestString = requestString +ele +'*****'
+                        requestString = requestString + encodeURIComponent(ele)+'*****'
                     }
                     requestString = requestString.substr(0, requestString.length-5);
                     //send an ajax request
@@ -356,6 +358,7 @@ Database.createDatabase().then((result) =>{
                         // console.log("hellloooo", Database.labelledScript)
                         if (Database.labelledScript.get(details.url)){
                             found = true;
+                       
                         }
                         // for(var i = 0; i < Database.scripts.length; i++) {
                         //     if (Database.scripts[i].name == details.url) {
@@ -371,7 +374,7 @@ Database.createDatabase().then((result) =>{
                             scripts.push(details.url)
                             // console.log ("pushed", details.url,scripts.length)
                         }
-    
+                        console.log("Scripts: ", scripts)
     
                     }
                     else{
@@ -385,7 +388,7 @@ Database.createDatabase().then((result) =>{
                         timedout = false;
                         var requestString = "";
                         for(let ele of scripts){
-                            requestString = requestString +ele +'*****'
+                            requestString = requestString + encodeURIComponent(ele) +'*****'
                         }
                         requestString = requestString.substr(0, requestString.length-5);
                         //send an ajax request

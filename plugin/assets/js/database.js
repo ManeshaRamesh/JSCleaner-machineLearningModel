@@ -1,6 +1,7 @@
 
 import * as Constants from './constants.js';
 
+
  var db;
 
 //  var blockScripts = ['']; //array of blocked scripts (based on labels)
@@ -414,7 +415,7 @@ function iterate(OSName, callback){
     var tempObj = {}
     var Obj = {};
     var entry; 
-    if (requestDetails.type ==="script"){
+    if ((requestDetails.url.search(".js") !== -1 && requestDetails.url.search("http://86.97.179.52:9000/JSCleaner/JSLabel.py") === -1) || (requestDetails.type === "script")){ //check if url is of type script
         console.log("requestDetails", requestDetails)
         //gettign the hostURL - the page that makes the requests
         if (requestDetails.frameAncestors.length===0){
