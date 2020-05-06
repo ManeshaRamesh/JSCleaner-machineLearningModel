@@ -1,0 +1,456 @@
+/usr/local/bin/geckodriver: error: Found argument '-e' which wasn't expected, or isn't valid in this context
+
+USAGE:
+    geckodriver -v
+
+For more information try --help
+
+/usr/local/bin/geckodriver: error: Found argument '-e' which wasn't expected, or isn't valid in this context
+
+USAGE:
+    geckodriver -v
+
+For more information try --help
+
+/usr/local/bin/geckodriver: error: Found argument '-e' which wasn't expected, or isn't valid in this context
+
+USAGE:
+    geckodriver -v
+
+For more information try --help
+
+1588689748963	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofileI5JuCw"
+1588689750006	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588689750677	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588689750677	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588689750677	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588689750677	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1588689753737	Marionette	INFO	Listening on port 52994
+1588689753764	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588689753854	Marionette	INFO	Stopped listening on port 52994
+1588690056599	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofileDcaX0S"
+1588690057463	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588690058105	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588690058105	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588690058105	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588690058105	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1588690060985	Marionette	INFO	Listening on port 58020
+1588690061009	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588690061166	Marionette	INFO	Stopped listening on port 58020
+1588690061786	addons.xpi	WARN	Addon with ID amazondotcom@search.mozilla.org already installed, older version will be disabled
+1588690061787	addons.xpi-utils	WARN	Error: XPI database modified after shutdown began(resource://gre/modules/addons/XPIDatabase.jsm:1545:17) JS Stack trace: saveChanges@XPIDatabase.jsm:1545:17
+makeAddonVisible@XPIDatabase.jsm:2348:10
+addToDatabase@XPIDatabase.jsm:2275:12
+install@XPIInstall.jsm:4320:27
+update@XPIProvider.jsm:2074:13
+1588690061787	addons.xpi-utils	WARN	Error: XPI database modified after shutdown began(resource://gre/modules/addons/XPIDatabase.jsm:1545:17) JS Stack trace: saveChanges@XPIDatabase.jsm:1545:17
+addToDatabase@XPIDatabase.jsm:2278:10
+install@XPIInstall.jsm:4320:27
+update@XPIProvider.jsm:2074:13
+1588690061814	addons.xpi	WARN	Addon with ID bing@search.mozilla.org already installed, older version will be disabled
+1588690061815	addons.xpi-utils	WARN	Error: XPI database modified after shutdown began(resource://gre/modules/addons/XPIDatabase.jsm:1545:17) JS Stack trace: saveChanges@XPIDatabase.jsm:1545:17
+makeAddonVisible@XPIDatabase.jsm:2348:10
+addToDatabase@XPIDatabase.jsm:2275:12
+install@XPIInstall.jsm:4320:27
+update@XPIProvider.jsm:2074:13
+1588690061815	addons.xpi-utils	WARN	Error: XPI database modified after shutdown began(resource://gre/modules/addons/XPIDatabase.jsm:1545:17) JS Stack trace: saveChanges@XPIDatabase.jsm:1545:17
+addToDatabase@XPIDatabase.jsm:2278:10
+install@XPIInstall.jsm:4320:27
+update@XPIProvider.jsm:2074:13
+1588690061844	addons.xpi	WARN	Addon with ID google@search.mozilla.org already installed, older version will be disabled
+1588690061846	addons.xpi-utils	WARN	Error: XPI database modified after shutdown began(resource://gre/modules/addons/XPIDatabase.jsm:1545:17) JS Stack trace: saveChanges@XPIDatabase.jsm:1545:17
+makeAddonVisible@XPIDatabase.jsm:2348:10
+addToDatabase@XPIDatabase.jsm:2275:12
+install@XPIInstall.jsm:4320:27
+update@XPIProvider.jsm:2074:13
+1588690061846	addons.xpi-utils	WARN	Error: XPI database modified after shutdown began(resource://gre/modules/addons/XPIDatabase.jsm:1545:17) JS Stack trace: saveChanges@XPIDatabase.jsm:1545:17
+addToDatabase@XPIDatabase.jsm:2278:10
+install@XPIInstall.jsm:4320:27
+update@XPIProvider.jsm:2074:13
+1588690061882	addons.xpi	WARN	Addon with ID twitter@search.mozilla.org already installed, older version will be disabled
+1588690061883	addons.xpi-utils	WARN	Error: XPI database modified after shutdown began(resource://gre/modules/addons/XPIDatabase.jsm:1545:17) JS Stack trace: saveChanges@XPIDatabase.jsm:1545:17
+makeAddonVisible@XPIDatabase.jsm:2348:10
+addToDatabase@XPIDatabase.jsm:2275:12
+install@XPIInstall.jsm:4320:27
+update@XPIProvider.jsm:2074:13
+1588690061883	addons.xpi-utils	WARN	Error: XPI database modified after shutdown began(resource://gre/modules/addons/XPIDatabase.jsm:1545:17) JS Stack trace: saveChanges@XPIDatabase.jsm:1545:17
+addToDatabase@XPIDatabase.jsm:2278:10
+install@XPIInstall.jsm:4320:27
+update@XPIProvider.jsm:2074:13
+1588690061952	addons.xpi	WARN	Addon with ID wikipedia@search.mozilla.org already installed, older version will be disabled
+1588690061952	addons.xpi-utils	WARN	Error: XPI database modified after shutdown began(resource://gre/modules/addons/XPIDatabase.jsm:1545:17) JS Stack trace: saveChanges@XPIDatabase.jsm:1545:17
+makeAddonVisible@XPIDatabase.jsm:2348:10
+addToDatabase@XPIDatabase.jsm:2275:12
+install@XPIInstall.jsm:4320:27
+update@XPIProvider.jsm:2074:13
+1588690061953	addons.xpi-utils	WARN	Error: XPI database modified after shutdown began(resource://gre/modules/addons/XPIDatabase.jsm:1545:17) JS Stack trace: saveChanges@XPIDatabase.jsm:1545:17
+addToDatabase@XPIDatabase.jsm:2278:10
+install@XPIInstall.jsm:4320:27
+update@XPIProvider.jsm:2074:13
+1588690061996	addons.xpi	WARN	Addon with ID ddg@search.mozilla.org already installed, older version will be disabled
+1588690061997	addons.xpi-utils	WARN	Error: XPI database modified after shutdown began(resource://gre/modules/addons/XPIDatabase.jsm:1545:17) JS Stack trace: saveChanges@XPIDatabase.jsm:1545:17
+makeAddonVisible@XPIDatabase.jsm:2348:10
+addToDatabase@XPIDatabase.jsm:2275:12
+install@XPIInstall.jsm:4320:27
+update@XPIProvider.jsm:2074:13
+1588690061997	addons.xpi-utils	WARN	Error: XPI database modified after shutdown began(resource://gre/modules/addons/XPIDatabase.jsm:1545:17) JS Stack trace: saveChanges@XPIDatabase.jsm:1545:17
+addToDatabase@XPIDatabase.jsm:2278:10
+install@XPIInstall.jsm:4320:27
+update@XPIProvider.jsm:2074:13
+1588690076348	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofilekUy9EG"
+1588690077027	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588690077679	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588690077680	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588690077680	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588690077680	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1588690080505	Marionette	INFO	Listening on port 58411
+1588690080601	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588690082763	Marionette	ERROR	[23] No reply from Marionette:Register
+1588690084521	Marionette	ERROR	[25] No reply from Marionette:Register
+1588690159271	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofileAHY8sO"
+1588690160534	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588690161180	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588690161180	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588690161180	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588690161181	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1588690164679	Marionette	INFO	Listening on port 59815
+1588690164729	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588690167037	Marionette	ERROR	[21] No reply from Marionette:Register
+1588693488739	Marionette	INFO	Stopped listening on port 58411
+1588693490680	Marionette	INFO	Stopped listening on port 59815
+1588693499112	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofileDkbtVo"
+1588693499975	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588693500725	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588693500726	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588693500726	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588693500726	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1588693504053	Marionette	INFO	Listening on port 62832
+1588693504100	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588693532648	Marionette	INFO	Stopped listening on port 62832
+1588693535054	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofile14J1QU"
+1588693535701	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588693536319	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588693536319	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588693536319	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588693536319	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1588693538898	Marionette	INFO	Listening on port 63495
+1588693538929	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/SimpleServices.jsm, line 138: NS_ERROR_FILE_NOT_FOUND
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://d582c10f-b20c-5a40-a430-e0c85229705d/assets/js/contentscript.js
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://d582c10f-b20c-5a40-a430-e0c85229705d/assets/js/contentscript.js
+JavaScript error: resource://gre/modules/SimpleServices.jsm, line 138: NS_ERROR_FILE_NOT_FOUND
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://d582c10f-b20c-5a40-a430-e0c85229705d/assets/js/contentscript.js
+JavaScript error: https://edition.cnn.com/ line 1 > scriptElement, line 22: TypeError: exceptions is undefined
+JavaScript error: https://edition.cnn.com/, line 1: ReferenceError: osdlfm is not defined
+1588693965264	Marionette	INFO	Stopped listening on port 63495
+1588694119160	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofilexoQ50O"
+1588694119897	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588694120589	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588694120590	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588694120590	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588694120590	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1588694123708	Marionette	INFO	Listening on port 56872
+1588694123747	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/SimpleServices.jsm, line 138: NS_ERROR_FILE_NOT_FOUND
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://c8ef28e1-1fa3-214d-a807-413860aa6028/assets/js/contentscript.js
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://c8ef28e1-1fa3-214d-a807-413860aa6028/assets/js/contentscript.js
+JavaScript error: resource://gre/modules/SimpleServices.jsm, line 138: NS_ERROR_FILE_NOT_FOUND
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://c8ef28e1-1fa3-214d-a807-413860aa6028/assets/js/contentscript.js
+1588694132202	Marionette	ERROR	[23] No reply from Marionette:Register
+JavaScript error: https://edition.cnn.com/ line 1 > scriptElement, line 22: TypeError: exceptions is undefined
+1588694138584	Marionette	ERROR	[25] No reply from Marionette:Register
+1588694139224	Marionette	ERROR	[29] No reply from Marionette:Register
+1588694151245	Marionette	ERROR	[31] No reply from Marionette:Register
+JavaScript error: https://eus.rubiconproject.com/usync.html, line 12: SecurityError: The operation is insecure.
+1588694195011	Marionette	INFO	Stopped listening on port 56872
+1588694198689	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofileoIv9yT"
+1588694199398	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588694200005	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588694200006	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588694200006	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588694200006	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1588694202900	Marionette	INFO	Listening on port 58404
+1588694202983	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/SimpleServices.jsm, line 138: NS_ERROR_FILE_NOT_FOUND
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://664819d9-0ce4-4d44-b9db-8e500e08af31/assets/js/contentscript.js
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://664819d9-0ce4-4d44-b9db-8e500e08af31/assets/js/contentscript.js
+JavaScript error: resource://gre/modules/SimpleServices.jsm, line 138: NS_ERROR_FILE_NOT_FOUND
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://664819d9-0ce4-4d44-b9db-8e500e08af31/assets/js/contentscript.js
+JavaScript error: https://edition.cnn.com/ line 1 > scriptElement, line 22: TypeError: exceptions is undefined
+JavaScript error: https://eus.rubiconproject.com/usync.html, line 12: SecurityError: The operation is insecure.
+1588694240076	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofile2BZTgT"
+1588694240725	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588694241334	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588694241335	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588694241335	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588694241335	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1588694244287	Marionette	INFO	Listening on port 59306
+1588694244351	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/SimpleServices.jsm, line 138: NS_ERROR_FILE_NOT_FOUND
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://7de3d6e4-5c21-c747-acc5-e9ced1da8327/assets/js/contentscript.js
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://7de3d6e4-5c21-c747-acc5-e9ced1da8327/assets/js/contentscript.js
+JavaScript error: resource://gre/modules/SimpleServices.jsm, line 138: NS_ERROR_FILE_NOT_FOUND
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://7de3d6e4-5c21-c747-acc5-e9ced1da8327/assets/js/contentscript.js
+1588694249144	Marionette	INFO	Stopped listening on port 58404
+JavaScript error: https://edition.cnn.com/ line 1 > scriptElement, line 22: TypeError: exceptions is undefined
+JavaScript error: https://eus.rubiconproject.com/usync.html, line 12: SecurityError: The operation is insecure.
+1588694275174	Marionette	INFO	Stopped listening on port 59306
+1588694278989	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofileCH967c"
+1588694279759	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588694280373	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588694280373	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588694280373	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588694280373	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1588694283160	Marionette	INFO	Listening on port 60230
+1588694283195	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/SimpleServices.jsm, line 138: NS_ERROR_FILE_NOT_FOUND
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://3bd26f91-7186-e440-8ca4-856ab550b745/assets/js/contentscript.js
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://3bd26f91-7186-e440-8ca4-856ab550b745/assets/js/contentscript.js
+JavaScript error: resource://gre/modules/SimpleServices.jsm, line 138: NS_ERROR_FILE_NOT_FOUND
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://3bd26f91-7186-e440-8ca4-856ab550b745/assets/js/contentscript.js
+JavaScript error: https://edition.cnn.com/ line 1 > scriptElement, line 22: TypeError: exceptions is undefined
+1588694320542	Marionette	ERROR	[23] No reply from Marionette:Register
+1588694325946	Marionette	ERROR	[25] No reply from Marionette:Register
+JavaScript error: https://eus.rubiconproject.com/usync.html, line 12: SecurityError: The operation is insecure.
+1588694879716	Marionette	INFO	Stopped listening on port 60230
+1588695659148	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofiledlIMog"
+1588695662743	Marionette	INFO	Listening on port 50093
+1588695662847	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/SimpleServices.jsm, line 138: NS_ERROR_FILE_NOT_FOUND
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://673ab5ac-284c-7e42-bede-d18a93b953b6/assets/js/contentscript.js
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://673ab5ac-284c-7e42-bede-d18a93b953b6/assets/js/contentscript.js
+JavaScript error: resource://gre/modules/SimpleServices.jsm, line 138: NS_ERROR_FILE_NOT_FOUND
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://673ab5ac-284c-7e42-bede-d18a93b953b6/assets/js/contentscript.js
+1588695684500	Marionette	INFO	Stopped listening on port 50093
+1588695693818	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofilelilZRC"
+1588695697081	Marionette	INFO	Listening on port 50810
+1588695697106	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/SimpleServices.jsm, line 138: NS_ERROR_FILE_NOT_FOUND
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://77f43ba9-0644-4649-b494-eae754eaf4bc/assets/js/contentscript.js
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://77f43ba9-0644-4649-b494-eae754eaf4bc/assets/js/contentscript.js
+JavaScript error: resource://gre/modules/SimpleServices.jsm, line 138: NS_ERROR_FILE_NOT_FOUND
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://77f43ba9-0644-4649-b494-eae754eaf4bc/assets/js/contentscript.js
+1588695702552	Marionette	ERROR	[27] No reply from Marionette:Register
+1588695703041	Marionette	ERROR	[31] No reply from Marionette:Register
+JavaScript error: https://edition.cnn.com/ line 1 > scriptElement, line 22: TypeError: exceptions is undefined
+1588695714748	Marionette	ERROR	[35] No reply from Marionette:Register
+1588695855268	Marionette	INFO	Stopped listening on port 50810
+1588696176580	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofileIHziuS"
+1588696183411	Marionette	INFO	Listening on port 58850
+1588696183531	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/SimpleServices.jsm, line 138: NS_ERROR_FILE_NOT_FOUND
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://cadbde29-07f8-3747-a1e8-e6f56279bc63/assets/js/contentscript.js
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://cadbde29-07f8-3747-a1e8-e6f56279bc63/assets/js/contentscript.js
+JavaScript error: resource://gre/modules/SimpleServices.jsm, line 138: NS_ERROR_FILE_NOT_FOUND
+JavaScript error: , line 0: uncaught exception: Unable to load script: moz-extension://cadbde29-07f8-3747-a1e8-e6f56279bc63/assets/js/contentscript.js
+1588696185874	Marionette	ERROR	[29] No reply from Marionette:Register
+1588696199966	Marionette	ERROR	[31] No reply from Marionette:Register
+JavaScript error: https://edition.cnn.com/ line 1 > scriptElement, line 22: TypeError: exceptions is undefined
+1588696257404	Marionette	INFO	Stopped listening on port 58850
+1588696268366	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofiler3Y3Um"
+1588696274915	Marionette	INFO	Listening on port 60642
+1588696274997	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588696425807	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofilesnTIX9"
+1588696433957	Marionette	INFO	Listening on port 63248
+1588696434035	Marionette	WARN	TLS certificate errors will be ignored for this session
+objc[42721]: Class FIFinderSyncExtensionHost is implemented in both /System/Library/PrivateFrameworks/FinderKit.framework/Versions/A/FinderKit (0x7fff9b0a9c90) and /System/Library/PrivateFrameworks/FileProvider.framework/OverrideBundles/FinderSyncCollaborationFileProviderOverride.bundle/Contents/MacOS/FinderSyncCollaborationFileProviderOverride (0x124c49cd8). One of the two will be used. Which one is undefined.
+1588696471391	Marionette	INFO	Stopped listening on port 63248
+1588696471821	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofileNADYmO"
+1588696478806	Marionette	INFO	Listening on port 64077
+1588696478931	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588696620056	Marionette	INFO	Stopped listening on port 64077
+1588699305759	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofilebP7MsH"
+1588699310352	Marionette	INFO	Listening on port 64307
+1588699310397	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588699331774	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofileujy1Eo"
+1588699335384	Marionette	INFO	Listening on port 64794
+1588699335504	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588699348896	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofileV3i0YO"
+1588699352806	Marionette	INFO	Listening on port 65127
+1588699352862	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588699388436	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofilemOxTVm"
+1588699393196	Marionette	INFO	Listening on port 49434
+1588699393264	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/UpdateTimerManager.jsm, line 352: TypeError: setting getter-only property "gLogEnabled"
+JavaScript error: resource://gre/modules/ModulesPing.jsm, line 70: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "setting getter-only property "gLogEnabled"" {file: "resource://gre/modules/UpdateTimerManager.jsm" line: 352}]'[JavaScript Error: "setting getter-only property "gLogEnabled"" {file: "resource://gre/modules/UpdateTimerManager.jsm" line: 352}]' when calling method: [nsIUpdateTimerManager::registerTimer]
+1588699394054	Marionette	INFO	Stopped listening on port 64794
+1588699395339	Marionette	INFO	Stopped listening on port 65127
+1588699396393	Marionette	INFO	Stopped listening on port 49434
+1588701716659	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofilejj34yQ"
+1588701726091	Marionette	INFO	Listening on port 54508
+1588701726225	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588701860800	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofilek2wuT7"
+1588701864054	Marionette	INFO	Stopped listening on port 54508
+1588701866206	Marionette	INFO	Stopped listening on port 64307
+1588701869170	Marionette	INFO	Listening on port 56923
+1588701869264	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588701945384	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-devtools" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofileDPtypt"
+1588701945392	geckodriver::marionette	DEBUG	Waiting 60s to connect to browser on 127.0.0.1:58397
+1588701947212	Marionette	TRACE	Marionette enabled
+1588701947570	Marionette	TRACE	Received observer notification toplevel-window-ready
+1588701954157	Marionette	INFO	Stopped listening on port 56923
+1588701959282	Marionette	TRACE	Received observer notification marionette-startup-requested
+1588701959282	Marionette	TRACE	Waiting until startup recorder finished recording startup scripts...
+1588701959538	Marionette	TRACE	All scripts recorded.
+1588701959539	Marionette	DEBUG	Setting recommended pref apz.content_response_timeout to 60000
+1588701959540	Marionette	DEBUG	Setting recommended pref browser.contentblocking.introCount to 99
+1588701959542	Marionette	DEBUG	Setting recommended pref browser.download.panel.shown to true
+1588701959542	Marionette	DEBUG	Setting recommended pref browser.pagethumbnails.capturing_disabled to true
+1588701959544	Marionette	DEBUG	Setting recommended pref browser.tabs.disableBackgroundZombification to false
+1588701959545	Marionette	DEBUG	Setting recommended pref browser.tabs.remote.separatePrivilegedContentProcess to false
+1588701959545	Marionette	DEBUG	Setting recommended pref browser.tabs.unloadOnLowMemory to false
+1588701959546	Marionette	DEBUG	Setting recommended pref browser.tabs.warnOnCloseOtherTabs to false
+1588701959546	Marionette	DEBUG	Setting recommended pref browser.urlbar.suggest.searches to false
+1588701959549	Marionette	DEBUG	Setting recommended pref datareporting.policy.dataSubmissionPolicyAccepted to false
+1588701959549	Marionette	DEBUG	Setting recommended pref dom.disable_beforeunload to true
+1588701959550	Marionette	DEBUG	Setting recommended pref dom.file.createInChild to true
+1588701959550	Marionette	DEBUG	Setting recommended pref dom.push.connection.enabled to false
+1588701959551	Marionette	DEBUG	Setting recommended pref extensions.getAddons.cache.enabled to false
+1588701959552	Marionette	DEBUG	Setting recommended pref extensions.webservice.discoverURL to http://%(server)s/dummy/discoveryURL
+1588701959552	Marionette	DEBUG	Setting recommended pref network.http.prompt-temp-redirect to false
+1588701959553	Marionette	DEBUG	Setting recommended pref network.http.speculative-parallel-limit to 0
+1588701959556	Marionette	DEBUG	Setting recommended pref privacy.trackingprotection.enabled to false
+1588701959556	Marionette	DEBUG	Setting recommended pref security.notification_enable_delay to 0
+1588701959556	Marionette	DEBUG	Setting recommended pref signon.autofillForms to false
+1588701959557	Marionette	DEBUG	Setting recommended pref toolkit.cosmeticAnimations.enabled to false
+1588701959821	Marionette	INFO	Listening on port 58397
+1588701959822	Marionette	DEBUG	Marionette is listening
+1588701959898	Marionette	DEBUG	Accepted connection 0 from 127.0.0.1:58784
+1588701959901	geckodriver::marionette	DEBUG	Connection to Marionette established on 127.0.0.1:58397.
+1588701959936	Marionette	DEBUG	0 -> [0,1,"WebDriver:NewSession",{"acceptInsecureCerts":true,"browserName":"firefox"}]
+1588701959938	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588701959985	Marionette	TRACE	[11] Frame script loaded
+1588701959986	Marionette	TRACE	[11] Frame script registered
+1588701960013	Marionette	TRACE	[6] Frame script loaded
+1588701960088	Marionette	TRACE	[6] Frame script registered
+1588701960109	Marionette	DEBUG	0 <- [1,1,null,{"sessionId":"13751c8a-f5d4-c244-b40c-003e307af460","capabilities":{"browserName":"firefox","browserVersion":"76.0" ... /rust_mozprofileDPtypt","moz:shutdownTimeout":60000,"moz:useNonSpecCompliantPointerOrigin":false,"moz:webdriverClick":true}}]
+1588701960120	webdriver::server	DEBUG	<- 200 OK {"value":{"sessionId":"13751c8a-f5d4-c244-b40c-003e307af460","capabilities":{"acceptInsecureCerts":true,"browserName":"firefox","browserVersion":"76.0","moz:accessibilityChecks":false,"moz:buildID":"20200429185419","moz:geckodriverVersion":"0.26.0","moz:headless":false,"moz:processID":95507,"moz:profile":"/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofileDPtypt","moz:shutdownTimeout":60000,"moz:useNonSpecCompliantPointerOrigin":false,"moz:webdriverClick":true,"pageLoadStrategy":"normal","platformName":"mac","platformVersion":"17.7.0","rotatable":false,"setWindowRect":true,"strictFileInteractability":false,"timeouts":{"implicit":0,"pageLoad":300000,"script":30000},"unhandledPromptBehavior":"dismiss and notify"}}}
+1588701960160	webdriver::server	DEBUG	-> POST /session/13751c8a-f5d4-c244-b40c-003e307af460/element {"using": "css selector", "value": "body"}
+1588701960163	Marionette	DEBUG	0 -> [0,2,"WebDriver:FindElement",{"using":"css selector","value":"body"}]
+1588701960178	Marionette	DEBUG	0 <- [1,2,null,{"value":{"element-6066-11e4-a52e-4f735466cecf":"7126a7d2-2f56-b347-8520-590c62f6305e"}}]
+1588701960179	webdriver::server	DEBUG	<- 200 OK {"value":{"element-6066-11e4-a52e-4f735466cecf":"7126a7d2-2f56-b347-8520-590c62f6305e"}}
+1588702683461	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofileK1fao9"
+1588702688296	Marionette	INFO	Listening on port 53018
+1588702688340	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588702713579	Marionette	DEBUG	Closed connection 0
+1588702713715	Marionette	TRACE	Received observer notification xpcom-will-shutdown
+1588702713716	Marionette	DEBUG	Resetting recommended pref apz.content_response_timeout
+1588702713716	Marionette	DEBUG	Resetting recommended pref browser.contentblocking.introCount
+1588702713716	Marionette	DEBUG	Resetting recommended pref browser.download.panel.shown
+1588702713716	Marionette	DEBUG	Resetting recommended pref browser.pagethumbnails.capturing_disabled
+1588702713716	Marionette	DEBUG	Resetting recommended pref browser.tabs.disableBackgroundZombification
+1588702713717	Marionette	DEBUG	Resetting recommended pref browser.tabs.remote.separatePrivilegedContentProcess
+1588702713717	Marionette	DEBUG	Resetting recommended pref browser.tabs.unloadOnLowMemory
+1588702713717	Marionette	DEBUG	Resetting recommended pref browser.tabs.warnOnCloseOtherTabs
+1588702713717	Marionette	DEBUG	Resetting recommended pref browser.urlbar.suggest.searches
+1588702713719	Marionette	DEBUG	Resetting recommended pref datareporting.policy.dataSubmissionPolicyAccepted
+1588702713719	Marionette	DEBUG	Resetting recommended pref dom.disable_beforeunload
+1588702713719	Marionette	DEBUG	Resetting recommended pref dom.file.createInChild
+1588702713719	Marionette	DEBUG	Resetting recommended pref dom.push.connection.enabled
+1588702713719	Marionette	DEBUG	Resetting recommended pref extensions.getAddons.cache.enabled
+1588702713720	Marionette	DEBUG	Resetting recommended pref extensions.webservice.discoverURL
+1588702713720	Marionette	DEBUG	Resetting recommended pref network.http.prompt-temp-redirect
+1588702713720	Marionette	DEBUG	Resetting recommended pref network.http.speculative-parallel-limit
+1588702713720	Marionette	DEBUG	Resetting recommended pref privacy.trackingprotection.enabled
+1588702713720	Marionette	DEBUG	Resetting recommended pref security.notification_enable_delay
+1588702713720	Marionette	DEBUG	Resetting recommended pref signon.autofillForms
+1588702713721	Marionette	DEBUG	Resetting recommended pref toolkit.cosmeticAnimations.enabled
+1588702713722	Marionette	INFO	Stopped listening on port 58397
+1588702713722	Marionette	DEBUG	Marionette stopped listening
+1588702714602	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofileQ4QYY9"
+1588702716166	Marionette	INFO	Stopped listening on port 53018
+1588702718889	Marionette	INFO	Listening on port 53593
+1588702718953	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://g.alicdn.com/??kissy/k/1.4.14/seed-min.js,mui/kissy-polyfill/4.0.16/index.js,mui/zepto/4.0.9/zepto.js,mui/zepto/4.0.9/event.js,mui/zepto/4.0.9/touch.js,mui/mtb-windvane/4.0.3/index.js,mui/babel-polyfill/6.2.7/index.js,mui/mtop/4.1.9/index.js,mui/zebra-dynamic/4.2.12/io.js,mui/zebra-dynamic/4.2.12/ald-bottom.js,mui/fetch/4.1.12/tool.js,mui/zebra-dynamic/4.2.12/request.js,mui/cookie/4.1.0/index.js,mui/zebra-dynamic/4.2.12/plugins/region/index.js,mui/zebra-dynamic/4.2.12/plugins/chaoshi/index.js,mui/zebra-dynamic/4.2.12/plugins/userId/index.js,mui/zebra-dynamic/4.2.12/plugin.js,mui/zebra-dynamic/4.2.12/index.js,mui/common/4.0.105/js/mod-config.js,mui/common/4.0.105/js/event.js,mui/custom-event/4.0.3/index.js,mui/common/4.0.105/js/tm.js,mui/common/4.0.105/js/tool.js,mui/common/4.0.105/js/site-nav.js,mui/common/4.0.105/js/plugin-pc.js,mui/common/4.0.105/index-pc.js,mui/location/4.1.0/get-user-location-by-ip.js,mui/zebra-loader/4.4.15/index.js,mui/bat/5.0.11/index.js,mui/tes/5.0.14/index.js,mui/zebra-oversea-header-pc/4.0.33/index-pc.js, line 106: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+JavaScript error: https://g.alicdn.com/??kissy/k/1.4.14/seed-min.js,mui/kissy-polyfill/4.0.16/index.js,mui/zepto/4.0.9/zepto.js,mui/zepto/4.0.9/event.js,mui/zepto/4.0.9/touch.js,mui/mtb-windvane/4.0.3/index.js,mui/babel-polyfill/6.2.7/index.js,mui/mtop/4.1.9/index.js,mui/zebra-dynamic/4.2.12/io.js,mui/zebra-dynamic/4.2.12/ald-bottom.js,mui/fetch/4.1.12/tool.js,mui/zebra-dynamic/4.2.12/request.js,mui/cookie/4.1.0/index.js,mui/zebra-dynamic/4.2.12/plugins/region/index.js,mui/zebra-dynamic/4.2.12/plugins/chaoshi/index.js,mui/zebra-dynamic/4.2.12/plugins/userId/index.js,mui/zebra-dynamic/4.2.12/plugin.js,mui/zebra-dynamic/4.2.12/index.js,mui/common/4.0.105/js/mod-config.js,mui/common/4.0.105/js/event.js,mui/custom-event/4.0.3/index.js,mui/common/4.0.105/js/tm.js,mui/common/4.0.105/js/tool.js,mui/common/4.0.105/js/site-nav.js,mui/common/4.0.105/js/plugin-pc.js,mui/common/4.0.105/index-pc.js,mui/location/4.1.0/get-user-location-by-ip.js,mui/zebra-loader/4.4.15/index.js,mui/bat/5.0.11/index.js,mui/tes/5.0.14/index.js,mui/zebra-oversea-header-pc/4.0.33/index-pc.js, line 106: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+JavaScript warning: https://g.alicdn.com/secdev/sufei_data/3.9.0/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://g.alicdn.com/secdev/nsv/1.0.76/ns_e_86_3_n.js, line 2: WebGL context was lost.
+JavaScript error: https://login.taobao.com/jump?target=https://www.tmall.com, line 27: SyntaxError: expected expression, got '<'
+1588702856490	Marionette	INFO	Stopped listening on port 53593
+1588705057805	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofileDEj4uF"
+1588705062876	Marionette	INFO	Listening on port 58071
+1588705062973	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://g.alicdn.com/??kissy/k/1.4.14/seed-min.js,mui/kissy-polyfill/4.0.16/index.js,mui/zepto/4.0.9/zepto.js,mui/zepto/4.0.9/event.js,mui/zepto/4.0.9/touch.js,mui/mtb-windvane/4.0.3/index.js,mui/babel-polyfill/6.2.7/index.js,mui/mtop/4.1.9/index.js,mui/zebra-dynamic/4.2.12/io.js,mui/zebra-dynamic/4.2.12/ald-bottom.js,mui/fetch/4.1.12/tool.js,mui/zebra-dynamic/4.2.12/request.js,mui/cookie/4.1.0/index.js,mui/zebra-dynamic/4.2.12/plugins/region/index.js,mui/zebra-dynamic/4.2.12/plugins/chaoshi/index.js,mui/zebra-dynamic/4.2.12/plugins/userId/index.js,mui/zebra-dynamic/4.2.12/plugin.js,mui/zebra-dynamic/4.2.12/index.js,mui/common/4.0.105/js/mod-config.js,mui/common/4.0.105/js/event.js,mui/custom-event/4.0.3/index.js,mui/common/4.0.105/js/tm.js,mui/common/4.0.105/js/tool.js,mui/common/4.0.105/js/site-nav.js,mui/common/4.0.105/js/plugin-pc.js,mui/common/4.0.105/index-pc.js,mui/zebra-oversea-header-pc/4.0.33/index-pc.js,mui/location/4.1.0/get-user-location-by-ip.js,mui/zebra-loader/4.4.15/index.js,mui/bat/5.0.11/index.js,mui/tes/5.0.14/index.js, line 106: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+JavaScript error: https://g.alicdn.com/??kissy/k/1.4.14/seed-min.js,mui/kissy-polyfill/4.0.16/index.js,mui/zepto/4.0.9/zepto.js,mui/zepto/4.0.9/event.js,mui/zepto/4.0.9/touch.js,mui/mtb-windvane/4.0.3/index.js,mui/babel-polyfill/6.2.7/index.js,mui/mtop/4.1.9/index.js,mui/zebra-dynamic/4.2.12/io.js,mui/zebra-dynamic/4.2.12/ald-bottom.js,mui/fetch/4.1.12/tool.js,mui/zebra-dynamic/4.2.12/request.js,mui/cookie/4.1.0/index.js,mui/zebra-dynamic/4.2.12/plugins/region/index.js,mui/zebra-dynamic/4.2.12/plugins/chaoshi/index.js,mui/zebra-dynamic/4.2.12/plugins/userId/index.js,mui/zebra-dynamic/4.2.12/plugin.js,mui/zebra-dynamic/4.2.12/index.js,mui/common/4.0.105/js/mod-config.js,mui/common/4.0.105/js/event.js,mui/custom-event/4.0.3/index.js,mui/common/4.0.105/js/tm.js,mui/common/4.0.105/js/tool.js,mui/common/4.0.105/js/site-nav.js,mui/common/4.0.105/js/plugin-pc.js,mui/common/4.0.105/index-pc.js,mui/zebra-oversea-header-pc/4.0.33/index-pc.js,mui/location/4.1.0/get-user-location-by-ip.js,mui/zebra-loader/4.4.15/index.js,mui/bat/5.0.11/index.js,mui/tes/5.0.14/index.js, line 106: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+JavaScript warning: https://g.alicdn.com/secdev/sufei_data/3.9.0/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://g.alicdn.com/secdev/nsv/1.0.76/ns_e_86_3_n.js, line 2: WebGL context was lost.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+1588705285562	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofile8B8CgA"
+1588705288881	Marionette	INFO	Listening on port 62009
+1588705288997	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://g.alicdn.com/??kissy/k/1.4.14/seed-min.js,mui/kissy-polyfill/4.0.16/index.js,mui/zepto/4.0.9/zepto.js,mui/zepto/4.0.9/event.js,mui/zepto/4.0.9/touch.js,mui/mtb-windvane/4.0.3/index.js,mui/babel-polyfill/6.2.7/index.js,mui/mtop/4.1.9/index.js,mui/zebra-dynamic/4.2.12/io.js,mui/zebra-dynamic/4.2.12/ald-bottom.js,mui/fetch/4.1.12/tool.js,mui/zebra-dynamic/4.2.12/request.js,mui/cookie/4.1.0/index.js,mui/zebra-dynamic/4.2.12/plugins/region/index.js,mui/zebra-dynamic/4.2.12/plugins/chaoshi/index.js,mui/zebra-dynamic/4.2.12/plugins/userId/index.js,mui/zebra-dynamic/4.2.12/plugin.js,mui/zebra-dynamic/4.2.12/index.js,mui/common/4.0.105/js/mod-config.js,mui/common/4.0.105/js/event.js,mui/custom-event/4.0.3/index.js,mui/common/4.0.105/js/tm.js,mui/common/4.0.105/js/tool.js,mui/common/4.0.105/js/site-nav.js,mui/common/4.0.105/js/plugin-pc.js,mui/common/4.0.105/index-pc.js,mui/location/4.1.0/get-user-location-by-ip.js,mui/zebra-loader/4.4.15/index.js,mui/bat/5.0.11/index.js,mui/tes/5.0.14/index.js,mui/zebra-oversea-header-pc/4.0.33/index-pc.js, line 106: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+JavaScript error: https://g.alicdn.com/??kissy/k/1.4.14/seed-min.js,mui/kissy-polyfill/4.0.16/index.js,mui/zepto/4.0.9/zepto.js,mui/zepto/4.0.9/event.js,mui/zepto/4.0.9/touch.js,mui/mtb-windvane/4.0.3/index.js,mui/babel-polyfill/6.2.7/index.js,mui/mtop/4.1.9/index.js,mui/zebra-dynamic/4.2.12/io.js,mui/zebra-dynamic/4.2.12/ald-bottom.js,mui/fetch/4.1.12/tool.js,mui/zebra-dynamic/4.2.12/request.js,mui/cookie/4.1.0/index.js,mui/zebra-dynamic/4.2.12/plugins/region/index.js,mui/zebra-dynamic/4.2.12/plugins/chaoshi/index.js,mui/zebra-dynamic/4.2.12/plugins/userId/index.js,mui/zebra-dynamic/4.2.12/plugin.js,mui/zebra-dynamic/4.2.12/index.js,mui/common/4.0.105/js/mod-config.js,mui/common/4.0.105/js/event.js,mui/custom-event/4.0.3/index.js,mui/common/4.0.105/js/tm.js,mui/common/4.0.105/js/tool.js,mui/common/4.0.105/js/site-nav.js,mui/common/4.0.105/js/plugin-pc.js,mui/common/4.0.105/index-pc.js,mui/location/4.1.0/get-user-location-by-ip.js,mui/zebra-loader/4.4.15/index.js,mui/bat/5.0.11/index.js,mui/tes/5.0.14/index.js,mui/zebra-oversea-header-pc/4.0.33/index-pc.js, line 106: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+JavaScript warning: https://g.alicdn.com/secdev/sufei_data/3.9.0/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://g.alicdn.com/secdev/nsv/1.0.76/ns_e_86_3_n.js, line 2: WebGL context was lost.
+JavaScript error: https://login.taobao.com/jump?target=https://www.tmall.com, line 27: SyntaxError: expected expression, got '<'
+1588705499420	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofilej70AbE"
+1588705503190	Marionette	INFO	Listening on port 49313
+1588705503234	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://g.alicdn.com/??kissy/k/1.4.14/seed-min.js,mui/kissy-polyfill/4.0.16/index.js,mui/zepto/4.0.9/zepto.js,mui/zepto/4.0.9/event.js,mui/zepto/4.0.9/touch.js,mui/mtb-windvane/4.0.3/index.js,mui/babel-polyfill/6.2.7/index.js,mui/mtop/4.1.9/index.js,mui/zebra-dynamic/4.2.12/io.js,mui/zebra-dynamic/4.2.12/ald-bottom.js,mui/fetch/4.1.12/tool.js,mui/zebra-dynamic/4.2.12/request.js,mui/cookie/4.1.0/index.js,mui/zebra-dynamic/4.2.12/plugins/region/index.js,mui/zebra-dynamic/4.2.12/plugins/chaoshi/index.js,mui/zebra-dynamic/4.2.12/plugins/userId/index.js,mui/zebra-dynamic/4.2.12/plugin.js,mui/zebra-dynamic/4.2.12/index.js,mui/common/4.0.105/js/mod-config.js,mui/common/4.0.105/js/event.js,mui/custom-event/4.0.3/index.js,mui/common/4.0.105/js/tm.js,mui/common/4.0.105/js/tool.js,mui/common/4.0.105/js/site-nav.js,mui/common/4.0.105/js/plugin-pc.js,mui/common/4.0.105/index-pc.js,mui/location/4.1.0/get-user-location-by-ip.js,mui/zebra-loader/4.4.15/index.js,mui/bat/5.0.11/index.js,mui/tes/5.0.14/index.js,mui/zebra-oversea-header-pc/4.0.33/index-pc.js, line 106: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+JavaScript error: https://g.alicdn.com/??kissy/k/1.4.14/seed-min.js,mui/kissy-polyfill/4.0.16/index.js,mui/zepto/4.0.9/zepto.js,mui/zepto/4.0.9/event.js,mui/zepto/4.0.9/touch.js,mui/mtb-windvane/4.0.3/index.js,mui/babel-polyfill/6.2.7/index.js,mui/mtop/4.1.9/index.js,mui/zebra-dynamic/4.2.12/io.js,mui/zebra-dynamic/4.2.12/ald-bottom.js,mui/fetch/4.1.12/tool.js,mui/zebra-dynamic/4.2.12/request.js,mui/cookie/4.1.0/index.js,mui/zebra-dynamic/4.2.12/plugins/region/index.js,mui/zebra-dynamic/4.2.12/plugins/chaoshi/index.js,mui/zebra-dynamic/4.2.12/plugins/userId/index.js,mui/zebra-dynamic/4.2.12/plugin.js,mui/zebra-dynamic/4.2.12/index.js,mui/common/4.0.105/js/mod-config.js,mui/common/4.0.105/js/event.js,mui/custom-event/4.0.3/index.js,mui/common/4.0.105/js/tm.js,mui/common/4.0.105/js/tool.js,mui/common/4.0.105/js/site-nav.js,mui/common/4.0.105/js/plugin-pc.js,mui/common/4.0.105/index-pc.js,mui/location/4.1.0/get-user-location-by-ip.js,mui/zebra-loader/4.4.15/index.js,mui/bat/5.0.11/index.js,mui/tes/5.0.14/index.js,mui/zebra-oversea-header-pc/4.0.33/index-pc.js, line 106: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+JavaScript warning: https://g.alicdn.com/secdev/sufei_data/3.9.0/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://g.alicdn.com/secdev/nsv/1.0.76/ns_e_86_3_n.js, line 2: WebGL context was lost.
+JavaScript error: https://login.taobao.com/jump?target=https://www.tmall.com, line 27: SyntaxError: expected expression, got '<'
+1588705539759	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofilefMpRyo"
+1588705544039	Marionette	INFO	Stopped listening on port 49313
+1588705544266	Marionette	INFO	Listening on port 50146
+1588705544302	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://g.alicdn.com/??kissy/k/1.4.14/seed-min.js,mui/kissy-polyfill/4.0.16/index.js,mui/zepto/4.0.9/zepto.js,mui/zepto/4.0.9/event.js,mui/zepto/4.0.9/touch.js,mui/mtb-windvane/4.0.3/index.js,mui/babel-polyfill/6.2.7/index.js,mui/mtop/4.1.9/index.js,mui/zebra-dynamic/4.2.12/io.js,mui/zebra-dynamic/4.2.12/ald-bottom.js,mui/fetch/4.1.12/tool.js,mui/zebra-dynamic/4.2.12/request.js,mui/cookie/4.1.0/index.js,mui/zebra-dynamic/4.2.12/plugins/region/index.js,mui/zebra-dynamic/4.2.12/plugins/chaoshi/index.js,mui/zebra-dynamic/4.2.12/plugins/userId/index.js,mui/zebra-dynamic/4.2.12/plugin.js,mui/zebra-dynamic/4.2.12/index.js,mui/common/4.0.105/js/mod-config.js,mui/common/4.0.105/js/event.js,mui/custom-event/4.0.3/index.js,mui/common/4.0.105/js/tm.js,mui/common/4.0.105/js/tool.js,mui/common/4.0.105/js/site-nav.js,mui/common/4.0.105/js/plugin-pc.js,mui/common/4.0.105/index-pc.js,mui/location/4.1.0/get-user-location-by-ip.js,mui/zebra-loader/4.4.15/index.js,mui/bat/5.0.11/index.js,mui/tes/5.0.14/index.js,mui/zebra-oversea-header-pc/4.0.33/index-pc.js, line 106: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+JavaScript error: https://g.alicdn.com/??kissy/k/1.4.14/seed-min.js,mui/kissy-polyfill/4.0.16/index.js,mui/zepto/4.0.9/zepto.js,mui/zepto/4.0.9/event.js,mui/zepto/4.0.9/touch.js,mui/mtb-windvane/4.0.3/index.js,mui/babel-polyfill/6.2.7/index.js,mui/mtop/4.1.9/index.js,mui/zebra-dynamic/4.2.12/io.js,mui/zebra-dynamic/4.2.12/ald-bottom.js,mui/fetch/4.1.12/tool.js,mui/zebra-dynamic/4.2.12/request.js,mui/cookie/4.1.0/index.js,mui/zebra-dynamic/4.2.12/plugins/region/index.js,mui/zebra-dynamic/4.2.12/plugins/chaoshi/index.js,mui/zebra-dynamic/4.2.12/plugins/userId/index.js,mui/zebra-dynamic/4.2.12/plugin.js,mui/zebra-dynamic/4.2.12/index.js,mui/common/4.0.105/js/mod-config.js,mui/common/4.0.105/js/event.js,mui/custom-event/4.0.3/index.js,mui/common/4.0.105/js/tm.js,mui/common/4.0.105/js/tool.js,mui/common/4.0.105/js/site-nav.js,mui/common/4.0.105/js/plugin-pc.js,mui/common/4.0.105/index-pc.js,mui/location/4.1.0/get-user-location-by-ip.js,mui/zebra-loader/4.4.15/index.js,mui/bat/5.0.11/index.js,mui/tes/5.0.14/index.js,mui/zebra-oversea-header-pc/4.0.33/index-pc.js, line 106: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+JavaScript warning: https://g.alicdn.com/secdev/sufei_data/3.9.0/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://g.alicdn.com/secdev/nsv/1.0.76/ns_e_86_3_n.js, line 2: WebGL context was lost.
+JavaScript error: https://login.taobao.com/jump?target=https://www.tmall.com, line 27: SyntaxError: expected expression, got '<'
+1588705581185	Marionette	INFO	Stopped listening on port 50146
+1588705582735	Marionette	INFO	Stopped listening on port 62009
+1588705589926	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofileeRJr6i"
+1588705593580	Marionette	INFO	Listening on port 51176
+1588705593637	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://g.alicdn.com/??kissy/k/1.4.14/seed-min.js,mui/kissy-polyfill/4.0.16/index.js,mui/zepto/4.0.9/zepto.js,mui/zepto/4.0.9/event.js,mui/zepto/4.0.9/touch.js,mui/mtb-windvane/4.0.3/index.js,mui/babel-polyfill/6.2.7/index.js,mui/mtop/4.1.9/index.js,mui/zebra-dynamic/4.2.12/io.js,mui/zebra-dynamic/4.2.12/ald-bottom.js,mui/fetch/4.1.12/tool.js,mui/zebra-dynamic/4.2.12/request.js,mui/cookie/4.1.0/index.js,mui/zebra-dynamic/4.2.12/plugins/region/index.js,mui/zebra-dynamic/4.2.12/plugins/chaoshi/index.js,mui/zebra-dynamic/4.2.12/plugins/userId/index.js,mui/zebra-dynamic/4.2.12/plugin.js,mui/zebra-dynamic/4.2.12/index.js,mui/common/4.0.105/js/mod-config.js,mui/common/4.0.105/js/event.js,mui/custom-event/4.0.3/index.js,mui/common/4.0.105/js/tm.js,mui/common/4.0.105/js/tool.js,mui/common/4.0.105/js/site-nav.js,mui/common/4.0.105/js/plugin-pc.js,mui/common/4.0.105/index-pc.js,mui/location/4.1.0/get-user-location-by-ip.js,mui/zebra-loader/4.4.15/index.js,mui/bat/5.0.11/index.js,mui/tes/5.0.14/index.js,mui/zebra-oversea-header-pc/4.0.33/index-pc.js, line 106: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+JavaScript error: https://g.alicdn.com/??kissy/k/1.4.14/seed-min.js,mui/kissy-polyfill/4.0.16/index.js,mui/zepto/4.0.9/zepto.js,mui/zepto/4.0.9/event.js,mui/zepto/4.0.9/touch.js,mui/mtb-windvane/4.0.3/index.js,mui/babel-polyfill/6.2.7/index.js,mui/mtop/4.1.9/index.js,mui/zebra-dynamic/4.2.12/io.js,mui/zebra-dynamic/4.2.12/ald-bottom.js,mui/fetch/4.1.12/tool.js,mui/zebra-dynamic/4.2.12/request.js,mui/cookie/4.1.0/index.js,mui/zebra-dynamic/4.2.12/plugins/region/index.js,mui/zebra-dynamic/4.2.12/plugins/chaoshi/index.js,mui/zebra-dynamic/4.2.12/plugins/userId/index.js,mui/zebra-dynamic/4.2.12/plugin.js,mui/zebra-dynamic/4.2.12/index.js,mui/common/4.0.105/js/mod-config.js,mui/common/4.0.105/js/event.js,mui/custom-event/4.0.3/index.js,mui/common/4.0.105/js/tm.js,mui/common/4.0.105/js/tool.js,mui/common/4.0.105/js/site-nav.js,mui/common/4.0.105/js/plugin-pc.js,mui/common/4.0.105/index-pc.js,mui/location/4.1.0/get-user-location-by-ip.js,mui/zebra-loader/4.4.15/index.js,mui/bat/5.0.11/index.js,mui/tes/5.0.14/index.js,mui/zebra-oversea-header-pc/4.0.33/index-pc.js, line 106: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+JavaScript warning: https://g.alicdn.com/secdev/sufei_data/3.9.0/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://g.alicdn.com/secdev/nsv/1.0.76/ns_e_86_3_n.js, line 2: WebGL context was lost.
+1588705633291	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofilekW8SsQ"
+1588705637070	Marionette	INFO	Listening on port 52020
+1588705637091	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://g.alicdn.com/??kissy/k/1.4.14/seed-min.js,mui/kissy-polyfill/4.0.16/index.js,mui/zepto/4.0.9/zepto.js,mui/zepto/4.0.9/event.js,mui/zepto/4.0.9/touch.js,mui/mtb-windvane/4.0.3/index.js,mui/babel-polyfill/6.2.7/index.js,mui/mtop/4.1.9/index.js,mui/zebra-dynamic/4.2.12/io.js,mui/zebra-dynamic/4.2.12/ald-bottom.js,mui/fetch/4.1.12/tool.js,mui/zebra-dynamic/4.2.12/request.js,mui/cookie/4.1.0/index.js,mui/zebra-dynamic/4.2.12/plugins/region/index.js,mui/zebra-dynamic/4.2.12/plugins/chaoshi/index.js,mui/zebra-dynamic/4.2.12/plugins/userId/index.js,mui/zebra-dynamic/4.2.12/plugin.js,mui/zebra-dynamic/4.2.12/index.js,mui/common/4.0.105/js/mod-config.js,mui/common/4.0.105/js/event.js,mui/custom-event/4.0.3/index.js,mui/common/4.0.105/js/tm.js,mui/common/4.0.105/js/tool.js,mui/common/4.0.105/js/site-nav.js,mui/common/4.0.105/js/plugin-pc.js,mui/common/4.0.105/index-pc.js,mui/location/4.1.0/get-user-location-by-ip.js,mui/zebra-loader/4.4.15/index.js,mui/bat/5.0.11/index.js,mui/tes/5.0.14/index.js,mui/zebra-oversea-header-pc/4.0.33/index-pc.js, line 106: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+JavaScript error: https://g.alicdn.com/??kissy/k/1.4.14/seed-min.js,mui/kissy-polyfill/4.0.16/index.js,mui/zepto/4.0.9/zepto.js,mui/zepto/4.0.9/event.js,mui/zepto/4.0.9/touch.js,mui/mtb-windvane/4.0.3/index.js,mui/babel-polyfill/6.2.7/index.js,mui/mtop/4.1.9/index.js,mui/zebra-dynamic/4.2.12/io.js,mui/zebra-dynamic/4.2.12/ald-bottom.js,mui/fetch/4.1.12/tool.js,mui/zebra-dynamic/4.2.12/request.js,mui/cookie/4.1.0/index.js,mui/zebra-dynamic/4.2.12/plugins/region/index.js,mui/zebra-dynamic/4.2.12/plugins/chaoshi/index.js,mui/zebra-dynamic/4.2.12/plugins/userId/index.js,mui/zebra-dynamic/4.2.12/plugin.js,mui/zebra-dynamic/4.2.12/index.js,mui/common/4.0.105/js/mod-config.js,mui/common/4.0.105/js/event.js,mui/custom-event/4.0.3/index.js,mui/common/4.0.105/js/tm.js,mui/common/4.0.105/js/tool.js,mui/common/4.0.105/js/site-nav.js,mui/common/4.0.105/js/plugin-pc.js,mui/common/4.0.105/index-pc.js,mui/location/4.1.0/get-user-location-by-ip.js,mui/zebra-loader/4.4.15/index.js,mui/bat/5.0.11/index.js,mui/tes/5.0.14/index.js,mui/zebra-oversea-header-pc/4.0.33/index-pc.js, line 106: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+JavaScript warning: https://g.alicdn.com/secdev/sufei_data/3.9.0/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://g.alicdn.com/secdev/nsv/1.0.76/ns_e_86_3_n.js, line 2: WebGL context was lost.
+JavaScript error: https://login.taobao.com/jump?target=https://www.tmall.com, line 27: SyntaxError: expected expression, got '<'
+1588705663892	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofile5JhaA5"
+1588705667535	Marionette	INFO	Listening on port 52729
+1588705667610	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://g.alicdn.com/??kissy/k/1.4.14/seed-min.js,mui/kissy-polyfill/4.0.16/index.js,mui/zepto/4.0.9/zepto.js,mui/zepto/4.0.9/event.js,mui/zepto/4.0.9/touch.js,mui/mtb-windvane/4.0.3/index.js,mui/babel-polyfill/6.2.7/index.js,mui/mtop/4.1.9/index.js,mui/zebra-dynamic/4.2.12/io.js,mui/zebra-dynamic/4.2.12/ald-bottom.js,mui/fetch/4.1.12/tool.js,mui/zebra-dynamic/4.2.12/request.js,mui/cookie/4.1.0/index.js,mui/zebra-dynamic/4.2.12/plugins/region/index.js,mui/zebra-dynamic/4.2.12/plugins/chaoshi/index.js,mui/zebra-dynamic/4.2.12/plugins/userId/index.js,mui/zebra-dynamic/4.2.12/plugin.js,mui/zebra-dynamic/4.2.12/index.js,mui/common/4.0.105/js/mod-config.js,mui/common/4.0.105/js/event.js,mui/custom-event/4.0.3/index.js,mui/common/4.0.105/js/tm.js,mui/common/4.0.105/js/tool.js,mui/common/4.0.105/js/site-nav.js,mui/common/4.0.105/js/plugin-pc.js,mui/common/4.0.105/index-pc.js,mui/location/4.1.0/get-user-location-by-ip.js,mui/zebra-loader/4.4.15/index.js,mui/bat/5.0.11/index.js,mui/tes/5.0.14/index.js,mui/zebra-oversea-header-pc/4.0.33/index-pc.js, line 106: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+JavaScript error: https://g.alicdn.com/??kissy/k/1.4.14/seed-min.js,mui/kissy-polyfill/4.0.16/index.js,mui/zepto/4.0.9/zepto.js,mui/zepto/4.0.9/event.js,mui/zepto/4.0.9/touch.js,mui/mtb-windvane/4.0.3/index.js,mui/babel-polyfill/6.2.7/index.js,mui/mtop/4.1.9/index.js,mui/zebra-dynamic/4.2.12/io.js,mui/zebra-dynamic/4.2.12/ald-bottom.js,mui/fetch/4.1.12/tool.js,mui/zebra-dynamic/4.2.12/request.js,mui/cookie/4.1.0/index.js,mui/zebra-dynamic/4.2.12/plugins/region/index.js,mui/zebra-dynamic/4.2.12/plugins/chaoshi/index.js,mui/zebra-dynamic/4.2.12/plugins/userId/index.js,mui/zebra-dynamic/4.2.12/plugin.js,mui/zebra-dynamic/4.2.12/index.js,mui/common/4.0.105/js/mod-config.js,mui/common/4.0.105/js/event.js,mui/custom-event/4.0.3/index.js,mui/common/4.0.105/js/tm.js,mui/common/4.0.105/js/tool.js,mui/common/4.0.105/js/site-nav.js,mui/common/4.0.105/js/plugin-pc.js,mui/common/4.0.105/index-pc.js,mui/location/4.1.0/get-user-location-by-ip.js,mui/zebra-loader/4.4.15/index.js,mui/bat/5.0.11/index.js,mui/tes/5.0.14/index.js,mui/zebra-oversea-header-pc/4.0.33/index-pc.js, line 106: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+JavaScript warning: https://g.alicdn.com/secdev/sufei_data/3.9.0/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://g.alicdn.com/secdev/nsv/1.0.76/ns_e_86_3_n.js, line 2: WebGL context was lost.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+1588705809837	Marionette	INFO	Stopped listening on port 52020
+1588705811660	Marionette	INFO	Stopped listening on port 51176
+1588705817914	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofileAb5zFu"
+1588705821397	Marionette	INFO	Listening on port 55351
+1588705821491	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://g.alicdn.com/??kissy/k/1.4.14/seed-min.js,mui/kissy-polyfill/4.0.16/index.js,mui/zepto/4.0.9/zepto.js,mui/zepto/4.0.9/event.js,mui/zepto/4.0.9/touch.js,mui/mtb-windvane/4.0.3/index.js,mui/babel-polyfill/6.2.7/index.js,mui/mtop/4.1.9/index.js,mui/zebra-dynamic/4.2.12/io.js,mui/zebra-dynamic/4.2.12/ald-bottom.js,mui/fetch/4.1.12/tool.js,mui/zebra-dynamic/4.2.12/request.js,mui/cookie/4.1.0/index.js,mui/zebra-dynamic/4.2.12/plugins/region/index.js,mui/zebra-dynamic/4.2.12/plugins/chaoshi/index.js,mui/zebra-dynamic/4.2.12/plugins/userId/index.js,mui/zebra-dynamic/4.2.12/plugin.js,mui/zebra-dynamic/4.2.12/index.js,mui/common/4.0.105/js/mod-config.js,mui/common/4.0.105/js/event.js,mui/custom-event/4.0.3/index.js,mui/common/4.0.105/js/tm.js,mui/common/4.0.105/js/tool.js,mui/common/4.0.105/js/site-nav.js,mui/common/4.0.105/js/plugin-pc.js,mui/common/4.0.105/index-pc.js,mui/location/4.1.0/get-user-location-by-ip.js,mui/zebra-loader/4.4.15/index.js,mui/bat/5.0.11/index.js,mui/tes/5.0.14/index.js,mui/zebra-oversea-header-pc/4.0.33/index-pc.js, line 106: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+JavaScript error: https://g.alicdn.com/??kissy/k/1.4.14/seed-min.js,mui/kissy-polyfill/4.0.16/index.js,mui/zepto/4.0.9/zepto.js,mui/zepto/4.0.9/event.js,mui/zepto/4.0.9/touch.js,mui/mtb-windvane/4.0.3/index.js,mui/babel-polyfill/6.2.7/index.js,mui/mtop/4.1.9/index.js,mui/zebra-dynamic/4.2.12/io.js,mui/zebra-dynamic/4.2.12/ald-bottom.js,mui/fetch/4.1.12/tool.js,mui/zebra-dynamic/4.2.12/request.js,mui/cookie/4.1.0/index.js,mui/zebra-dynamic/4.2.12/plugins/region/index.js,mui/zebra-dynamic/4.2.12/plugins/chaoshi/index.js,mui/zebra-dynamic/4.2.12/plugins/userId/index.js,mui/zebra-dynamic/4.2.12/plugin.js,mui/zebra-dynamic/4.2.12/index.js,mui/common/4.0.105/js/mod-config.js,mui/common/4.0.105/js/event.js,mui/custom-event/4.0.3/index.js,mui/common/4.0.105/js/tm.js,mui/common/4.0.105/js/tool.js,mui/common/4.0.105/js/site-nav.js,mui/common/4.0.105/js/plugin-pc.js,mui/common/4.0.105/index-pc.js,mui/location/4.1.0/get-user-location-by-ip.js,mui/zebra-loader/4.4.15/index.js,mui/bat/5.0.11/index.js,mui/tes/5.0.14/index.js,mui/zebra-oversea-header-pc/4.0.33/index-pc.js, line 106: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+JavaScript warning: https://g.alicdn.com/secdev/sufei_data/3.9.0/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://g.alicdn.com/secdev/nsv/1.0.76/ns_e_86_3_n.js, line 2: WebGL context was lost.
+JavaScript error: https://login.taobao.com/jump?target=https://www.tmall.com, line 27: SyntaxError: expected expression, got '<'
+1588705917335	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0j/7g8ytd_12c50dz8nkdl04c4h0000gq/T/rust_mozprofileWfbCnw"
+1588705921335	Marionette	INFO	Listening on port 57147
+1588705921367	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588705922036	Marionette	INFO	Stopped listening on port 55351
+JavaScript error: https://g.alicdn.com/??kissy/k/1.4.14/seed-min.js,mui/kissy-polyfill/4.0.16/index.js,mui/zepto/4.0.9/zepto.js,mui/zepto/4.0.9/event.js,mui/zepto/4.0.9/touch.js,mui/mtb-windvane/4.0.3/index.js,mui/babel-polyfill/6.2.7/index.js,mui/mtop/4.1.9/index.js,mui/zebra-dynamic/4.2.12/io.js,mui/zebra-dynamic/4.2.12/ald-bottom.js,mui/fetch/4.1.12/tool.js,mui/zebra-dynamic/4.2.12/request.js,mui/cookie/4.1.0/index.js,mui/zebra-dynamic/4.2.12/plugins/region/index.js,mui/zebra-dynamic/4.2.12/plugins/chaoshi/index.js,mui/zebra-dynamic/4.2.12/plugins/userId/index.js,mui/zebra-dynamic/4.2.12/plugin.js,mui/zebra-dynamic/4.2.12/index.js,mui/common/4.0.105/js/mod-config.js,mui/common/4.0.105/js/event.js,mui/custom-event/4.0.3/index.js,mui/common/4.0.105/js/tm.js,mui/common/4.0.105/js/tool.js,mui/common/4.0.105/js/site-nav.js,mui/common/4.0.105/js/plugin-pc.js,mui/common/4.0.105/index-pc.js,mui/location/4.1.0/get-user-location-by-ip.js,mui/zebra-loader/4.4.15/index.js,mui/bat/5.0.11/index.js,mui/tes/5.0.14/index.js,mui/zebra-oversea-header-pc/4.0.33/index-pc.js, line 106: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+JavaScript error: https://g.alicdn.com/??kissy/k/1.4.14/seed-min.js,mui/kissy-polyfill/4.0.16/index.js,mui/zepto/4.0.9/zepto.js,mui/zepto/4.0.9/event.js,mui/zepto/4.0.9/touch.js,mui/mtb-windvane/4.0.3/index.js,mui/babel-polyfill/6.2.7/index.js,mui/mtop/4.1.9/index.js,mui/zebra-dynamic/4.2.12/io.js,mui/zebra-dynamic/4.2.12/ald-bottom.js,mui/fetch/4.1.12/tool.js,mui/zebra-dynamic/4.2.12/request.js,mui/cookie/4.1.0/index.js,mui/zebra-dynamic/4.2.12/plugins/region/index.js,mui/zebra-dynamic/4.2.12/plugins/chaoshi/index.js,mui/zebra-dynamic/4.2.12/plugins/userId/index.js,mui/zebra-dynamic/4.2.12/plugin.js,mui/zebra-dynamic/4.2.12/index.js,mui/common/4.0.105/js/mod-config.js,mui/common/4.0.105/js/event.js,mui/custom-event/4.0.3/index.js,mui/common/4.0.105/js/tm.js,mui/common/4.0.105/js/tool.js,mui/common/4.0.105/js/site-nav.js,mui/common/4.0.105/js/plugin-pc.js,mui/common/4.0.105/index-pc.js,mui/location/4.1.0/get-user-location-by-ip.js,mui/zebra-loader/4.4.15/index.js,mui/bat/5.0.11/index.js,mui/tes/5.0.14/index.js,mui/zebra-oversea-header-pc/4.0.33/index-pc.js, line 106: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+JavaScript warning: https://g.alicdn.com/secdev/sufei_data/3.9.0/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://g.alicdn.com/secdev/nsv/1.0.76/ns_e_86_3_n.js, line 2: WebGL context was lost.
+1588705932789	Marionette	INFO	Stopped listening on port 57147
+1588745312002	Marionette	INFO	Stopped listening on port 60642
