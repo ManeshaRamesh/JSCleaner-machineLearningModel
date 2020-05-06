@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log("here")
   var accordian = document.getElementById("accordionLabels");
 
-  var labels = ['Advertising','Analytics', 'Social', 'Video', 'Utility', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Manager', 'Others']
+  var labels = ['Advertising','Analytics', 'Social', 'Video', 'Utility', 'Hosting', 'Marketing', 'Customer Success', 'Content', 'CDN', 'Tag Manager']
   var checkbox = {
     1 : "", 
     0 : "checked"

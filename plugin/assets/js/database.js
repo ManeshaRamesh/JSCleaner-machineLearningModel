@@ -417,6 +417,45 @@ function iterate(OSName, callback){
     var entry; 
     if ((requestDetails.url.search(".js") !== -1 && requestDetails.url.search("http://86.97.179.52:9000/JSCleaner/JSLabel.py") === -1) || (requestDetails.type === "script")){ //check if url is of type script
         console.log("requestDetails", requestDetails)
+
+        if (labelledScript.get(requestDetails.url)){
+            var entry = labelledScript.get(requestDetails.url)
+            if (entry.label === "Others"){
+                if (parseFloat(entry.accuracy) === 2.0){
+                    console.log("critical")
+                    Obj = {
+                        name: requestDetails.url,
+                        status: 1, 
+                        label: entry.label
+                    };
+                    tempObj = {
+                        message : Obj, 
+                        subject: "script"
+                    }
+                    browser.tabs.sendMessage(requestDetails.tabId,tempObj)
+                    // it is critical
+                    return
+                }
+                else if (parseFloat(entry.accuracy) === -2.0){
+
+                    // it is non-critical
+                    Obj = {
+                        name: requestDetails.url,
+                        status: 0, 
+                        label: entry.label
+                    };
+                    tempObj = {
+                        message : Obj, 
+                        subject: "script"
+                    }
+                    browser.tabs.sendMessage(requestDetails.tabId,tempObj)
+                    console.log("Canceling non-critical scripts: " + requestDetails.url);
+
+                    return({cancel:true})
+                }
+            }
+
+        }
         //gettign the hostURL - the page that makes the requests
         if (requestDetails.frameAncestors.length===0){
             hostUrl = requestDetails.documentUrl;
