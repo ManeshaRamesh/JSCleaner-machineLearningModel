@@ -114,7 +114,7 @@ chrome.storage.local.get(['default'], function(result) {
         
     // });
 browser.runtime.onInstalled.addListener(function (object) {
-    browser.tabs.create({url: "./../../settings.html"}, function (tab) {
+    browser.tabs.create({url: "../html/settings.html"}, function (tab) {
         
     });
     

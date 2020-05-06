@@ -199,8 +199,10 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
               //saves the settings 
               $("#reload").click(function(){
-                closeSelf();
+                setTimeout(closeSelf, 1000)
                 browser.tabs.reload(tabs[0].id, {bypassCache: true});
+                // closeSelf();
+                
 
               })
               function handleResponseSave(sentMessage){
