@@ -492,6 +492,44 @@ function iterate(OSName, callback){
                   // }
 
             }
+            else{
+                var entry = labelledScript.get(requestDetails.url)
+                if (entry.label === "Others"){
+                    if (parseFloat(entry.accuracy) === 2.0){
+                        console.log("critical")
+                        Obj = {
+                            name: requestDetails.url,
+                            status: 1, 
+                            label: entry.label
+                        };
+                        tempObj = {
+                            message : Obj, 
+                            subject: "script"
+                        }
+                        browser.tabs.sendMessage(requestDetails.tabId,tempObj)
+                        // it is critical
+                        return
+                    }
+                    else if (parseFloat(entry.accuracy) === -2.0){
+
+                        // it is non-critical
+                        Obj = {
+                            name: requestDetails.url,
+                            status: 0, 
+                            label: entry.label
+                        };
+                        tempObj = {
+                            message : Obj, 
+                            subject: "script"
+                        }
+                        browser.tabs.sendMessage(requestDetails.tabId,tempObj)
+                        console.log("Canceling non-critical scripts: " + requestDetails.url);
+
+                        return({cancel:true})
+                    }
+                }
+
+            }
             // for(var i = 0; i < Database.scripts.length; i++) {
             //     if (Database.scripts[i].name == details.url) {
             //         found = true;
@@ -550,8 +588,9 @@ function iterate(OSName, callback){
         }
 
         //will be executed if the script is not a URLExcepption or if the urls are set to follow the default settings across all pages
-         
-        if (blockScripts.includes(requestDetails.url)){
+         // if it is a url that needs to be bloked
+        if (blockScripts.includes(requestDetails.url)){ 
+
                 Obj = {
                     name: requestDetails.url,
                     status: 0, 
@@ -565,6 +604,7 @@ function iterate(OSName, callback){
             console.log("Canceling: " + requestDetails.url);
             return {cancel: true};
         }
+
         else{
             Obj = {
                 name: requestDetails.url,
