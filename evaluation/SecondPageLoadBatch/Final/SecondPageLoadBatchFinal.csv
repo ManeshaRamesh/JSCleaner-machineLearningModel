@@ -1,0 +1,13 @@
+url,Time to interactivity,Time to DOM completion,Page Load Time,Total Number requests,Total Number JS requests,Total Transfer Size,Transfer size of JS elements
+https://world.taobao.com/,0.992,7.017,7.045,72,19,1690970,276449
+https://twitter.com/,0.538,1.24,1.24,0,0,0,0
+https://www.reddit.com/,2.684,3.009,3.009,1,0,222845,0
+https://www.instagram.com/,0.682,1.709,1.718,12,1,497274,119617
+https://outlook.live.com/owa/,0.186,0.44,0.44,21,6,1521872,39576
+https://www.jd.com/,2.428,2.437,2.438,1,0,6770,0
+http://sohu.com/,2.387,9.347,9.347,14,1,4346679,2843
+https://yandex.ru/,1.12,1.36,1.367,30,3,495701,408972
+url,Time to interactivity,Time to DOM completion,Page Load Time,Total Number requests,Total Number JS requests,Total Transfer Size,Transfer size of JS elements
+https://world.taobao.com/,0.846,6.522,6.554,71,18,1689466,274957
+https://twitter.com/,0.571,1.886,1.886,0,0,0,0
+https://www.reddit.com/,2.596,8.093,8.15,5,3,359704,132324
