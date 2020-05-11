@@ -85,7 +85,9 @@ chrome.storage.local.get(["default"], function (result) {
     });
 
     console.log("default setting", settingDefault);
-    chrome.storage.local.set({ default: settingDefault }, function () {}); //store default settings in chrome storage
+    chrome.storage.local.set({ default: settingDefault }, function () {
+      Database.blockRequests();
+    }); //store default settings in chrome storage
     Constants.setdefaultLabels(settingDefault);
   } else {
     console.log("exists", result);
@@ -228,11 +230,11 @@ Database.createDatabase().then((result) => {
         }
         requestString = requestString.substr(0, requestString.length - 5);
         //send an ajax request
-        console.log("REQUEST TO PROXY: ", requestString);
+        // console.log("REQUEST TO PROXY: ", requestString);
 
         function reqListener() {
           var tempObj;
-          console.log("RESPONSE FROM PROXY: ", this.responseText);
+          // console.log("RESPONSE FROM PROXY: ", this.responseText);
           labeledScripts = JSON.parse(this.responseText);
           console.log(labeledScripts);
           var script;
@@ -241,11 +243,11 @@ Database.createDatabase().then((result) => {
           }
           // scripts = [];
           // labeledScripts = [];
-          tempObj = {
-            message: script,
-            subject: "updateScripts",
-          };
-          browser.tabs.sendMessage(requestDetails.tabId, tempObj);
+          // tempObj = {
+          //   message: script,
+          //   subject: "updateScripts",
+          // };
+          // browser.tabs.sendMessage(requestDetails.tabId, tempObj);
         }
 
         var oReq = new XMLHttpRequest();
@@ -393,7 +395,7 @@ Database.createDatabase().then((result) => {
               scripts.push(details.url);
               // console.log ("pushed", details.url,scripts.length)
             }
-            console.log("Scripts: ", scripts);
+            // console.log("Scripts: ", scripts);
           } else {
             resolve("not script");
           }
@@ -401,7 +403,7 @@ Database.createDatabase().then((result) => {
 
           if (scripts.length == 5) {
             //add a timer
-            console.log("print add item - here1");
+            // console.log("print add item - here1");
             timedout = false;
             var requestString = "";
             for (let ele of scripts) {
@@ -409,21 +411,21 @@ Database.createDatabase().then((result) => {
             }
             requestString = requestString.substr(0, requestString.length - 5);
             //send an ajax request
-            console.log("REQUESTSTRING", requestString);
+            // console.log("REQUESTSTRING", requestString);
 
             function reqListener() {
               var tempObj;
-              console.log("RESPONSE FROM PROXY: ", this.responseText);
+              // console.log("RESPONSE FROM PROXY: ", this.responseText);
               labeledScripts = JSON.parse(this.responseText);
               var script;
               for (script of labeledScripts) {
                 Database.addItem(script, "scripts");
               }
-              tempObj = {
-                message: script,
-                subject: "updateScripts",
-              };
-              browser.tabs.sendMessage(requestDetails.tabId, tempObj);
+              // tempObj = {
+              //   message: script,
+              //   subject: "updateScripts",
+              // };
+              // browser.tabs.sendMessage(requestDetails.tabId, tempObj);
 
               resolve();
             }

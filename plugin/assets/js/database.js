@@ -114,7 +114,7 @@ function addItem(newItem, OSName) {
     } else if (OSName == "urls") {
       updateURLExceptionMap(newItem);
     }
-
+    console.log("update");
     updateBlockedScripts("add", newItem);
   };
 }
@@ -128,8 +128,12 @@ function updateURLExceptionMap(item) {
   URLExceptions.set(key, value);
 }
 function updateBlockedScripts(action, item) {
+  console.log("update1");
   if (action === "add") {
+    console.log("update2");
+    console.log("disabled labels: ", JSON.stringify(disabledLabels));
     if (disabledLabels.includes(item.label)) {
+      console.log("update3");
       blockRequests(true, item, action);
     }
   }
@@ -392,7 +396,7 @@ function cancel(requestDetails) {
     requestDetails.type === "script"
   ) {
     //check if url is of type script
-    console.log("requestDetails", requestDetails);
+    // console.log("requestDetails", requestDetails);
 
     if (labelledScript.get(requestDetails.url)) {
       var entry = labelledScript.get(requestDetails.url);
@@ -467,9 +471,10 @@ function cancel(requestDetails) {
 
     //will be executed if the script is not a URLExcepption or if the urls are set to follow the default settings across all pages
     console.log("Check: ", requestDetails.url);
+    console.log("block: ", JSON.stringify(blockScripts));
 
     if (blockScripts.includes(requestDetails.url)) {
-      console.log("Will be blocked: ", requestDetails.url);
+      console.log("Check Will be blocked: ", requestDetails.url);
       Obj = {
         name: requestDetails.url,
         status: 0,
