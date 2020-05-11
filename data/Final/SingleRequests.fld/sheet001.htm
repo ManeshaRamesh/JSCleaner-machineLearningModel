@@ -1,0 +1,1365 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link id=Main-File rel=Main-File href="../SingleRequests.htm">
+<link rel=File-List href=filelist.xml>
+<link rel=Stylesheet href=stylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+-->
+</style>
+<![if !supportTabStrip]><script language="JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=4) {
+   if (parent.document.readyState=="complete"
+    && parent.frames['frTabs'].document.readyState=="complete")
+   parent.fnSetActiveSheet(0);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!="frSheet")
+ window.location.replace("../SingleRequests.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link="#0563C1" vlink="#954F72">
+
+<table border=0 cellpadding=0 cellspacing=0 width=2274 style='border-collapse:
+ collapse;table-layout:fixed;width:1700pt'>
+ <col width=273 style='mso-width-source:userset;mso-width-alt:8746;width:205pt'>
+ <col width=87 span=23 style='width:65pt'>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 width=273 style='height:16.0pt;width:205pt'></td>
+  <td colspan=7 class=xl65 width=609 style='width:455pt'>Base Case</td>
+  <td colspan=7 class=xl65 width=609 style='width:455pt'>First Page Load</td>
+  <td colspan=7 class=xl65 width=609 style='width:455pt'>Second Page Load</td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>url</td>
+  <td>Time to inter<span style='display:none'>activity</span></td>
+  <td>Time to DO<span style='display:none'>M completion</span></td>
+  <td>Page Load Ti<span style='display:none'>me</span></td>
+  <td>Total Numbe<span style='display:none'>r requests</span></td>
+  <td>Total Numbe<span style='display:none'>r JS requests</span></td>
+  <td>Total Transf<span style='display:none'>er Size</span></td>
+  <td>Transfer size<span style='display:none'> of JS elements</span></td>
+  <td>Time to inter<span style='display:none'>activity</span></td>
+  <td>Time to DO<span style='display:none'>M completion</span></td>
+  <td>Page Load Ti<span style='display:none'>me</span></td>
+  <td>Total Numbe<span style='display:none'>r requests</span></td>
+  <td>Total Numbe<span style='display:none'>r JS requests</span></td>
+  <td>Total Transf<span style='display:none'>er Size</span></td>
+  <td>Transfer size<span style='display:none'> of JS elements</span></td>
+  <td>Time to inter<span style='display:none'>activity</span></td>
+  <td>Time to DO<span style='display:none'>M completion</span></td>
+  <td>Page Load Ti<span style='display:none'>me</span></td>
+  <td>Total Numbe<span style='display:none'>r requests</span></td>
+  <td>Total Numbe<span style='display:none'>r JS requests</span></td>
+  <td>Total Transf<span style='display:none'>er Size</span></td>
+  <td colspan=3 style='mso-ignore:colspan'>Transfer size of JS elements</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://world.taobao.com/</td>
+  <td align=right>2.835</td>
+  <td align=right>13.107</td>
+  <td align=right>13.115</td>
+  <td align=right>85</td>
+  <td align=right>20</td>
+  <td align=right>1801204</td>
+  <td align=right>279416</td>
+  <td align=right>2.242</td>
+  <td align=right>6.324</td>
+  <td align=right>6.332</td>
+  <td align=right>85</td>
+  <td align=right>20</td>
+  <td align=right>1800295</td>
+  <td align=right>278481</td>
+  <td align=right>1.33</td>
+  <td align=right>1.363</td>
+  <td align=right>1.37</td>
+  <td align=right>15</td>
+  <td align=right>6</td>
+  <td align=right>385100</td>
+  <td align=right>171376</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://twitter.com/</td>
+  <td align=right>1.31</td>
+  <td align=right>2.55</td>
+  <td align=right>2.55</td>
+  <td align=right>2</td>
+  <td align=right>1</td>
+  <td align=right>19562</td>
+  <td align=right>3445</td>
+  <td align=right>1.401</td>
+  <td align=right>3.039</td>
+  <td align=right>3.108</td>
+  <td align=right>1</td>
+  <td align=right>0</td>
+  <td align=right>16163</td>
+  <td align=right>0</td>
+  <td align=right>0.519</td>
+  <td align=right>1.262</td>
+  <td align=right>1.263</td>
+  <td align=right>0</td>
+  <td align=right>0</td>
+  <td align=right>0</td>
+  <td align=right>0</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.reddit.com/</td>
+  <td align=right>4.247</td>
+  <td align=right>11.084</td>
+  <td align=right>11.152</td>
+  <td align=right>8</td>
+  <td align=right>4</td>
+  <td align=right>354145</td>
+  <td align=right>133614</td>
+  <td align=right>1.57</td>
+  <td align=right>7.385</td>
+  <td align=right>7.432</td>
+  <td align=right>7</td>
+  <td align=right>4</td>
+  <td align=right>376419</td>
+  <td align=right>134503</td>
+  <td align=right>2.702</td>
+  <td align=right>7.803</td>
+  <td align=right>7.863</td>
+  <td align=right>7</td>
+  <td align=right>4</td>
+  <td align=right>394236</td>
+  <td align=right>133199</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.instagram.com/</td>
+  <td align=right>1.629</td>
+  <td align=right>2.322</td>
+  <td align=right>2.327</td>
+  <td align=right>12</td>
+  <td align=right>1</td>
+  <td align=right>578837</td>
+  <td align=right>119645</td>
+  <td align=right>1.218</td>
+  <td align=right>2.357</td>
+  <td align=right>2.367</td>
+  <td align=right>11</td>
+  <td align=right>2</td>
+  <td align=right>486013</td>
+  <td align=right>122210</td>
+  <td align=right>0.714</td>
+  <td align=right>1.217</td>
+  <td align=right>1.219</td>
+  <td align=right>9</td>
+  <td align=right>1</td>
+  <td align=right>480781</td>
+  <td align=right>119637</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://outlook.live.com/owa/</td>
+  <td align=right>0.542</td>
+  <td align=right>0.939</td>
+  <td align=right>0.939</td>
+  <td align=right>19</td>
+  <td align=right>7</td>
+  <td align=right>1048769</td>
+  <td align=right>130878</td>
+  <td align=right>0.513</td>
+  <td align=right>0.848</td>
+  <td align=right>0.848</td>
+  <td align=right>19</td>
+  <td align=right>7</td>
+  <td align=right>1048998</td>
+  <td align=right>130878</td>
+  <td align=right>0.221</td>
+  <td align=right>0.452</td>
+  <td align=right>0.452</td>
+  <td align=right>21</td>
+  <td align=right>6</td>
+  <td align=right>1522101</td>
+  <td align=right>39576</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.jd.com/</td>
+  <td align=right>3.138</td>
+  <td align=right>13.227</td>
+  <td align=right>13.231</td>
+  <td align=right>39</td>
+  <td align=right>2</td>
+  <td align=right>4609728</td>
+  <td align=right>14104</td>
+  <td align=right>3.224</td>
+  <td align=right>15.14</td>
+  <td align=right>15.144</td>
+  <td align=right>39</td>
+  <td align=right>2</td>
+  <td align=right>4725062</td>
+  <td align=right>14104</td>
+  <td align=right>1.516</td>
+  <td align=right>6.164</td>
+  <td align=right>6.167</td>
+  <td align=right>39</td>
+  <td align=right>2</td>
+  <td align=right>4714869</td>
+  <td align=right>14104</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>http://sohu.com/</td>
+  <td align=right>3.632</td>
+  <td align=right>67.825</td>
+  <td align=right>67.83</td>
+  <td align=right>9</td>
+  <td align=right>1</td>
+  <td align=right>464376</td>
+  <td align=right>2847</td>
+  <td align=right>18</td>
+  <td align=right>26.715</td>
+  <td align=right>26.72</td>
+  <td align=right>14</td>
+  <td align=right>1</td>
+  <td align=right>4353106</td>
+  <td align=right>2843</td>
+  <td align=right>2.628</td>
+  <td align=right>8.612</td>
+  <td align=right>8.617</td>
+  <td align=right>14</td>
+  <td align=right>1</td>
+  <td align=right>4353063</td>
+  <td align=right>2843</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://yandex.ru/</td>
+  <td align=right>3.229</td>
+  <td align=right>3.381</td>
+  <td align=right>3.383</td>
+  <td align=right>30</td>
+  <td align=right>4</td>
+  <td align=right>813748</td>
+  <td align=right>413014</td>
+  <td align=right>2.936</td>
+  <td align=right>4.183</td>
+  <td align=right>4.207</td>
+  <td align=right>47</td>
+  <td align=right>6</td>
+  <td align=right>1259617</td>
+  <td align=right>657966</td>
+  <td align=right>1.442</td>
+  <td align=right>1.733</td>
+  <td align=right>1.74</td>
+  <td align=right>28</td>
+  <td align=right>3</td>
+  <td align=right>493948</td>
+  <td align=right>408972</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.weibo.com/overseas</td>
+  <td align=right>1.69</td>
+  <td align=right>3.053</td>
+  <td align=right>3.054</td>
+  <td align=right>13</td>
+  <td align=right>5</td>
+  <td align=right>294927</td>
+  <td align=right>168886</td>
+  <td align=right>1.354</td>
+  <td align=right>17.665</td>
+  <td align=right>17.667</td>
+  <td align=right>82</td>
+  <td align=right>10</td>
+  <td align=right>709904</td>
+  <td align=right>241468</td>
+  <td align=right>1.552</td>
+  <td align=right>2.042</td>
+  <td align=right>2.043</td>
+  <td align=right>41</td>
+  <td align=right>7</td>
+  <td align=right>584773</td>
+  <td align=right>226628</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.netflix.com/ae-en/</td>
+  <td align=right>2.941</td>
+  <td align=right>3.787</td>
+  <td align=right>3.787</td>
+  <td align=right>13</td>
+  <td align=right>2</td>
+  <td align=right>522632</td>
+  <td align=right>360337</td>
+  <td align=right>3.665</td>
+  <td align=right>5.61</td>
+  <td align=right>5.611</td>
+  <td align=right>12</td>
+  <td align=right>2</td>
+  <td align=right>517664</td>
+  <td align=right>357601</td>
+  <td align=right>2.997</td>
+  <td align=right>3.861</td>
+  <td align=right>3.861</td>
+  <td align=right>12</td>
+  <td align=right>2</td>
+  <td align=right>516520</td>
+  <td align=right>357524</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.bilibili.com/</td>
+  <td align=right>2.328</td>
+  <td align=right>4.854</td>
+  <td align=right>4.855</td>
+  <td align=right>50</td>
+  <td align=right>12</td>
+  <td align=right>5329846</td>
+  <td align=right>536912</td>
+  <td align=right>2.139</td>
+  <td align=right>4.396</td>
+  <td align=right>4.398</td>
+  <td align=right>49</td>
+  <td align=right>12</td>
+  <td align=right>4871595</td>
+  <td align=right>536918</td>
+  <td align=right>2.695</td>
+  <td align=right>14.721</td>
+  <td align=right>14.723</td>
+  <td align=right>49</td>
+  <td align=right>12</td>
+  <td align=right>5796201</td>
+  <td align=right>536837</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.360.cn/</td>
+  <td align=right>4.175</td>
+  <td align=right>15.09</td>
+  <td align=right>15.09</td>
+  <td align=right>2</td>
+  <td align=right>0</td>
+  <td align=right>24730</td>
+  <td align=right>0</td>
+  <td align=right>7.039</td>
+  <td align=right>12.226</td>
+  <td align=right>12.226</td>
+  <td align=right>1</td>
+  <td align=right>0</td>
+  <td align=right>23085</td>
+  <td align=right>0</td>
+  <td align=right>3.541</td>
+  <td align=right>13.324</td>
+  <td align=right>13.324</td>
+  <td align=right>2</td>
+  <td align=right>0</td>
+  <td align=right>24657</td>
+  <td align=right>0</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.csdn.net/</td>
+  <td align=right>9.333</td>
+  <td align=right>20.328</td>
+  <td align=right>20.338</td>
+  <td align=right>109</td>
+  <td align=right>16</td>
+  <td align=right>3563307</td>
+  <td align=right>143025</td>
+  <td align=right>8.702</td>
+  <td align=right>16.688</td>
+  <td align=right>16.694</td>
+  <td align=right>109</td>
+  <td align=right>16</td>
+  <td align=right>3568691</td>
+  <td align=right>143010</td>
+  <td align=right>6.027</td>
+  <td align=right>16.557</td>
+  <td align=right>16.567</td>
+  <td align=right>113</td>
+  <td align=right>16</td>
+  <td align=right>3664176</td>
+  <td align=right>142885</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://mail.ru/</td>
+  <td align=right>2.278</td>
+  <td align=right>59.271</td>
+  <td align=right>59.276</td>
+  <td align=right>48</td>
+  <td align=right>10</td>
+  <td align=right>586586</td>
+  <td align=right>305509</td>
+  <td align=right>2.694</td>
+  <td align=right>14.993</td>
+  <td align=right>15.003</td>
+  <td align=right>75</td>
+  <td align=right>11</td>
+  <td align=right>873090</td>
+  <td align=right>434886</td>
+  <td align=right>1.634</td>
+  <td align=right>4.628</td>
+  <td align=right>4.634</td>
+  <td align=right>78</td>
+  <td align=right>9</td>
+  <td align=right>893506</td>
+  <td align=right>413521</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>http://www.bing.com/</td>
+  <td align=right>0.441</td>
+  <td align=right>0.549</td>
+  <td align=right>0.551</td>
+  <td align=right>18</td>
+  <td align=right>2</td>
+  <td align=right>350534</td>
+  <td align=right>7886</td>
+  <td align=right>0.433</td>
+  <td align=right>0.471</td>
+  <td align=right>0.473</td>
+  <td align=right>4</td>
+  <td align=right>0</td>
+  <td align=right>315175</td>
+  <td align=right>0</td>
+  <td align=right>0.308</td>
+  <td align=right>0.313</td>
+  <td align=right>0.314</td>
+  <td align=right>4</td>
+  <td align=right>1</td>
+  <td align=right>319549</td>
+  <td align=right>5972</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.naver.com/</td>
+  <td align=right>1.568</td>
+  <td align=right>2.967</td>
+  <td align=right>2.985</td>
+  <td align=right>3</td>
+  <td align=right>0</td>
+  <td align=right>33580</td>
+  <td align=right>0</td>
+  <td align=right>1.195</td>
+  <td align=right>2.378</td>
+  <td align=right>2.408</td>
+  <td align=right>3</td>
+  <td align=right>0</td>
+  <td align=right>34080</td>
+  <td align=right>0</td>
+  <td align=right>0.819</td>
+  <td align=right>2.45</td>
+  <td align=right>2.475</td>
+  <td align=right>2</td>
+  <td align=right>0</td>
+  <td align=right>32150</td>
+  <td align=right>0</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.aliexpress.com/</td>
+  <td align=right>1.26</td>
+  <td align=right>4.403</td>
+  <td align=right>4.539</td>
+  <td align=right>68</td>
+  <td align=right>20</td>
+  <td align=right>1128993</td>
+  <td align=right>707676</td>
+  <td align=right>1.571</td>
+  <td align=right>5.735</td>
+  <td align=right>5.844</td>
+  <td align=right>68</td>
+  <td align=right>20</td>
+  <td align=right>1132840</td>
+  <td align=right>707628</td>
+  <td align=right>1.425</td>
+  <td align=right>2.484</td>
+  <td align=right>2.619</td>
+  <td align=right>60</td>
+  <td align=right>19</td>
+  <td align=right>1018310</td>
+  <td align=right>707246</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.microsoft.com/en-gulf/</td>
+  <td align=right>0.678</td>
+  <td align=right>0.998</td>
+  <td align=right>1.004</td>
+  <td align=right>15</td>
+  <td align=right>5</td>
+  <td align=right>277446</td>
+  <td align=right>146643</td>
+  <td align=right>0.729</td>
+  <td align=right>1.196</td>
+  <td align=right>1.198</td>
+  <td align=right>12</td>
+  <td align=right>2</td>
+  <td align=right>196158</td>
+  <td align=right>65342</td>
+  <td align=right>0.593</td>
+  <td align=right>0.695</td>
+  <td align=right>0.696</td>
+  <td align=right>11</td>
+  <td align=right>2</td>
+  <td align=right>172084</td>
+  <td align=right>65342</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.whatsapp.com/</td>
+  <td align=right>1.315</td>
+  <td align=right>2.847</td>
+  <td align=right>2.877</td>
+  <td align=right>24</td>
+  <td align=right>13</td>
+  <td align=right>981949</td>
+  <td align=right>787164</td>
+  <td align=right>1.483</td>
+  <td align=right>3.665</td>
+  <td align=right>3.701</td>
+  <td align=right>24</td>
+  <td align=right>13</td>
+  <td align=right>981983</td>
+  <td align=right>787164</td>
+  <td align=right>0.867</td>
+  <td align=right>2.418</td>
+  <td align=right>2.438</td>
+  <td align=right>24</td>
+  <td align=right>13</td>
+  <td align=right>981560</td>
+  <td align=right>787164</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.alipay.com/</td>
+  <td align=right>2.476</td>
+  <td align=right>6.248</td>
+  <td align=right>6.248</td>
+  <td align=right>13</td>
+  <td align=right>2</td>
+  <td align=right>513172</td>
+  <td align=right>127657</td>
+  <td align=right>2.348</td>
+  <td align=right>7.183</td>
+  <td align=right>7.183</td>
+  <td align=right>14</td>
+  <td align=right>2</td>
+  <td align=right>711497</td>
+  <td align=right>127665</td>
+  <td align=right>0.626</td>
+  <td align=right>1.181</td>
+  <td align=right>1.181</td>
+  <td align=right>13</td>
+  <td align=right>2</td>
+  <td align=right>513017</td>
+  <td align=right>127665</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.ebay.com/</td>
+  <td align=right>1.22</td>
+  <td align=right>2.107</td>
+  <td align=right>2.122</td>
+  <td align=right>2</td>
+  <td align=right>1</td>
+  <td align=right>39851</td>
+  <td align=right>1232</td>
+  <td align=right>1.259</td>
+  <td align=right>1.95</td>
+  <td align=right>1.967</td>
+  <td align=right>2</td>
+  <td align=right>1</td>
+  <td align=right>39948</td>
+  <td align=right>1232</td>
+  <td align=right>0.993</td>
+  <td align=right>1.303</td>
+  <td align=right>1.318</td>
+  <td align=right>2</td>
+  <td align=right>1</td>
+  <td align=right>40400</td>
+  <td align=right>1232</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.tribunnews.com/</td>
+  <td align=right>2.81</td>
+  <td align=right>10.082</td>
+  <td align=right>10.154</td>
+  <td align=right>23</td>
+  <td align=right>9</td>
+  <td align=right>535046</td>
+  <td align=right>323592</td>
+  <td align=right>132.518</td>
+  <td align=right>137.572</td>
+  <td align=right>137.583</td>
+  <td align=right>24</td>
+  <td align=right>9</td>
+  <td align=right>554028</td>
+  <td align=right>326386</td>
+  <td align=right>2.403</td>
+  <td align=right>8.228</td>
+  <td align=right>8.27</td>
+  <td align=right>20</td>
+  <td align=right>8</td>
+  <td align=right>433217</td>
+  <td align=right>323984</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://github.com/</td>
+  <td align=right>1.019</td>
+  <td align=right>1.54</td>
+  <td align=right>1.558</td>
+  <td align=right>1</td>
+  <td align=right>0</td>
+  <td align=right>41106</td>
+  <td align=right>0</td>
+  <td align=right>0.946</td>
+  <td align=right>1.712</td>
+  <td align=right>1.722</td>
+  <td align=right>2</td>
+  <td align=right>0</td>
+  <td align=right>74714</td>
+  <td align=right>0</td>
+  <td align=right>0.616</td>
+  <td align=right>0.912</td>
+  <td align=right>0.923</td>
+  <td align=right>2</td>
+  <td align=right>0</td>
+  <td align=right>74084</td>
+  <td align=right>0</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.imdb.com/</td>
+  <td align=right>1.282</td>
+  <td align=right>2.831</td>
+  <td align=right>2.846</td>
+  <td align=right>3</td>
+  <td align=right>0</td>
+  <td align=right>87862</td>
+  <td align=right>0</td>
+  <td align=right>1.668</td>
+  <td align=right>3.758</td>
+  <td align=right>3.793</td>
+  <td align=right>4</td>
+  <td align=right>0</td>
+  <td align=right>107201</td>
+  <td align=right>0</td>
+  <td align=right>1.199</td>
+  <td align=right>3.007</td>
+  <td align=right>3.019</td>
+  <td align=right>3</td>
+  <td align=right>0</td>
+  <td align=right>87520</td>
+  <td align=right>0</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.okezone.com/</td>
+  <td align=right>1.952</td>
+  <td align=right>31.011</td>
+  <td align=right>31.042</td>
+  <td align=right>21</td>
+  <td align=right>5</td>
+  <td align=right>225855</td>
+  <td align=right>130809</td>
+  <td align=right>5.559</td>
+  <td align=right>27.929</td>
+  <td align=right>27.954</td>
+  <td align=right>20</td>
+  <td align=right>5</td>
+  <td align=right>212109</td>
+  <td align=right>130472</td>
+  <td align=right>1.893</td>
+  <td align=right>4.309</td>
+  <td align=right>4.33</td>
+  <td align=right>14</td>
+  <td align=right>2</td>
+  <td align=right>171676</td>
+  <td align=right>104623</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://t.co/</td>
+  <td align=right>1.198</td>
+  <td align=right>1.466</td>
+  <td align=right>1.466</td>
+  <td align=right>2</td>
+  <td align=right>0</td>
+  <td align=right>2501</td>
+  <td align=right>0</td>
+  <td align=right>1.159</td>
+  <td align=right>1.383</td>
+  <td align=right>1.383</td>
+  <td align=right>2</td>
+  <td align=right>0</td>
+  <td align=right>2501</td>
+  <td align=right>0</td>
+  <td align=right>0.263</td>
+  <td align=right>0.527</td>
+  <td align=right>0.527</td>
+  <td align=right>2</td>
+  <td align=right>0</td>
+  <td align=right>2501</td>
+  <td align=right>0</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://stackoverflow.com/</td>
+  <td align=right>0.499</td>
+  <td align=right>2.097</td>
+  <td align=right>2.098</td>
+  <td align=right>2</td>
+  <td align=right>1</td>
+  <td align=right>59000</td>
+  <td align=right>34686</td>
+  <td align=right>1.597</td>
+  <td align=right>3.752</td>
+  <td align=right>3.754</td>
+  <td align=right>2</td>
+  <td align=right>1</td>
+  <td align=right>58999</td>
+  <td align=right>34686</td>
+  <td align=right>0.517</td>
+  <td align=right>1.103</td>
+  <td align=right>1.105</td>
+  <td align=right>2</td>
+  <td align=right>1</td>
+  <td align=right>58860</td>
+  <td align=right>34686</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.office.com/</td>
+  <td align=right>0.58</td>
+  <td align=right>1.857</td>
+  <td align=right>1.859</td>
+  <td align=right>22</td>
+  <td align=right>4</td>
+  <td align=right>3502107</td>
+  <td align=right>105362</td>
+  <td align=right>0.896</td>
+  <td align=right>2.989</td>
+  <td align=right>2.992</td>
+  <td align=right>22</td>
+  <td align=right>4</td>
+  <td align=right>3502159</td>
+  <td align=right>105362</td>
+  <td align=right>0.609</td>
+  <td align=right>1.023</td>
+  <td align=right>1.024</td>
+  <td align=right>9</td>
+  <td align=right>1</td>
+  <td align=right>524936</td>
+  <td align=right>35518</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.fandom.com/</td>
+  <td align=right>0.299</td>
+  <td align=right>1.669</td>
+  <td align=right>1.671</td>
+  <td align=right>40</td>
+  <td align=right>6</td>
+  <td align=right>1590505</td>
+  <td align=right>552987</td>
+  <td align=right>0.734</td>
+  <td align=right>4.506</td>
+  <td align=right>4.62</td>
+  <td align=right>46</td>
+  <td align=right>6</td>
+  <td align=right>1703132</td>
+  <td align=right>552572</td>
+  <td align=right>0.35</td>
+  <td align=right>2.63</td>
+  <td align=right>2.671</td>
+  <td align=right>41</td>
+  <td align=right>7</td>
+  <td align=right>1632986</td>
+  <td align=right>554139</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.msn.com/en-ae/</td>
+  <td align=right>0.802</td>
+  <td align=right>1.129</td>
+  <td align=right>1.134</td>
+  <td align=right>21</td>
+  <td align=right>1</td>
+  <td align=right>268346</td>
+  <td align=right>121108</td>
+  <td align=right>0.703</td>
+  <td align=right>1.36</td>
+  <td align=right>1.363</td>
+  <td align=right>22</td>
+  <td align=right>1</td>
+  <td align=right>262920</td>
+  <td align=right>121108</td>
+  <td align=right>0.795</td>
+  <td align=right>1.037</td>
+  <td align=right>1.038</td>
+  <td align=right>22</td>
+  <td align=right>1</td>
+  <td align=right>262466</td>
+  <td align=right>121108</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.paypal.com/ae/home</td>
+  <td align=right>1.19</td>
+  <td align=right>1.753</td>
+  <td align=right>1.76</td>
+  <td align=right>2</td>
+  <td align=right>0</td>
+  <td align=right>13810</td>
+  <td align=right>0</td>
+  <td align=right>1.072</td>
+  <td align=right>2.816</td>
+  <td align=right>2.855</td>
+  <td align=right>2</td>
+  <td align=right>0</td>
+  <td align=right>13807</td>
+  <td align=right>0</td>
+  <td align=right>0.897</td>
+  <td align=right>1.141</td>
+  <td align=right>1.146</td>
+  <td align=right>1</td>
+  <td align=right>0</td>
+  <td align=right>12490</td>
+  <td align=right>0</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://imgur.com/</td>
+  <td align=right>1.582</td>
+  <td align=right>4.082</td>
+  <td align=right>4.09</td>
+  <td align=right>1</td>
+  <td align=right>0</td>
+  <td align=right>5230</td>
+  <td align=right>0</td>
+  <td align=right>1.782</td>
+  <td align=right>4.978</td>
+  <td align=right>5.066</td>
+  <td align=right>1</td>
+  <td align=right>0</td>
+  <td align=right>5229</td>
+  <td align=right>0</td>
+  <td align=right>0.914</td>
+  <td align=right>1.403</td>
+  <td align=right>1.409</td>
+  <td align=right>1</td>
+  <td align=right>0</td>
+  <td align=right>5232</td>
+  <td align=right>0</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.zhihu.com/signin</td>
+  <td align=right>1.132</td>
+  <td align=right>2.641</td>
+  <td align=right>2.666</td>
+  <td align=right>20</td>
+  <td align=right>7</td>
+  <td align=right>814996</td>
+  <td align=right>734766</td>
+  <td align=right>1.871</td>
+  <td align=right>5.021</td>
+  <td align=right>5.074</td>
+  <td align=right>21</td>
+  <td align=right>7</td>
+  <td align=right>814447</td>
+  <td align=right>734900</td>
+  <td align=right>1.38</td>
+  <td align=right>2.478</td>
+  <td align=right>2.499</td>
+  <td align=right>15</td>
+  <td align=right>6</td>
+  <td align=right>767092</td>
+  <td align=right>694541</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.apple.com/</td>
+  <td align=right>1.249</td>
+  <td align=right>1.705</td>
+  <td align=right>1.713</td>
+  <td align=right>59</td>
+  <td align=right>10</td>
+  <td align=right>1960644</td>
+  <td align=right>338181</td>
+  <td align=right>1.135</td>
+  <td align=right>2.409</td>
+  <td align=right>2.421</td>
+  <td align=right>59</td>
+  <td align=right>10</td>
+  <td align=right>1960357</td>
+  <td align=right>338128</td>
+  <td align=right>1.231</td>
+  <td align=right>1.825</td>
+  <td align=right>1.835</td>
+  <td align=right>51</td>
+  <td align=right>10</td>
+  <td align=right>1390557</td>
+  <td align=right>338128</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.hao123.com/</td>
+  <td align=right>2.721</td>
+  <td align=right>4.928</td>
+  <td align=right>4.932</td>
+  <td align=right>56</td>
+  <td align=right>1</td>
+  <td align=right>615518</td>
+  <td align=right>9219</td>
+  <td align=right>3.596</td>
+  <td align=right>64.462</td>
+  <td align=right>64.469</td>
+  <td align=right>65</td>
+  <td align=right>1</td>
+  <td align=right>922043</td>
+  <td align=right>9219</td>
+  <td align=right>2.128</td>
+  <td align=right>28.768</td>
+  <td align=right>28.777</td>
+  <td align=right>65</td>
+  <td align=right>1</td>
+  <td align=right>920129</td>
+  <td align=right>9219</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://wordpress.com/</td>
+  <td align=right>1.454</td>
+  <td align=right>1.853</td>
+  <td align=right>1.867</td>
+  <td align=right>2</td>
+  <td align=right>0</td>
+  <td align=right>36530</td>
+  <td align=right>0</td>
+  <td align=right>1.254</td>
+  <td align=right>2.726</td>
+  <td align=right>2.733</td>
+  <td align=right>2</td>
+  <td align=right>0</td>
+  <td align=right>36531</td>
+  <td align=right>0</td>
+  <td align=right>0.431</td>
+  <td align=right>2.498</td>
+  <td align=right>2.506</td>
+  <td align=right>7</td>
+  <td align=right>2</td>
+  <td align=right>54014</td>
+  <td align=right>14030</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://ok.ru/</td>
+  <td align=right>1.527</td>
+  <td align=right>2.955</td>
+  <td align=right>2.96</td>
+  <td align=right>41</td>
+  <td align=right>9</td>
+  <td align=right>551597</td>
+  <td align=right>80681</td>
+  <td align=right>1.696</td>
+  <td align=right>4.926</td>
+  <td align=right>4.933</td>
+  <td align=right>67</td>
+  <td align=right>30</td>
+  <td align=right>1060582</td>
+  <td align=right>140395</td>
+  <td align=right>0.756</td>
+  <td align=right>3.381</td>
+  <td align=right>3.387</td>
+  <td align=right>67</td>
+  <td align=right>30</td>
+  <td align=right>1060359</td>
+  <td align=right>140398</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.adobe.com/</td>
+  <td align=right>0.939</td>
+  <td align=right>3.11</td>
+  <td align=right>3.131</td>
+  <td align=right>34</td>
+  <td align=right>15</td>
+  <td align=right>1311024</td>
+  <td align=right>435977</td>
+  <td align=right>1.108</td>
+  <td align=right>3.351</td>
+  <td align=right>3.369</td>
+  <td align=right>37</td>
+  <td align=right>18</td>
+  <td align=right>1319922</td>
+  <td align=right>444842</td>
+  <td align=right>0.525</td>
+  <td align=right>1.126</td>
+  <td align=right>1.145</td>
+  <td align=right>26</td>
+  <td align=right>13</td>
+  <td align=right>1072600</td>
+  <td align=right>416278</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.pinterest.com/</td>
+  <td align=right>0.711</td>
+  <td align=right>2.23</td>
+  <td align=right>2.231</td>
+  <td align=right>71</td>
+  <td align=right>11</td>
+  <td align=right>1443519</td>
+  <td align=right>542289</td>
+  <td align=right>0.731</td>
+  <td align=right>3.241</td>
+  <td align=right>3.298</td>
+  <td align=right>74</td>
+  <td align=right>14</td>
+  <td align=right>1573029</td>
+  <td align=right>684338</td>
+  <td align=right>1.156</td>
+  <td align=right>1.348</td>
+  <td align=right>1.348</td>
+  <td align=right>0</td>
+  <td align=right>0</td>
+  <td align=right>0</td>
+  <td align=right>0</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.cnblogs.com/</td>
+  <td align=right>8.162</td>
+  <td align=right>11.992</td>
+  <td align=right>11.994</td>
+  <td align=right>12</td>
+  <td align=right>4</td>
+  <td align=right>143431</td>
+  <td align=right>111953</td>
+  <td align=right>9.907</td>
+  <td align=right>12.66</td>
+  <td align=right>12.661</td>
+  <td align=right>12</td>
+  <td align=right>4</td>
+  <td align=right>144384</td>
+  <td align=right>112874</td>
+  <td align=right>4.273</td>
+  <td align=right>6.457</td>
+  <td align=right>6.458</td>
+  <td align=right>11</td>
+  <td align=right>3</td>
+  <td align=right>142349</td>
+  <td align=right>110861</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.douban.com/</td>
+  <td align=right>1.514</td>
+  <td align=right>3.301</td>
+  <td align=right>3.312</td>
+  <td align=right>2</td>
+  <td align=right>1</td>
+  <td align=right>26760</td>
+  <td align=right>12409</td>
+  <td align=right>1.94</td>
+  <td align=right>3.815</td>
+  <td align=right>3.833</td>
+  <td align=right>6</td>
+  <td align=right>3</td>
+  <td align=right>58028</td>
+  <td align=right>23207</td>
+  <td align=right>0.732</td>
+  <td align=right>1.83</td>
+  <td align=right>1.846</td>
+  <td align=right>6</td>
+  <td align=right>3</td>
+  <td align=right>58159</td>
+  <td align=right>22912</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.booking.com/</td>
+  <td align=right>1.96</td>
+  <td align=right>2.209</td>
+  <td align=right>2.221</td>
+  <td align=right>31</td>
+  <td align=right>10</td>
+  <td align=right>741985</td>
+  <td align=right>333684</td>
+  <td align=right>1.911</td>
+  <td align=right>3.546</td>
+  <td align=right>3.569</td>
+  <td align=right>51</td>
+  <td align=right>14</td>
+  <td align=right>1322418</td>
+  <td align=right>408308</td>
+  <td align=right>1.421</td>
+  <td align=right>2.304</td>
+  <td align=right>2.322</td>
+  <td align=right>47</td>
+  <td align=right>14</td>
+  <td align=right>1249036</td>
+  <td align=right>409486</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.google.com/</td>
+  <td align=right>0.355</td>
+  <td align=right>0.757</td>
+  <td align=right>0.765</td>
+  <td align=right>8</td>
+  <td align=right>2</td>
+  <td align=right>290651</td>
+  <td align=right>219730</td>
+  <td align=right>0.797</td>
+  <td align=right>1.165</td>
+  <td align=right>1.175</td>
+  <td align=right>8</td>
+  <td align=right>2</td>
+  <td align=right>290487</td>
+  <td align=right>219730</td>
+  <td align=right>0.338</td>
+  <td align=right>1.902</td>
+  <td align=right>1.916</td>
+  <td align=right>9</td>
+  <td align=right>2</td>
+  <td align=right>291396</td>
+  <td align=right>219730</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.tumblr.com/</td>
+  <td align=right>2.273</td>
+  <td align=right>3.487</td>
+  <td align=right>3.488</td>
+  <td align=right>64</td>
+  <td align=right>9</td>
+  <td align=right>3432403</td>
+  <td align=right>519058</td>
+  <td align=right>2.64</td>
+  <td align=right>2.836</td>
+  <td align=right>2.852</td>
+  <td align=right>64</td>
+  <td align=right>9</td>
+  <td align=right>4014817</td>
+  <td align=right>519058</td>
+  <td align=right>1.996</td>
+  <td align=right>2.351</td>
+  <td align=right>2.353</td>
+  <td align=right>34</td>
+  <td align=right>8</td>
+  <td align=right>2117315</td>
+  <td align=right>517843</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>http://soso.com/</td>
+  <td align=right>1.329</td>
+  <td align=right>2.04</td>
+  <td align=right>2.043</td>
+  <td align=right>6</td>
+  <td align=right>1</td>
+  <td align=right>27214</td>
+  <td align=right>4863</td>
+  <td align=right>1.479</td>
+  <td align=right>1.857</td>
+  <td align=right>1.86</td>
+  <td align=right>6</td>
+  <td align=right>1</td>
+  <td align=right>27214</td>
+  <td align=right>4863</td>
+  <td align=right>0.515</td>
+  <td align=right>0.753</td>
+  <td align=right>0.756</td>
+  <td align=right>6</td>
+  <td align=right>1</td>
+  <td align=right>26661</td>
+  <td align=right>4869</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.dropbox.com/h</td>
+  <td align=right>1.923</td>
+  <td align=right>6.347</td>
+  <td align=right>6.351</td>
+  <td align=right>103</td>
+  <td align=right>63</td>
+  <td align=right>1224120</td>
+  <td align=right>885617</td>
+  <td align=right>2.045</td>
+  <td align=right>2.829</td>
+  <td align=right>2.842</td>
+  <td align=right>97</td>
+  <td align=right>62</td>
+  <td align=right>833968</td>
+  <td align=right>503964</td>
+  <td align=right>1.086</td>
+  <td align=right>1.729</td>
+  <td align=right>1.735</td>
+  <td align=right>93</td>
+  <td align=right>62</td>
+  <td align=right>685416</td>
+  <td align=right>503964</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.rakuten.co.jp/</td>
+  <td align=right>5.4</td>
+  <td align=right>11.356</td>
+  <td align=right>11.381</td>
+  <td align=right>15</td>
+  <td align=right>8</td>
+  <td align=right>91425</td>
+  <td align=right>20791</td>
+  <td align=right>4.478</td>
+  <td align=right>8.836</td>
+  <td align=right>8.884</td>
+  <td align=right>15</td>
+  <td align=right>8</td>
+  <td align=right>91408</td>
+  <td align=right>20791</td>
+  <td align=right>10.26</td>
+  <td align=right>10.667</td>
+  <td align=right>10.667</td>
+  <td align=right>1</td>
+  <td align=right>0</td>
+  <td align=right>256</td>
+  <td align=right>0</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.quora.com/</td>
+  <td align=right>1.915</td>
+  <td align=right>3.174</td>
+  <td align=right>3.175</td>
+  <td align=right>12</td>
+  <td align=right>3</td>
+  <td align=right>1348462</td>
+  <td align=right>636227</td>
+  <td align=right>1.153</td>
+  <td align=right>1.811</td>
+  <td align=right>1.856</td>
+  <td align=right>12</td>
+  <td align=right>3</td>
+  <td align=right>1348415</td>
+  <td align=right>636229</td>
+  <td align=right>1.024</td>
+  <td align=right>1.451</td>
+  <td align=right>1.453</td>
+  <td align=right>9</td>
+  <td align=right>5</td>
+  <td align=right>861870</td>
+  <td align=right>652574</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>https://www.pixnet.net/</td>
+  <td align=right>5.993</td>
+  <td align=right>13.526</td>
+  <td align=right>13.527</td>
+  <td align=right>11</td>
+  <td align=right>0</td>
+  <td align=right>28456</td>
+  <td align=right>0</td>
+  <td align=right>2.362</td>
+  <td align=right>9.124</td>
+  <td align=right>9.125</td>
+  <td align=right>12</td>
+  <td align=right>0</td>
+  <td align=right>28340</td>
+  <td align=right>0</td>
+  <td align=right>1.579</td>
+  <td align=right>3.654</td>
+  <td align=right>3.654</td>
+  <td align=right>11</td>
+  <td align=right>0</td>
+  <td align=right>27932</td>
+  <td align=right>0</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 style='height:16.0pt'>Average</td>
+  <td align=right>2.16397959</td>
+  <td align=right>7.71561224</td>
+  <td align=right>7.72832653</td>
+  <td align=right>25.8571429</td>
+  <td align=right>6.28571429</td>
+  <td align=right>893020.918</td>
+  <td align=right>215181.204</td>
+  <td align=right>5.19289796</td>
+  <td align=right>9.94932653</td>
+  <td align=right>9.97081633</td>
+  <td align=right>29.244898</td>
+  <td align=right>7</td>
+  <td align=right>1028256.57</td>
+  <td align=right>220721.041</td>
+  <td align=right>1.55991837</td>
+  <td align=right>3.96785714</td>
+  <td align=right>3.97965306</td>
+  <td align=right>22.8367347</td>
+  <td align=right>5.85714286</td>
+  <td align=right>834532.857</td>
+  <td align=right>193686</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=273 style='width:205pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=87 style='width:65pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>

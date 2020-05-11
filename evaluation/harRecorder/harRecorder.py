@@ -40,10 +40,10 @@ for i in range(100):
 
 a = raw_input("go")
 
-with open('FirstPageLoadSingle/FirstPageLoadSingleFinal.csv', 'a') as csvfile:
+with open('baseCase/Final/BaseCaseFinal.csv', 'a') as csvfile:
 	writer = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 	writer.writerow(header)
-	for i in range(50):
+	for i in range(55):
 		try:
 			stats= []
 			jssize = []
@@ -97,7 +97,7 @@ with open('FirstPageLoadSingle/FirstPageLoadSingleFinal.csv', 'a') as csvfile:
 
 			writer.writerow(stats)
 		except:
-			print "	 First Page Load  - Skipped: " + websites[i]
+			print "	 Base Case  - Skipped: " + websites[i]
 		
 
 		# print "3. Saving the har file"
@@ -108,67 +108,67 @@ with open('FirstPageLoadSingle/FirstPageLoadSingleFinal.csv', 'a') as csvfile:
 		# f.write(result)
 		# f.close()
 		# driver.close()
-with open('SecondPageLoadSingle/SecondPageLoadSingleFinal.csv', 'a') as csvfile2:
-	writer2 = csv.writer(csvfile2, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-	writer2.writerow(header)
-	for i in range(50):
-		try:
-			stats= []
-			jssize = []
-			size = []
-			jsEntries = []
-			# proxy.new_har(websites[i])
-			# go to the google home page
-			driver.get(websites[i])
-			navigationStart = driver.execute_script("return window.performance.timing.navigationStart")
-			responseStart = driver.execute_script("return window.performance.timing.responseStart")
-			domComplete = driver.execute_script("return window.performance.timing.domComplete")
-			domInteractive = driver.execute_script("return window.performance.timing.domInteractive")
-			LoadEventEnd = driver.execute_script("return window.performance.timing.loadEventEnd")
-			Network =  driver.execute_script("var performance = window.performance || window.mozPerformance || window.msPerformance || window.webkitPerformance || {}; var network = performance.getEntries() || {}; return network;")
+# with open('SecondPageLoadSingle/SecondPageLoadSingleFinal.csv', 'a') as csvfile2:
+# 	writer2 = csv.writer(csvfile2, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+# 	writer2.writerow(header)
+# 	for i in range(90, 100):
+# 		try:
+# 			stats= []
+# 			jssize = []
+# 			size = []
+# 			jsEntries = []
+# 			# proxy.new_har(websites[i])
+# 			# go to the google home page
+# 			driver.get(websites[i])
+# 			navigationStart = driver.execute_script("return window.performance.timing.navigationStart")
+# 			responseStart = driver.execute_script("return window.performance.timing.responseStart")
+# 			domComplete = driver.execute_script("return window.performance.timing.domComplete")
+# 			domInteractive = driver.execute_script("return window.performance.timing.domInteractive")
+# 			LoadEventEnd = driver.execute_script("return window.performance.timing.loadEventEnd")
+# 			Network =  driver.execute_script("var performance = window.performance || window.mozPerformance || window.msPerformance || window.webkitPerformance || {}; var network = performance.getEntries() || {}; return network;")
 
-			print "1. Scrolling throught the page to make sure everything is loaded"
-			scheight = 0
-			while scheight < 15.0:
-			    driver.execute_script("window.scrollTo(0, document.body.scrollHeight/%s);" % scheight)
-			    time.sleep(0.001)
-			    scheight += .01  
-			for entry in Network:
-				if entry.get('transferSize'):
-					size.append(entry['transferSize'])
-				else:
-					print entry
-				if entry.get('initiatorType'):
-					if entry['initiatorType'] == "script":
-						if entry.get('transferSize'):
-							jssize.append(entry['transferSize'])
-							jsEntries.append(entry)
-						else:
-							print entry
-			print "	2. Recording page load time, page size, number fo requests as"
-			print "	Time to Interactivity: " + str(domInteractive - navigationStart)
-			print "	Time to DOM completion: " + str(domComplete - navigationStart)
-			print "	Page Load Time: " + str(LoadEventEnd - navigationStart)
-			print "	Total Number requests: " + str(len(size))
-			print "	Total Number JS requests: " + str(len(jssize))
-			print "	Total Transfer Size: " + str(sum(size))
-			print "	Transfer size of JS elements: " + str(sum(jssize))
-
-
+# 			print "1. Scrolling throught the page to make sure everything is loaded"
+# 			scheight = 0
+# 			while scheight < 15.0:
+# 			    driver.execute_script("window.scrollTo(0, document.body.scrollHeight/%s);" % scheight)
+# 			    time.sleep(0.001)
+# 			    scheight += .01  
+# 			for entry in Network:
+# 				if entry.get('transferSize'):
+# 					size.append(entry['transferSize'])
+# 				else:
+# 					print entry
+# 				if entry.get('initiatorType'):
+# 					if entry['initiatorType'] == "script":
+# 						if entry.get('transferSize'):
+# 							jssize.append(entry['transferSize'])
+# 							jsEntries.append(entry)
+# 						else:
+# 							print entry
+# 			print "	2. Recording page load time, page size, number fo requests as"
+# 			print "	Time to Interactivity: " + str(domInteractive - navigationStart)
+# 			print "	Time to DOM completion: " + str(domComplete - navigationStart)
+# 			print "	Page Load Time: " + str(LoadEventEnd - navigationStart)
+# 			print "	Total Number requests: " + str(len(size))
+# 			print "	Total Number JS requests: " + str(len(jssize))
+# 			print "	Total Transfer Size: " + str(sum(size))
+# 			print "	Transfer size of JS elements: " + str(sum(jssize))
 
 
-			stats.append(websites[i])
-			stats.append((domInteractive - navigationStart)/1000.0)
-			stats.append((domComplete - navigationStart)/1000.0)
-			stats.append((LoadEventEnd - navigationStart)/1000.0)
-			stats.append(len(size))
-			stats.append(len(jssize))
-			stats.append(sum(size))
-			stats.append(sum(jssize))
 
-			writer2.writerow(stats)
-		except:
-			print "	 Second Page Load - Skipped: " + websites[i]
+
+# 			stats.append(websites[i])
+# 			stats.append((domInteractive - navigationStart)/1000.0)
+# 			stats.append((domComplete - navigationStart)/1000.0)
+# 			stats.append((LoadEventEnd - navigationStart)/1000.0)
+# 			stats.append(len(size))
+# 			stats.append(len(jssize))
+# 			stats.append(sum(size))
+# 			stats.append(sum(jssize))
+
+# 			writer2.writerow(stats)
+# 		except:
+# 			print "	 Second Page Load - Skipped: " + websites[i]
 
 
 driver.quit()

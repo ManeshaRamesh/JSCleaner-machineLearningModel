@@ -25,3 +25,38 @@ https://www.tribunnews.com/,1.298,4.32,4.361,15,5,362594,209991
 https://github.com/,1.053,1.26,1.281,2,0,74074,0
 https://www.imdb.com/,1.218,2.743,2.756,3,0,87869,0
 https://t.co/,0.52,0.767,0.767,2,0,2501,0
+url,Time to interactivity,Time to DOM completion,Page Load Time,Total Number requests,Total Number JS requests,Total Transfer Size,Transfer size of JS elements
+https://stackoverflow.com/,0.6,1.993,1.994,2,1,58859,34686
+https://www.office.com/,0.603,1.414,1.414,8,0,489380,0
+https://www.fandom.com/,0.83,1.394,1.397,36,2,1497948,359545
+https://www.msn.com/en-ae/,0.615,1.444,1.448,43,2,381136,122863
+https://www.paypal.com/ae/home,0.921,1.926,1.972,2,0,13199,0
+https://imgur.com/,1.714,4.079,4.089,1,0,5233,0
+https://www.zhihu.com/signin,4.098,7.506,7.54,16,6,771520,694407
+https://www.apple.com/,0.918,0.989,0.995,59,10,1960345,338159
+https://www.hao123.com/,2.706,5.891,5.896,56,1,616131,9219
+https://wordpress.com/,1.183,145.837,145.845,7,2,54006,14025
+https://ok.ru/,1.652,4.078,4.083,72,30,1112674,140400
+https://www.adobe.com/,1.095,1.68,1.714,29,13,1239411,416280
+https://www.pinterest.com/,0.7,2.89,2.895,61,3,976265,141706
+https://www.cnblogs.com/,5.854,7.363,7.363,9,1,36737,5364
+https://www.douban.com/,1.589,3.5,3.514,5,2,45705,10503
+https://www.booking.com/,1.82,3.334,3.352,51,15,1367861,398738
+https://www.google.com/,0.394,0.753,0.761,8,2,290278,219730
+https://www.tumblr.com/,2.541,2.891,2.892,43,8,4643443,517843
+http://soso.com/,1.493,1.922,1.924,6,1,26655,4863
+https://www.dropbox.com/h,1.633,2.41,2.415,97,62,849051,503951
+https://www.rakuten.co.jp/,10.502,10.513,10.513,1,0,255,0
+url,Time to interactivity,Time to DOM completion,Page Load Time,Total Number requests,Total Number JS requests,Total Transfer Size,Transfer size of JS elements
+url,Time to interactivity,Time to DOM completion,Page Load Time,Total Number requests,Total Number JS requests,Total Transfer Size,Transfer size of JS elements
+https://fc2.com/,2.492,2.649,2.655,3,2,12316,6165
+https://medium.com/,2.571,2.842,2.856,2,0,18815,0
+https://www.gamepedia.com/,2.936,4.854,4.856,42,8,894909,551608
+https://us.alibabacloud.com/,1.284,2.339,2.356,53,16,1044466,199887
+https://www.flipkart.com/,1.22,1.504,1.504,12,5,556849,438560
+https://www.theguardian.com/international,0.413,2.137,2.178,6,4,254086,107133
+https://www.sindonews.com/,2.685,8.017,8.02,20,6,189617,132821
+https://www.mercadolivre.com.br/,0.919,1.741,1.757,2,0,50315,0
+https://wetransfer.com/,0.628,1.109,1.109,1,0,5887,0
+https://www.alibaba.com/,0.743,4.889,5.178,184,43,2501379,923311
+url,Time to interactivity,Time to DOM completion,Page Load Time,Total Number requests,Total Number JS requests,Total Transfer Size,Transfer size of JS elements

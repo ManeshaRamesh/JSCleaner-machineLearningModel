@@ -42,6 +42,14 @@
 
 import os
 
-command = "python harRecorder/harRecorder.py"
+# f_websites = open("websites.txt", "r")
+# websites = []
+# # store websites in an array
+# for i in range(100):
+#     websites.append(f_websites.readline().rstrip())
+
+
+# for url in websites:
+command = "python harRecorder/harRecorder.py" 
 print command
 os.system(command)
