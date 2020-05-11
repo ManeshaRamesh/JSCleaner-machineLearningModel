@@ -63,9 +63,17 @@ chrome.storage.local.get(['default'], function(result) {
         // console.log("does not exist", result.key)
         var settingDefault = []
         window.jscleaner.labels.forEach((element) =>{
-            obj ={
-                label: element,
-                status: 1
+            if (element === "Others"){
+                obj ={
+                    label: element,
+                    status: 0
+                }
+
+            }else{
+                obj ={
+                    label: element,
+                    status: 1
+                }
             }
             settingDefault.push(obj)// enables all scripts - does not block anything unless set otherwise
         })

@@ -1,0 +1,293 @@
+[INFO  2017-09-15T14:46:32,313 net.lightbody.bmp.proxy.Main] (main) Starting BrowserMob Proxy version 2.1.4 
+[INFO  2017-09-15T14:46:32,449 org.eclipse.jetty.util.log] (main) jetty-7.x.y-SNAPSHOT 
+[INFO  2017-09-15T14:46:32,493 org.eclipse.jetty.util.log] (main) started o.e.j.s.ServletContextHandler{/,null} 
+[INFO  2017-09-15T14:46:32,784 org.eclipse.jetty.util.log] (main) Started SelectChannelConnector@0.0.0.0:8080 
+[INFO  2017-09-15T14:46:43,760 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-18) Starting proxy at address: 0.0.0.0/0.0.0.0:8081 
+[INFO  2017-09-15T14:46:43,829 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-18) Proxy listening with TCP transport 
+[INFO  2017-09-15T14:46:44,049 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-18) Proxy started at address: /0:0:0:0:0:0:0:0:8081 
+[INFO  2017-09-15T14:52:14,233 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-19) Starting proxy at address: 0.0.0.0/0.0.0.0:8082 
+[INFO  2017-09-15T14:52:14,259 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-19) Proxy listening with TCP transport 
+[INFO  2017-09-15T14:52:14,260 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-19) Proxy started at address: /0:0:0:0:0:0:0:0:8082 
+[INFO  2017-09-15T14:52:16,914 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-1-ClientToProxyWorker-5) (AWAITING_INITIAL) [id: 0xa6ba973d, L:/127.0.0.1:8082 - R:/127.0.0.1:52422]: Bad Host http://http//e.nexac.com/e/demdex_sync.xgi?na_exid=24553780383119620152623006680370503062&ru=https%3A%2F%2Fdpm.demdex.net%2Fibs%3Adpid%3D134096%26dpuuid%3D%3Cna_id%3E%20 
+[INFO  2017-09-15T14:52:18,487 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-1-ClientToProxyWorker-3) (AWAITING_INITIAL) [id: 0x8c00d9c4, L:/127.0.0.1:8082 - R:/127.0.0.1:52416]: Bad Host http://tacoda.at.atwola.com/atx/sync/demdex/demdex/24553780383119620152623006680370503062 
+[INFO  2017-09-15T14:52:33,117 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-1-ProxyToServerWorker-0) (AWAITING_INITIAL) [id: 0xa4d8a6e0, L:/216.165.71.244:50242 - R:metrics.foxnews.com/192.243.250.16:80]: An IOException occurred on ProxyToServerConnection: Connection reset by peer 
+[INFO  2017-09-15T14:52:33,117 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-1-ProxyToServerWorker-0) (AWAITING_INITIAL) [id: 0xa4d8a6e0, L:/216.165.71.244:50242 - R:metrics.foxnews.com/192.243.250.16:80]: Disconnecting open connection to server 
+[INFO  2017-09-15T14:52:34,607 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-1-ProxyToServerWorker-5) (AWAITING_INITIAL) [id: 0x7971683c, L:/216.165.71.244:36686 - R:gum.criteo.com/74.119.119.66:80]: An IOException occurred on ProxyToServerConnection: Connection reset by peer 
+[INFO  2017-09-15T14:52:34,607 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-1-ProxyToServerWorker-5) (AWAITING_INITIAL) [id: 0x7971683c, L:/216.165.71.244:36686 - R:gum.criteo.com/74.119.119.66:80]: Disconnecting open connection to server 
+[INFO  2017-09-15T14:53:53,568 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-1-ProxyToServerWorker-2) (AWAITING_INITIAL) [id: 0xea11d52e, L:/216.165.71.244:56316 - R:bam.nr-data.net/162.247.242.20:80]: An IOException occurred on ProxyToServerConnection: Connection reset by peer 
+[INFO  2017-09-15T14:53:53,568 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-1-ProxyToServerWorker-2) (AWAITING_INITIAL) [id: 0xea11d52e, L:/216.165.71.244:56316 - R:bam.nr-data.net/162.247.242.20:80]: Disconnecting open connection to server 
+[INFO  2017-09-15T14:54:06,338 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-1-ClientToProxyWorker-0) (AWAITING_INITIAL) [id: 0x8580e5bf, L:/127.0.0.1:8082 - R:/127.0.0.1:52782]: An IOException occurred on ClientToProxyConnection: Connection reset by peer 
+[INFO  2017-09-15T14:54:06,340 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-1-ClientToProxyWorker-7) (AWAITING_INITIAL) [id: 0x95b3c685, L:/127.0.0.1:8082 - R:/127.0.0.1:52748]: An IOException occurred on ClientToProxyConnection: Connection reset by peer 
+[INFO  2017-09-15T17:20:24,881 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-18) Starting proxy at address: 0.0.0.0/0.0.0.0:8083 
+[INFO  2017-09-15T17:20:24,915 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-18) Proxy listening with TCP transport 
+[INFO  2017-09-15T17:20:25,465 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-18) Proxy started at address: /0:0:0:0:0:0:0:0:8083 
+[INFO  2017-09-15T17:23:27,393 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-17) Starting proxy at address: 0.0.0.0/0.0.0.0:8084 
+[INFO  2017-09-15T17:23:27,394 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-17) Proxy listening with TCP transport 
+[INFO  2017-09-15T17:23:27,395 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-17) Proxy started at address: /0:0:0:0:0:0:0:0:8084 
+[INFO  2017-09-15T17:28:45,205 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-19) Starting proxy at address: 0.0.0.0/0.0.0.0:8085 
+[INFO  2017-09-15T17:28:45,206 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-19) Proxy listening with TCP transport 
+[INFO  2017-09-15T17:28:45,208 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-19) Proxy started at address: /0:0:0:0:0:0:0:0:8085 
+[INFO  2017-09-15T17:28:48,920 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-4-ProxyToServerWorker-5) (CONNECTING) [id: 0xaaf8fe2c]: Connection to upstream server failed io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:443
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[?:1.8.0_131]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[?:1.8.0_131]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:346) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:639) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:574) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:488) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:450) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:873) [browsermob-dist-2.1.4.jar:?]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_131]
+
+[INFO  2017-09-15T17:30:51,372 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-18) Starting proxy at address: 0.0.0.0/0.0.0.0:8086 
+[INFO  2017-09-15T17:30:51,373 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-18) Proxy listening with TCP transport 
+[INFO  2017-09-15T17:30:51,375 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-18) Proxy started at address: /0:0:0:0:0:0:0:0:8086 
+[INFO  2017-09-15T17:36:56,488 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-20) Starting proxy at address: 0.0.0.0/0.0.0.0:8087 
+[INFO  2017-09-15T17:36:56,490 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-20) Proxy listening with TCP transport 
+[INFO  2017-09-15T17:36:56,493 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-20) Proxy started at address: /0:0:0:0:0:0:0:0:8087 
+[INFO  2017-09-15T17:38:03,183 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-6-ProxyToServerWorker-1) (AWAITING_INITIAL) [id: 0xc8849b15, L:/216.165.71.244:44748 - R:bat.bing.com/204.79.197.200:80]: An IOException occurred on ProxyToServerConnection: Connection reset by peer 
+[INFO  2017-09-15T17:38:03,184 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-6-ProxyToServerWorker-1) (AWAITING_INITIAL) [id: 0xc8849b15, L:/216.165.71.244:44748 - R:bat.bing.com/204.79.197.200:80]: Disconnecting open connection to server 
+[INFO  2017-09-15T17:39:04,423 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-6-ProxyToServerWorker-0) (AWAITING_INITIAL) [id: 0x5578efc2, L:/216.165.71.244:52590 - R:api.iperceptions.com/52.184.189.101:80]: An IOException occurred on ProxyToServerConnection: Connection reset by peer 
+[INFO  2017-09-15T17:39:04,423 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-6-ProxyToServerWorker-0) (AWAITING_INITIAL) [id: 0x5578efc2, L:/216.165.71.244:52590 - R:api.iperceptions.com/52.184.189.101:80]: Disconnecting open connection to server 
+[INFO  2017-09-15T17:39:05,278 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-6-ProxyToServerWorker-0) (AWAITING_INITIAL) [id: 0x7d256f67, L:/216.165.71.244:39090 - R:app.e.seagate.com/209.167.231.27:80]: An IOException occurred on ProxyToServerConnection: Connection reset by peer 
+[INFO  2017-09-15T17:39:05,278 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-6-ProxyToServerWorker-0) (AWAITING_INITIAL) [id: 0x7d256f67, L:/216.165.71.244:39090 - R:app.e.seagate.com/209.167.231.27:80]: Disconnecting open connection to server 
+[INFO  2017-09-15T17:39:06,204 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-6-ProxyToServerWorker-6) (AWAITING_INITIAL) [id: 0xc8eca07d, L:/216.165.71.244:42004 - R:s43975733.t.eloqua.com/209.167.231.17:80]: An IOException occurred on ProxyToServerConnection: Connection reset by peer 
+[INFO  2017-09-15T17:39:06,204 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-6-ProxyToServerWorker-6) (AWAITING_INITIAL) [id: 0xc8eca07d, L:/216.165.71.244:42004 - R:s43975733.t.eloqua.com/209.167.231.17:80]: Disconnecting open connection to server 
+[INFO  2017-09-15T17:39:29,466 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-18) Starting proxy at address: 0.0.0.0/0.0.0.0:8088 
+[INFO  2017-09-15T17:39:29,469 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-18) Proxy listening with TCP transport 
+[INFO  2017-09-15T17:39:29,470 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-18) Proxy started at address: /0:0:0:0:0:0:0:0:8088 
+[INFO  2017-09-15T17:42:11,365 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-17) Starting proxy at address: 0.0.0.0/0.0.0.0:8089 
+[INFO  2017-09-15T17:42:11,371 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-17) Proxy listening with TCP transport 
+[INFO  2017-09-15T17:42:11,383 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-17) Proxy started at address: /0:0:0:0:0:0:0:0:8089 
+[INFO  2017-09-15T17:47:18,129 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-18) Starting proxy at address: 0.0.0.0/0.0.0.0:8090 
+[INFO  2017-09-15T17:47:18,181 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-18) Proxy listening with TCP transport 
+[INFO  2017-09-15T17:47:18,183 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-18) Proxy started at address: /0:0:0:0:0:0:0:0:8090 
+[INFO  2017-09-15T17:50:41,318 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-20) Starting proxy at address: 0.0.0.0/0.0.0.0:8091 
+[INFO  2017-09-15T17:50:41,319 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-20) Proxy listening with TCP transport 
+[INFO  2017-09-15T17:50:41,321 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-20) Proxy started at address: /0:0:0:0:0:0:0:0:8091 
+[INFO  2017-09-15T18:45:38,567 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-20) Starting proxy at address: 0.0.0.0/0.0.0.0:8092 
+[INFO  2017-09-15T18:45:38,568 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-20) Proxy listening with TCP transport 
+[INFO  2017-09-15T18:45:38,569 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-20) Proxy started at address: /0:0:0:0:0:0:0:0:8092 
+[INFO  2017-09-15T19:13:30,675 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-18) Starting proxy at address: 0.0.0.0/0.0.0.0:8093 
+[INFO  2017-09-15T19:13:30,692 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-18) Proxy listening with TCP transport 
+[INFO  2017-09-15T19:13:30,695 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-18) Proxy started at address: /0:0:0:0:0:0:0:0:8093 
+[INFO  2017-09-15T19:45:16,193 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-15) Starting proxy at address: 0.0.0.0/0.0.0.0:8094 
+[INFO  2017-09-15T19:45:16,209 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-15) Proxy listening with TCP transport 
+[INFO  2017-09-15T19:45:16,210 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-15) Proxy started at address: /0:0:0:0:0:0:0:0:8094 
+[INFO  2017-09-15T19:50:56,476 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-16) Starting proxy at address: 0.0.0.0/0.0.0.0:8095 
+[INFO  2017-09-15T19:50:56,477 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-16) Proxy listening with TCP transport 
+[INFO  2017-09-15T19:50:56,477 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-16) Proxy started at address: /0:0:0:0:0:0:0:0:8095 
+[INFO  2017-09-15T20:15:30,954 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-19) Starting proxy at address: 0.0.0.0/0.0.0.0:8096 
+[INFO  2017-09-15T20:15:30,970 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-19) Proxy listening with TCP transport 
+[INFO  2017-09-15T20:15:30,971 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-19) Proxy started at address: /0:0:0:0:0:0:0:0:8096 
+[INFO  2017-09-15T20:15:51,593 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-15-ProxyToServerWorker-1) (AWAITING_INITIAL) [id: 0x0dc5754d, L:/216.165.71.244:48584 - R:dis.us.criteo.com/74.119.119.84:443]: An IOException occurred on ProxyToServerConnection: Connection reset by peer 
+[INFO  2017-09-15T20:15:51,593 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-15-ProxyToServerWorker-1) (AWAITING_INITIAL) [id: 0x0dc5754d, L:/216.165.71.244:48584 - R:dis.us.criteo.com/74.119.119.84:443]: Disconnecting open connection to server 
+[INFO  2017-09-15T20:15:52,490 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-15-ProxyToServerWorker-5) (AWAITING_INITIAL) [id: 0x77ac306c, L:/216.165.71.244:48618 - R:dis.criteo.com/74.119.119.84:443]: An IOException occurred on ProxyToServerConnection: Connection reset by peer 
+[INFO  2017-09-15T20:15:52,490 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-15-ProxyToServerWorker-5) (AWAITING_INITIAL) [id: 0x77ac306c, L:/216.165.71.244:48618 - R:dis.criteo.com/74.119.119.84:443]: Disconnecting open connection to server 
+[INFO  2017-09-15T20:15:52,620 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-15-ProxyToServerWorker-4) (AWAITING_INITIAL) [id: 0x118da057, L:/216.165.71.244:45070 - R:static.criteo.net/74.119.119.70:443]: An IOException occurred on ProxyToServerConnection: Connection reset by peer 
+[INFO  2017-09-15T20:15:52,620 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-15-ProxyToServerWorker-4) (AWAITING_INITIAL) [id: 0x118da057, L:/216.165.71.244:45070 - R:static.criteo.net/74.119.119.70:443]: Disconnecting open connection to server 
+[INFO  2017-09-15T20:15:52,979 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-15-ProxyToServerWorker-0) (AWAITING_INITIAL) [id: 0xd1fe8f73, L:/216.165.71.244:47872 - R:sslwidget.criteo.com/74.119.119.79:443]: An IOException occurred on ProxyToServerConnection: Connection reset by peer 
+[INFO  2017-09-15T20:15:52,979 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-15-ProxyToServerWorker-0) (AWAITING_INITIAL) [id: 0xd1fe8f73, L:/216.165.71.244:47872 - R:sslwidget.criteo.com/74.119.119.79:443]: Disconnecting open connection to server 
+[INFO  2017-09-15T20:22:33,593 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-18) Starting proxy at address: 0.0.0.0/0.0.0.0:8097 
+[INFO  2017-09-15T20:22:33,594 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-18) Proxy listening with TCP transport 
+[INFO  2017-09-15T20:22:33,596 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-18) Proxy started at address: /0:0:0:0:0:0:0:0:8097 
+[INFO  2017-09-15T20:26:50,826 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-20) Starting proxy at address: 0.0.0.0/0.0.0.0:8098 
+[INFO  2017-09-15T20:26:50,827 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-20) Proxy listening with TCP transport 
+[INFO  2017-09-15T20:26:50,828 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-20) Proxy started at address: /0:0:0:0:0:0:0:0:8098 
+[INFO  2017-09-15T20:32:00,589 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-20) Starting proxy at address: 0.0.0.0/0.0.0.0:8099 
+[INFO  2017-09-15T20:32:00,590 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-20) Proxy listening with TCP transport 
+[INFO  2017-09-15T20:32:00,595 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-20) Proxy started at address: /0:0:0:0:0:0:0:0:8099 
+[INFO  2017-09-15T20:32:05,686 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-18-ClientToProxyWorker-2) (AWAITING_INITIAL) [id: 0x3b6be6ea, L:/127.0.0.1:8099 - R:/127.0.0.1:42620]: Bad Host tacoda.at.atwola.com:443 
+[INFO  2017-09-15T20:32:16,299 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-18-ProxyToServerWorker-0) (HANDSHAKING) [id: 0x3c44af95, L:0.0.0.0/0.0.0.0:53368 ! R:cw.addthis.com/52.3.112.128:443]: Connection to upstream server failed javax.net.ssl.SSLHandshakeException: General SSLEngine problem
+	at sun.security.ssl.Handshaker.checkThrown(Handshaker.java:1478) ~[?:1.8.0_131]
+	at sun.security.ssl.SSLEngineImpl.checkTaskThrown(SSLEngineImpl.java:535) ~[?:1.8.0_131]
+	at sun.security.ssl.SSLEngineImpl.readNetRecord(SSLEngineImpl.java:813) ~[?:1.8.0_131]
+	at sun.security.ssl.SSLEngineImpl.unwrap(SSLEngineImpl.java:781) ~[?:1.8.0_131]
+	at javax.net.ssl.SSLEngine.unwrap(SSLEngine.java:624) ~[?:1.8.0_131]
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1097) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:968) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:902) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:411) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:248) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1334) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:926) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:129) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:651) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:574) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:488) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:450) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:873) [browsermob-dist-2.1.4.jar:?]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_131]
+Caused by: javax.net.ssl.SSLHandshakeException: General SSLEngine problem
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:192) ~[?:1.8.0_131]
+	at sun.security.ssl.SSLEngineImpl.fatal(SSLEngineImpl.java:1728) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:304) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:296) ~[?:1.8.0_131]
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1514) ~[?:1.8.0_131]
+	at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:216) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker.processLoop(Handshaker.java:1026) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker$1.run(Handshaker.java:966) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker$1.run(Handshaker.java:963) ~[?:1.8.0_131]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker$DelegatedTask.run(Handshaker.java:1416) ~[?:1.8.0_131]
+	at io.netty.handler.ssl.SslHandler.runDelegatedTasks(SslHandler.java:1123) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1008) [browsermob-dist-2.1.4.jar:?]
+	... 17 more
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:397) ~[?:1.8.0_131]
+	at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:302) ~[?:1.8.0_131]
+	at sun.security.validator.Validator.validate(Validator.java:260) ~[?:1.8.0_131]
+	at sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:324) ~[?:1.8.0_131]
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:281) ~[?:1.8.0_131]
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:136) ~[?:1.8.0_131]
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1501) ~[?:1.8.0_131]
+	at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:216) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker.processLoop(Handshaker.java:1026) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker$1.run(Handshaker.java:966) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker$1.run(Handshaker.java:963) ~[?:1.8.0_131]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker$DelegatedTask.run(Handshaker.java:1416) ~[?:1.8.0_131]
+	at io.netty.handler.ssl.SslHandler.runDelegatedTasks(SslHandler.java:1123) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1008) ~[browsermob-dist-2.1.4.jar:?]
+	... 17 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:141) ~[?:1.8.0_131]
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:126) ~[?:1.8.0_131]
+	at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:280) ~[?:1.8.0_131]
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:392) ~[?:1.8.0_131]
+	at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:302) ~[?:1.8.0_131]
+	at sun.security.validator.Validator.validate(Validator.java:260) ~[?:1.8.0_131]
+	at sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:324) ~[?:1.8.0_131]
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:281) ~[?:1.8.0_131]
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:136) ~[?:1.8.0_131]
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1501) ~[?:1.8.0_131]
+	at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:216) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker.processLoop(Handshaker.java:1026) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker$1.run(Handshaker.java:966) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker$1.run(Handshaker.java:963) ~[?:1.8.0_131]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker$DelegatedTask.run(Handshaker.java:1416) ~[?:1.8.0_131]
+	at io.netty.handler.ssl.SslHandler.runDelegatedTasks(SslHandler.java:1123) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1008) ~[browsermob-dist-2.1.4.jar:?]
+	... 17 more
+
+[ERROR 2017-09-15T20:32:16,352 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-18-ProxyToServerWorker-0) (DISCONNECTED) [id: 0x3c44af95, L:0.0.0.0/0.0.0.0:53368 ! R:cw.addthis.com/52.3.112.128:443]: Caught an exception on ProxyToServerConnection io.netty.handler.codec.DecoderException: javax.net.ssl.SSLHandshakeException: General SSLEngine problem
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:442) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:248) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1334) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:926) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:129) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:651) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:574) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:488) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:450) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:873) [browsermob-dist-2.1.4.jar:?]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_131]
+Caused by: javax.net.ssl.SSLHandshakeException: General SSLEngine problem
+	at sun.security.ssl.Handshaker.checkThrown(Handshaker.java:1478) ~[?:1.8.0_131]
+	at sun.security.ssl.SSLEngineImpl.checkTaskThrown(SSLEngineImpl.java:535) ~[?:1.8.0_131]
+	at sun.security.ssl.SSLEngineImpl.readNetRecord(SSLEngineImpl.java:813) ~[?:1.8.0_131]
+	at sun.security.ssl.SSLEngineImpl.unwrap(SSLEngineImpl.java:781) ~[?:1.8.0_131]
+	at javax.net.ssl.SSLEngine.unwrap(SSLEngine.java:624) ~[?:1.8.0_131]
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1097) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:968) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:902) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:411) ~[browsermob-dist-2.1.4.jar:?]
+	... 15 more
+Caused by: javax.net.ssl.SSLHandshakeException: General SSLEngine problem
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:192) ~[?:1.8.0_131]
+	at sun.security.ssl.SSLEngineImpl.fatal(SSLEngineImpl.java:1728) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:304) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:296) ~[?:1.8.0_131]
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1514) ~[?:1.8.0_131]
+	at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:216) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker.processLoop(Handshaker.java:1026) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker$1.run(Handshaker.java:966) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker$1.run(Handshaker.java:963) ~[?:1.8.0_131]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker$DelegatedTask.run(Handshaker.java:1416) ~[?:1.8.0_131]
+	at io.netty.handler.ssl.SslHandler.runDelegatedTasks(SslHandler.java:1123) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1008) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:902) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:411) ~[browsermob-dist-2.1.4.jar:?]
+	... 15 more
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:397) ~[?:1.8.0_131]
+	at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:302) ~[?:1.8.0_131]
+	at sun.security.validator.Validator.validate(Validator.java:260) ~[?:1.8.0_131]
+	at sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:324) ~[?:1.8.0_131]
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:281) ~[?:1.8.0_131]
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:136) ~[?:1.8.0_131]
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1501) ~[?:1.8.0_131]
+	at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:216) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker.processLoop(Handshaker.java:1026) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker$1.run(Handshaker.java:966) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker$1.run(Handshaker.java:963) ~[?:1.8.0_131]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker$DelegatedTask.run(Handshaker.java:1416) ~[?:1.8.0_131]
+	at io.netty.handler.ssl.SslHandler.runDelegatedTasks(SslHandler.java:1123) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1008) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:902) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:411) ~[browsermob-dist-2.1.4.jar:?]
+	... 15 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:141) ~[?:1.8.0_131]
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:126) ~[?:1.8.0_131]
+	at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:280) ~[?:1.8.0_131]
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:392) ~[?:1.8.0_131]
+	at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:302) ~[?:1.8.0_131]
+	at sun.security.validator.Validator.validate(Validator.java:260) ~[?:1.8.0_131]
+	at sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:324) ~[?:1.8.0_131]
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:281) ~[?:1.8.0_131]
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:136) ~[?:1.8.0_131]
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1501) ~[?:1.8.0_131]
+	at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:216) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker.processLoop(Handshaker.java:1026) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker$1.run(Handshaker.java:966) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker$1.run(Handshaker.java:963) ~[?:1.8.0_131]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_131]
+	at sun.security.ssl.Handshaker$DelegatedTask.run(Handshaker.java:1416) ~[?:1.8.0_131]
+	at io.netty.handler.ssl.SslHandler.runDelegatedTasks(SslHandler.java:1123) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1008) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:902) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:411) ~[browsermob-dist-2.1.4.jar:?]
+	... 15 more
+
+[INFO  2017-09-15T20:32:25,757 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-18-ProxyToServerWorker-5) (AWAITING_INITIAL) [id: 0x59ea0568, L:/216.165.71.244:48082 - R:widget.criteo.com/74.119.119.79:443]: An IOException occurred on ProxyToServerConnection: Connection reset by peer 
+[INFO  2017-09-15T20:32:25,758 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-18-ProxyToServerWorker-5) (AWAITING_INITIAL) [id: 0x59ea0568, L:/216.165.71.244:48082 - R:widget.criteo.com/74.119.119.79:443]: Disconnecting open connection to server 
+[INFO  2017-09-15T20:32:26,313 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-18-ProxyToServerWorker-7) (AWAITING_INITIAL) [id: 0x332c12b0, L:/216.165.71.244:48146 - R:sslwidget.criteo.com/74.119.119.79:443]: An IOException occurred on ProxyToServerConnection: Connection reset by peer 
+[INFO  2017-09-15T20:32:26,313 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-18-ProxyToServerWorker-7) (AWAITING_INITIAL) [id: 0x332c12b0, L:/216.165.71.244:48146 - R:sslwidget.criteo.com/74.119.119.79:443]: Disconnecting open connection to server 
+[INFO  2017-09-15T20:32:29,318 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-18-ProxyToServerWorker-7) (AWAITING_INITIAL) [id: 0x01fd7f34, L:/216.165.71.244:45412 - R:static.criteo.net/74.119.119.70:443]: An IOException occurred on ProxyToServerConnection: Connection reset by peer 
+[INFO  2017-09-15T20:32:29,318 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-18-ProxyToServerWorker-7) (AWAITING_INITIAL) [id: 0x01fd7f34, L:/216.165.71.244:45412 - R:static.criteo.net/74.119.119.70:443]: Disconnecting open connection to server 
+[INFO  2017-09-15T20:32:29,768 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-18-ProxyToServerWorker-3) (AWAITING_INITIAL) [id: 0xaab651e1, L:/216.165.71.244:48808 - R:dis.us.criteo.com/74.119.119.84:443]: An IOException occurred on ProxyToServerConnection: Connection reset by peer 
+[INFO  2017-09-15T20:32:29,768 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-18-ProxyToServerWorker-3) (AWAITING_INITIAL) [id: 0xaab651e1, L:/216.165.71.244:48808 - R:dis.us.criteo.com/74.119.119.84:443]: Disconnecting open connection to server 
+[INFO  2017-09-15T20:32:34,280 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-18-ProxyToServerWorker-0) (AWAITING_INITIAL) [id: 0x238db553, L:/216.165.71.244:48952 - R:dis.criteo.com/74.119.119.84:443]: An IOException occurred on ProxyToServerConnection: Connection reset by peer 
+[INFO  2017-09-15T20:32:34,280 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-18-ProxyToServerWorker-0) (AWAITING_INITIAL) [id: 0x238db553, L:/216.165.71.244:48952 - R:dis.criteo.com/74.119.119.84:443]: Disconnecting open connection to server 
+[INFO  2017-09-15T20:32:34,976 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-18-ProxyToServerWorker-1) (AWAITING_INITIAL) [id: 0xc9fd69b1, L:/216.165.71.244:42568 - R:gum.criteo.com/74.119.119.66:443]: An IOException occurred on ProxyToServerConnection: Connection reset by peer 
+[INFO  2017-09-15T20:32:34,977 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-18-ProxyToServerWorker-1) (AWAITING_INITIAL) [id: 0xc9fd69b1, L:/216.165.71.244:42568 - R:gum.criteo.com/74.119.119.66:443]: Disconnecting open connection to server 
+[INFO  2017-09-15T20:32:35,736 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-18-ProxyToServerWorker-4) (AWAITING_INITIAL) [id: 0xf42a1ca8, L:/216.165.71.244:48920 - R:dis.criteo.com/74.119.119.84:443]: An IOException occurred on ProxyToServerConnection: Connection reset by peer 
+[INFO  2017-09-15T20:32:35,737 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-18-ProxyToServerWorker-4) (AWAITING_INITIAL) [id: 0xf42a1ca8, L:/216.165.71.244:48920 - R:dis.criteo.com/74.119.119.84:443]: Disconnecting open connection to server 
+[INFO  2017-09-15T20:33:21,277 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-18-ProxyToServerWorker-6) (AWAITING_INITIAL) [id: 0x00f6796a, L:/216.165.71.244:41518 - R:bat.bing.com/13.107.21.200:443]: An IOException occurred on ProxyToServerConnection: Connection reset by peer 
+[INFO  2017-09-15T20:33:21,734 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-18-ProxyToServerWorker-6) (AWAITING_INITIAL) [id: 0x00f6796a, L:/216.165.71.244:41518 - R:bat.bing.com/13.107.21.200:443]: Disconnecting open connection to server 
+[INFO  2017-09-15T20:40:11,407 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-16) Starting proxy at address: 0.0.0.0/0.0.0.0:8100 
+[INFO  2017-09-15T20:40:11,793 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-16) Proxy listening with TCP transport 
+[INFO  2017-09-15T20:40:11,794 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp746115872-16) Proxy started at address: /0:0:0:0:0:0:0:0:8100 
+[INFO  2017-09-17T07:11:35,122 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-7-ProxyToServerWorker-4) (HANDSHAKING) [id: 0xce2e2d34, L:0.0.0.0/0.0.0.0:58138 ! R:www.server110.com/122.228.208.112:443]: Connection to upstream server failed java.nio.channels.ClosedChannelException: null
+	at io.netty.handler.ssl.SslHandler.channelInactive(...)(Unknown Source) ~[browsermob-dist-2.1.4.jar:?]
+
+[INFO  2017-09-17T07:11:36,881 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-7-ProxyToServerWorker-5) (HANDSHAKING) [id: 0x553987d6, L:0.0.0.0/0.0.0.0:58140 ! R:www.server110.com/122.228.208.112:443]: Connection to upstream server failed java.nio.channels.ClosedChannelException: null
+	at io.netty.handler.ssl.SslHandler.channelInactive(...)(Unknown Source) ~[browsermob-dist-2.1.4.jar:?]
+
+[INFO  2017-09-17T15:37:30,163 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-7) (AWAITING_INITIAL) [id: 0xe14f0793, L:/216.165.71.244:8081 - R:/158.85.81.116:10000]: An IOException occurred on ClientToProxyConnection: Connection reset by peer 
+[INFO  2017-09-17T21:49:19,015 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-9-ClientToProxyWorker-4) (AWAITING_INITIAL) [id: 0x3be1454d, L:/216.165.71.244:8090 - R:/196.52.43.64:10000]: An IOException occurred on ClientToProxyConnection: Connection reset by peer 
+[INFO  2017-09-18T03:12:32,580 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-7-ClientToProxyWorker-7) (AWAITING_INITIAL) [id: 0x4f11520e, L:/216.165.71.244:8088 - R:/158.85.81.125:10000]: An IOException occurred on ClientToProxyConnection: Connection reset by peer 

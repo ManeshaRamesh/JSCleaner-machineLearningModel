@@ -425,7 +425,7 @@ function iterate(OSName, callback){
 
     // console.log("All requestDetails: ", (requestDetails.url.search("http://86.97.179.52:9000/JSCleaner/JSLabel2.py") === -1), requestDetails.url.search(".js"), requestDetails.url) 
 
-    if ((requestDetails.url.search(".js") !== -1 && requestDetails.url.search("http://86.97.179.52:9000/JSCleaner/JSLabel2.py") === -1) || (requestDetails.type === "script")){ //check if url is of type script
+    if ((requestDetails.url.search(".js") !== -1 && requestDetails.url.search("http://92.99.20.210:9000/JSCleaner/JSLabel2.py") === -1) || (requestDetails.type === "script")){ //check if url is of type script
         // console.log("All requestDetails: ", "pass", requestDetails.url) 
 
 
@@ -475,11 +475,11 @@ function iterate(OSName, callback){
                   var oReq = new XMLHttpRequest();
                   oReq.addEventListener("load", reqListener);
                   requestString = encodeURIComponent(requestDetails.url)
-                  request = "http://86.97.179.52:9000/JSCleaner/JSLabel2.py?url=" + requestString
-                  // console.log("Request: ", request)
+                  request = "http://92.99.20.210:9000/JSCleaner/JSLabel2.py?url=" + requestString
+                  console.log("Request: ", request)
                   oReq.open("GET", request );
                   oReq.send();
-                  // oReq.timeout = 5000;
+                  oReq.timeout = 5000;
                   oReq.onerror = function(e){
                       console.log("Server Error: contact administrator" + e)
                       return

@@ -1,0 +1,27 @@
+url,Time to interactivity,Time to DOM completion,Page Load Time,Total Number requests,Total Number JS requests,Total Transfer Size,Transfer size of JS elements
+url,Time to interactivity,Time to DOM completion,Page Load Time,Total Number requests,Total Number JS requests,Total Transfer Size,Transfer size of JS elements
+https://world.taobao.com/,1.752,4.888,4.897,80,17,1691639,221205
+https://twitter.com/,0.733,2.129,2.129,0,0,0,0
+https://www.reddit.com/,2.234,7.538,7.591,4,1,270848,26909
+https://www.instagram.com/,2.843,3.842,3.847,11,2,485709,122212
+https://outlook.live.com/owa/,0.836,1.563,1.563,24,7,1680527,130877
+https://www.jd.com/,1.49,1.498,1.499,1,0,6770,0
+http://sohu.com/,2.155,2.58,2.586,2,1,47952,2843
+https://yandex.ru/,2.599,5.036,5.046,59,9,1512278,819265
+https://www.weibo.com/overseas,2.566,12.075,12.077,102,11,1113193,253410
+https://www.netflix.com/ae-en/,2.791,3.792,3.793,12,2,520358,360337
+https://www.bilibili.com/,1.825,3.428,3.43,48,12,5176785,536918
+https://www.360.cn/,2.036,5.227,5.227,2,0,24616,0
+https://www.csdn.net/,3.417,9.834,9.843,114,16,3675741,142839
+https://mail.ru/,2.137,5.833,5.838,79,11,898867,434756
+http://www.bing.com/,0.578,0.587,0.589,6,1,324819,6147
+https://www.naver.com/,1.446,2.747,2.769,3,0,33905,0
+https://www.aliexpress.com/,1.067,3.082,3.213,65,18,1056420,706464
+https://www.microsoft.com/en-gulf/,0.832,0.934,0.937,15,5,277174,146650
+https://www.whatsapp.com/,1.363,2.894,2.911,24,13,981549,787164
+https://www.alipay.com/,1.929,3.575,3.575,13,2,513019,127665
+https://www.ebay.com/,1.218,2.35,2.367,2,1,40412,1232
+https://www.tribunnews.com/,1.298,4.32,4.361,15,5,362594,209991
+https://github.com/,1.053,1.26,1.281,2,0,74074,0
+https://www.imdb.com/,1.218,2.743,2.756,3,0,87869,0
+https://t.co/,0.52,0.767,0.767,2,0,2501,0

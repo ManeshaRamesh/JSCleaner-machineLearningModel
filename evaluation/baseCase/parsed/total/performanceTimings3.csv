@@ -1,0 +1,9 @@
+url,Time to interactivity,Time to DOM completion,Page Load Time,Total Number requests,Total Number JS requests,Total Transfer Size,Transfer size of JS elements
+https://world.taobao.com/,1.856,5.994,6.004,85,20,1802131,280325
+https://twitter.com/,1.236,2.627,2.627,2,1,19994,3877
+https://www.reddit.com/,2.657,8.312,8.36,7,4,380175,133199
+https://www.instagram.com/,1.795,2.495,2.499,10,1,483445,119640
+https://outlook.live.com/owa/,0.563,1.714,1.716,24,7,1680776,130878
+https://www.jd.com/,3.163,9.651,9.654,39,2,4752065,14102
+http://sohu.com/,2.55,9.672,9.677,14,1,1457018,2844
+https://yandex.ru/,3.243,4.758,4.774,52,6,1269350,657966
