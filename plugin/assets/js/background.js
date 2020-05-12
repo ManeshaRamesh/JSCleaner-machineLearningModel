@@ -83,7 +83,9 @@ chrome.storage.local.get(["default"], function (result) {
     });
 
     console.log("default setting", settingDefault);
-    chrome.storage.local.set({ default: settingDefault }, function () {}); //store default settings in chrome storage
+    chrome.storage.local.set({ default: settingDefault }, function () {
+      Database.blockRequests();
+    }); //store default settings in chrome storage
     Constants.setdefaultLabels(settingDefault);
   } else {
     console.log("exists", result);

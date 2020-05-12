@@ -111,7 +111,7 @@ with open('FirstPageLoadSingle/Final/FirstPageLoadSingleFinal.csv', 'a') as csvf
         # driver.close()
     with open('SecondPageLoadSingle/Final/SecondPageLoadSingleFinal.csv', 'a') as csvfile2:
         writer2 = csv.writer(csvfile2, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        writer2.writerow(header)
+        # writer2.writerow(header)
         # for i in range(90, 100):
         try:
             stats= []

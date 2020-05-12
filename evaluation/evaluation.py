@@ -41,15 +41,28 @@
 
 
 import os
+import csv
 
-# f_websites = open("websites.txt", "r")
-# websites = []
-# # store websites in an array
-# for i in range(100):
-#     websites.append(f_websites.readline().rstrip())
+header = ['url', 'Time to interactivity', 'Time to DOM completion', 'Page Load Time', 'Total Number requests', 'Total Number JS requests', 'Total Transfer Size', 'Transfer size of JS elements' ]
 
 
-# for url in websites:
-command = "python harRecorder/harRecorder.py" 
-print command
-os.system(command)
+f_websites = open("websites.txt", "r")
+# with open('FirstPageLoadSingle/Final/FirstPageLoadSingleFinal.csv', 'a') as csvfile:
+#     writer = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+#     writer.writerow(header)
+
+# with open('SecondPageLoadSingle/Final/SecondPageLoadSingleFinal.csv', 'a') as csvfile2:
+#     writer2 = csv.writer(csvfile2, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+#     writer2.writerow(header)
+
+
+websites = []
+# store websites in an array
+for i in range(53):
+    websites.append(f_websites.readline().rstrip())
+
+
+for k in range(33,53):
+    command = "python harRecorder/harRecorder2.py " + websites[k]
+    print command
+    os.system(command)
