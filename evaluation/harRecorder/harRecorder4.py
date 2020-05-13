@@ -41,7 +41,7 @@ profile.set_preference("network.http.use-cache", False)
 
 driver = webdriver.Firefox(firefox_profile=profile)
 a = raw_input("go")
-with open('FirstPageLoadBatch/Fixes/FirstPageLoadBatchFixes.csv', 'a') as csvfile:
+with open('FirstPageLoadSingle/Fixes/FirstPageLoadSingleFixes.csv', 'a') as csvfile:
     writer = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     # writer.writerow(header)
     try:
@@ -108,7 +108,7 @@ with open('FirstPageLoadBatch/Fixes/FirstPageLoadBatchFixes.csv', 'a') as csvfil
         # f.write(result)
         # f.close()
         # driver.close()
-    with open('SecondPageLoadBatch/Fixes/SecondPageLoadBatchFixes.csv', 'a') as csvfile2:
+    with open('SecondPageLoadSingle/Fixes/SecondPageLoadSingleFixes.csv', 'a') as csvfile2:
         writer2 = csv.writer(csvfile2, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         # writer2.writerow(header)
         # for i in range(90, 100):

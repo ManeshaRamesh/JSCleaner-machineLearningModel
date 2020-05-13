@@ -45,19 +45,29 @@ import os
 header = ['url', 'Time to interactivity', 'Time to DOM completion', 'Page Load Time', 'Total Number requests', 'Total Number JS requests', 'Total Transfer Size', 'Transfer size of JS elements' ]
 
 
-f_websites = open("websites.txt", "r")
+f_websites = open("websites2.txt", "r")
 websites = []
 # store websites in an array
-for i in range(55):
+for i in range(22):
     websites.append(f_websites.readline().rstrip())
+with open('BaseCase/Fixes/BaseCaseFixes.csv', 'a') as csvfile3:
+    writer3 = csv.writer(csvfile3, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+    writer3.writerow(header)
 
-with open('FirstPageLoadBatch/Final/FirstPageLoadBatchFinal.csv', 'a') as csvfile:
+with open('FirstPageLoadBatch/Fixes/FirstPageLoadBatchFixes.csv', 'a') as csvfile:
     writer = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     writer.writerow(header)
-with open('SecondPageLoadBatch/Final/SecondPageLoadBatchFinal.csv', 'a') as csvfile2:
+with open('SecondPageLoadBatch/Fixes/SecondPageLoadBatchFixes.csv', 'a') as csvfile2:
     writer2 = csv.writer(csvfile2, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     writer2.writerow(header)
+
 for url in websites:
-    command = "python harRecorder/harRecorder2.py " + url
+    command = "python harRecorder/harRecorder3.py " + url
     print command
     os.system(command)
+    command2 = "python harRecorder/harRecorder2.py " + url
+    os.system(command2)
+    command3 = "python harRecorder/harRecorder4.py " + url
+    os.system(command2)
+    break
+
